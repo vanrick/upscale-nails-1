@@ -62,8 +62,7 @@
 	ReactDOM.render(React.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
-	  React.createElement(_reactRouter.Route, { path: '/', component: _index2.default }),
-	  React.createElement(_reactRouter.Route, { path: '/second', component: Second })
+	  React.createElement(_reactRouter.Route, { path: '/', component: _index2.default })
 	), document.getElementById('app'));
 
 /***/ },
