@@ -27122,6 +27122,10 @@
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
+	var _createLogIn = __webpack_require__(499);
+
+	var _createLogIn2 = _interopRequireDefault(_createLogIn);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27153,7 +27157,8 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_navbar2.default, null)
+	        _react2.default.createElement(_navbar2.default, null),
+	        _react2.default.createElement(_createLogIn2.default, null)
 	      );
 	    }
 	  }]);
@@ -46282,7 +46287,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n", ""]);
 
 	// exports
 
@@ -46333,11 +46338,6 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Unique Nails, A Place for friends!!!'
-	        ),
-	        _react2.default.createElement(
 	          _reactBootstrap.Nav,
 	          { bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
 	          _react2.default.createElement(
@@ -46379,6 +46379,52 @@
 	              { eventKey: '4.4' },
 	              'Yelp'
 	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Form,
+	            { inline: true, className: 'pull-right' },
+	            _react2.default.createElement(
+	              _reactBootstrap.FormGroup,
+	              { controlId: 'formInlineName' },
+	              _react2.default.createElement(
+	                _reactBootstrap.ControlLabel,
+	                null,
+	                'Name'
+	              ),
+	              ' ',
+	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane Doe' })
+	            ),
+	            ' ',
+	            _react2.default.createElement(
+	              _reactBootstrap.FormGroup,
+	              { controlId: 'formInlineEmail' },
+	              _react2.default.createElement(
+	                _reactBootstrap.ControlLabel,
+	                null,
+	                'Password'
+	              ),
+	              ' ',
+	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
+	            ),
+	            ' ',
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-info', type: 'submit' },
+	              'Submit'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'pull-right' },
+	          _react2.default.createElement(
+	            'a',
+	            { href: '#' },
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'Click Here to Create A New Account'
+	            )
 	          )
 	        )
 	      );
@@ -46389,6 +46435,102 @@
 	}(_react.Component);
 
 	exports.default = NavComponent;
+
+
+	NavComponent.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
+
+/***/ },
+/* 499 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalInstance = function (_Component) {
+	  _inherits(ModalInstance, _Component);
+
+	  function ModalInstance() {
+	    _classCallCheck(this, ModalInstance);
+
+	    return _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).apply(this, arguments));
+	  }
+
+	  _createClass(ModalInstance, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'static-modal' },
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal.Dialog,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Header,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Modal.Title,
+	              null,
+	              'Modal title'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Body,
+	            null,
+	            'One fine body...'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Footer,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              null,
+	              'Close'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { bsStyle: 'primary' },
+	              'Save changes'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ModalInstance;
+	}(_react.Component);
+
+	exports.default = ModalInstance;
+
+
+	ModalInstance.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 /***/ }
 /******/ ]);

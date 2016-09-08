@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
 import NavComponent from './homeComponents/navbar';
+import ModalInstance from './homeComponents/createLogIn';
+
 
 
 export default class Home extends Component {
@@ -16,6 +18,7 @@ export default class Home extends Component {
     return (
       <div>
         <NavComponent />
+        <ModalInstance />
       </div>
     )
   };
