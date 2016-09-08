@@ -27118,6 +27118,10 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
+	var _navbar = __webpack_require__(498);
+
+	var _navbar2 = _interopRequireDefault(_navbar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27136,67 +27140,20 @@
 	  }
 
 	  _createClass(Home, [{
-	    key: 'handleSelect',
-	    value: function handleSelect(eventKey) {
-	      event.preventDefault();
-	      alert('selected ' + eventKey);
-	    }
-	  }, {
 	    key: 'render',
+
+
+	    // Import react
+	    // Import all of the bootstrap components in the file that will be using it
+	    // Create the class which is the folder that holds the file
+	    // list all components that will be used on the index page
+
 	    value: function render() {
 
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Unique Nails'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Nav,
-	          { bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
-	          _react2.default.createElement(
-	            _reactBootstrap.NavItem,
-	            { eventKey: 'Home', href: '#' },
-	            'Home'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.NavItem,
-	            { eventKey: 'Services', href: '#' },
-	            'Services'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.NavItem,
-	            { eventKey: 'About Us' },
-	            'About Us'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.NavDropdown,
-	            { eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
-	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.1' },
-	              'Hours & Location'
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.2' },
-	              'Directions'
-	            ),
-	            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.3' },
-	              'Facebook'
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.4' },
-	              'Yelp'
-	            )
-	          )
-	        )
+	        _react2.default.createElement(_navbar2.default, null)
 	      );
 	    }
 	  }]);
@@ -27204,14 +27161,14 @@
 	  return Home;
 	}(_react.Component);
 
-	exports.default = Home;
-	;
-
-	Home.contextTypes = {
-	  router: _react2.default.PropTypes.object.isRequired
-	};
-
 	/// In the render() method
+
+	// Home.contextTypes = {
+	//   router: React.PropTypes.object.isRequired,
+	// }
+
+
+	exports.default = Home;
 
 /***/ },
 /* 236 */
@@ -46329,6 +46286,109 @@
 
 	// exports
 
+
+/***/ },
+/* 498 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NavComponent = function (_Component) {
+	  _inherits(NavComponent, _Component);
+
+	  function NavComponent() {
+	    _classCallCheck(this, NavComponent);
+
+	    return _possibleConstructorReturn(this, (NavComponent.__proto__ || Object.getPrototypeOf(NavComponent)).apply(this, arguments));
+	  }
+
+	  _createClass(NavComponent, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Unique Nails, A Place for friends!!!'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Nav,
+	          { bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
+	          _react2.default.createElement(
+	            _reactBootstrap.NavItem,
+	            { eventKey: 'Home', href: '#' },
+	            'Home'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.NavItem,
+	            { eventKey: 'Services', href: '#' },
+	            'Services'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.NavItem,
+	            { eventKey: 'About Us' },
+	            'About Us'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.NavDropdown,
+	            { eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
+	            _react2.default.createElement(
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.1' },
+	              'Hours & Location'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.2' },
+	              'Directions'
+	            ),
+	            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
+	            _react2.default.createElement(
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.3' },
+	              'Facebook'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.4' },
+	              'Yelp'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return NavComponent;
+	}(_react.Component);
+
+	exports.default = NavComponent;
 
 /***/ }
 /******/ ]);
