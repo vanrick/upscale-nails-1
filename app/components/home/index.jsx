@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import NavComponent from './homeComponents/navbar';
+import CreateLogin from './homeComponents/createLogin';
 
 export default class Home extends Component {
 
@@ -13,6 +14,7 @@ export default class Home extends Component {
     return (
       <div>
         <NavComponent />
+        <CreateLogin />
       </div>
     )
   };
