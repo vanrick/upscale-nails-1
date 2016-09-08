@@ -1,8 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
+import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
 import NavComponent from './homeComponents/navbar';
-// import CreateLogin from './homeComponents/createLogIn'
-import SplashPage from './homeComponents/splashPage';
+import ModalInstance from './homeComponents/createLogIn';
+
+
 
 export default class Home extends Component {
 
@@ -12,23 +14,25 @@ export default class Home extends Component {
 // list all components that will be used on the index page
 
   render() {
+
     return (
-    <div>
       <div>
         <NavComponent />
+        <ModalInstance />
       </div>
-      <div>
-        <SplashPage />
-      </div>
-      <div>
-      </div>
-    </div>
-
-
     )
   };
 }
 
+
+
+
+
+
+
+
+
+/// In the render() method
 
 // Home.contextTypes = {
 //   router: React.PropTypes.object.isRequired,

@@ -27116,13 +27116,15 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _reactBootstrap = __webpack_require__(237);
+
 	var _navbar = __webpack_require__(236);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
-	var _splashPage = __webpack_require__(489);
+	var _createLogIn = __webpack_require__(501);
 
-	var _splashPage2 = _interopRequireDefault(_splashPage);
+	var _createLogIn2 = _interopRequireDefault(_createLogIn);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27131,8 +27133,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import CreateLogin from './homeComponents/createLogIn'
-
 
 	var Home = function (_Component) {
 	  _inherits(Home, _Component);
@@ -27153,26 +27153,20 @@
 	    // list all components that will be used on the index page
 
 	    value: function render() {
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(_navbar2.default, null)
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(_splashPage2.default, null)
-	        ),
-	        _react2.default.createElement('div', null)
+	        _react2.default.createElement(_navbar2.default, null),
+	        _react2.default.createElement(_createLogIn2.default, null)
 	      );
 	    }
 	  }]);
 
 	  return Home;
 	}(_react.Component);
+
+	/// In the render() method
 
 	// Home.contextTypes = {
 	//   router: React.PropTypes.object.isRequired,
@@ -46031,77 +46025,7 @@
 
 /***/ },
 /* 488 */,
-/* 489 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _reactBootstrap = __webpack_require__(237);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SplashPage = function (_Component) {
-	  _inherits(SplashPage, _Component);
-
-	  function SplashPage() {
-	    _classCallCheck(this, SplashPage);
-
-	    return _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).apply(this, arguments));
-	  }
-
-	  _createClass(SplashPage, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col-md-12 text-center ' },
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Upscale Nails'
-	              )
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return SplashPage;
-	}(_react.Component);
-
-	exports.default = SplashPage;
-
-/***/ },
+/* 489 */,
 /* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -46518,6 +46442,176 @@
 
 	// exports
 
+
+/***/ },
+/* 501 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(237);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalInstance = function (_Component) {
+	  _inherits(ModalInstance, _Component);
+
+	  function ModalInstance() {
+	    _classCallCheck(this, ModalInstance);
+
+	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this));
+
+	    _this.state = {
+	      show: false
+	    };
+	    return _this;
+	  }
+
+	  _createClass(ModalInstance, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var close = function close() {
+	        return _this2.setState({ show: false });
+	      };
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'modal-container', style: { height: 400 } },
+	        _react2.default.createElement(
+	          _reactBootstrap.Button,
+	          {
+	            className: 'pull-right btn-danger',
+	            bsStyle: 'primary',
+	            bsSize: 'medium',
+	            onClick: function onClick() {
+	              return _this2.setState({ show: true });
+	            }
+	          },
+	          'Create New Account'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal,
+	          {
+	            show: this.state.show,
+	            onHide: close,
+	            container: this,
+	            'aria-labelledby': 'contained-modal-title'
+	          },
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Header,
+	            { closeButton: true },
+	            _react2.default.createElement(
+	              _reactBootstrap.Modal.Title,
+	              { id: 'contained-modal-title' },
+	              'New Customer Information'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Body,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Form,
+	              { inline: true, className: 'pull-right' },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { 'class': 'pull-left' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Name'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane Doe' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { className: 'pull-right' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Password'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Email'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { className: 'pull-right' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Telephone Number'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999' })
+	              ),
+	              ' '
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Footer,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-danger', onClick: close },
+	              'Cancel'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-info', type: 'submit' },
+	              'Submit'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ModalInstance;
+	}(_react.Component);
+
+	exports.default = ModalInstance;
+
+
+	ModalInstance.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 /***/ }
 /******/ ]);
