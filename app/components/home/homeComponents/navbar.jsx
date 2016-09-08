@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Button, Nav, NavItem, NavDropdown, Form, FormGroup, FormControl, MenuItem, ControlLabel} from 'react-bootstrap';
 
 export default class NavComponent extends Component {
 
@@ -18,8 +18,35 @@ export default class NavComponent extends Component {
             <MenuItem eventKey="4.3">Facebook</MenuItem>
             <MenuItem eventKey="4.4">Yelp</MenuItem>
           </NavDropdown>
+
+          <Form inline  className="pull-right">
+           <FormGroup controlId="formInlineName">
+             <ControlLabel>Name</ControlLabel>
+             {' '}
+             <FormControl type="text" placeholder="Jane Doe" />
+           </FormGroup>
+           {' '}
+           <FormGroup controlId="formInlineEmail">
+             <ControlLabel>Password</ControlLabel>
+             {' '}
+             <FormControl type="password" placeholder="password" />
+           </FormGroup>
+           {' '}
+           <Button className="btn btn-info" type="submit">
+             Submit
+           </Button>
+         </Form>
         </Nav>
-      </div>
+        <div className="pull-right">
+          <a href="#">
+          <p>Click Here to Create A New Account</p></a>
+       </div>
+
+  </div>
     )
   };
+}
+
+NavComponent.contextTypes = {
+  router: React.PropTypes.object.isRequired,
 }
