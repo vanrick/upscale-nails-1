@@ -3,27 +3,44 @@ import ReactDOM from 'react-dom';
 import { Button, Modal} from 'react-bootstrap';
 
 export default class ModalInstance extends Component{
-  render(){
-    return(
-      <div className="static-modal">
-        <Modal.Dialog>
-          <Modal.Header>
-            <Modal.Title>Modal title</Modal.Title>
+  constructor(){
+    super();
+    this.state = {
+     show: false
+  };
+}
+  render (){
+    let close = () => this.setState({ show: false});
+
+    return (
+      <div className="modal-container" style={{height: 200}}>
+        <Button
+          bsStyle="primary"
+          bsSize="large"
+          onClick={() => this.setState({ show: true})}
+        >
+          Launch contained modal
+        </Button>
+
+        <Modal
+          show={this.state.show}
+          onHide={close}
+          container={this}
+          aria-labelledby="contained-modal-title"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title">Contained Modal</Modal.Title>
           </Modal.Header>
-
           <Modal.Body>
-            One fine body...
+            Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
           </Modal.Body>
-
           <Modal.Footer>
-            <Button>Close</Button>
-            <Button bsStyle="primary">Save changes</Button>
+            <Button onClick={close}>Close</Button>
           </Modal.Footer>
-
-        </Modal.Dialog>
+        </Modal>
       </div>
-      )
-    }
+    );
+  }
 }
 
 ModalInstance.contextTypes = {

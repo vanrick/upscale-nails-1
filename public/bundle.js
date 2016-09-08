@@ -46054,44 +46054,66 @@
 	  function ModalInstance() {
 	    _classCallCheck(this, ModalInstance);
 
-	    return _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this));
+
+	    _this.state = {
+	      show: false
+	    };
+	    return _this;
 	  }
 
 	  _createClass(ModalInstance, [{
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
+	      var close = function close() {
+	        return _this2.setState({ show: false });
+	      };
+
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'static-modal' },
+	        { className: 'modal-container', style: { height: 200 } },
 	        _react2.default.createElement(
-	          _reactBootstrap.Modal.Dialog,
-	          null,
+	          _reactBootstrap.Button,
+	          {
+	            bsStyle: 'primary',
+	            bsSize: 'large',
+	            onClick: function onClick() {
+	              return _this2.setState({ show: true });
+	            }
+	          },
+	          'Launch contained modal'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal,
+	          {
+	            show: this.state.show,
+	            onHide: close,
+	            container: this,
+	            'aria-labelledby': 'contained-modal-title'
+	          },
 	          _react2.default.createElement(
 	            _reactBootstrap.Modal.Header,
-	            null,
+	            { closeButton: true },
 	            _react2.default.createElement(
 	              _reactBootstrap.Modal.Title,
-	              null,
-	              'Modal title'
+	              { id: 'contained-modal-title' },
+	              'Contained Modal'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Modal.Body,
 	            null,
-	            'One fine body...'
+	            'Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.'
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Modal.Footer,
 	            null,
 	            _react2.default.createElement(
 	              _reactBootstrap.Button,
-	              null,
+	              { onClick: close },
 	              'Close'
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { bsStyle: 'primary' },
-	              'Save changes'
 	            )
 	          )
 	        )
