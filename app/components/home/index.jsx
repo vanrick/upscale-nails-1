@@ -6,7 +6,7 @@ import ModalInstance from './homeComponents/createLogIn';
 
 
 
-export default class Home extends React.Component {
+export default class Home extends Component {
 
 // Import react
 // Import all of the bootstrap components in the file that will be using it
@@ -23,17 +23,3 @@ export default class Home extends React.Component {
     )
   };
 }
-
-
-
-
-
-
-
-
-
-/// In the render() method
-
-// Home.contextTypes = {
-//   router: React.PropTypes.object.isRequired,
-// }
