@@ -46,206 +46,7 @@
 
 	'use strict';
 
-<<<<<<< HEAD
-	var _reactRouter = __webpack_require__(1);
-
-	var _index = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./app/components/home/index\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-	var _index2 = _interopRequireDefault(_index);
-
-	__webpack_require__(236);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var React = __webpack_require__(3);
-	var ReactDOM = __webpack_require__(98);
-
-	ReactDOM.render(React.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter.browserHistory },
-	  React.createElement(_reactRouter.Route, { path: '/', component: _index2.default })
-	), document.getElementById('app'));
-
-/***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	exports.__esModule = true;
-	exports.createMemoryHistory = exports.hashHistory = exports.browserHistory = exports.applyRouterMiddleware = exports.formatPattern = exports.useRouterHistory = exports.match = exports.routerShape = exports.locationShape = exports.PropTypes = exports.RoutingContext = exports.RouterContext = exports.createRoutes = exports.useRoutes = exports.RouteContext = exports.Lifecycle = exports.History = exports.Route = exports.Redirect = exports.IndexRoute = exports.IndexRedirect = exports.withRouter = exports.IndexLink = exports.Link = exports.Router = undefined;
-
-	var _RouteUtils = __webpack_require__(2);
-
-	Object.defineProperty(exports, 'createRoutes', {
-	  enumerable: true,
-	  get: function get() {
-	    return _RouteUtils.createRoutes;
-	  }
-	});
-
-	var _PropTypes2 = __webpack_require__(36);
-
-	Object.defineProperty(exports, 'locationShape', {
-	  enumerable: true,
-	  get: function get() {
-	    return _PropTypes2.locationShape;
-	  }
-	});
-	Object.defineProperty(exports, 'routerShape', {
-	  enumerable: true,
-	  get: function get() {
-	    return _PropTypes2.routerShape;
-	  }
-	});
-
-	var _PatternUtils = __webpack_require__(41);
-
-	Object.defineProperty(exports, 'formatPattern', {
-	  enumerable: true,
-	  get: function get() {
-	    return _PatternUtils.formatPattern;
-	  }
-	});
-
-	var _Router2 = __webpack_require__(43);
-
-	var _Router3 = _interopRequireDefault(_Router2);
-
-	var _Link2 = __webpack_require__(74);
-
-	var _Link3 = _interopRequireDefault(_Link2);
-
-	var _IndexLink2 = __webpack_require__(75);
-
-	var _IndexLink3 = _interopRequireDefault(_IndexLink2);
-
-	var _withRouter2 = __webpack_require__(76);
-
-	var _withRouter3 = _interopRequireDefault(_withRouter2);
-
-	var _IndexRedirect2 = __webpack_require__(78);
-
-	var _IndexRedirect3 = _interopRequireDefault(_IndexRedirect2);
-
-	var _IndexRoute2 = __webpack_require__(80);
-
-	var _IndexRoute3 = _interopRequireDefault(_IndexRoute2);
-
-	var _Redirect2 = __webpack_require__(79);
-
-	var _Redirect3 = _interopRequireDefault(_Redirect2);
-
-	var _Route2 = __webpack_require__(81);
-
-	var _Route3 = _interopRequireDefault(_Route2);
-
-	var _History2 = __webpack_require__(82);
-
-	var _History3 = _interopRequireDefault(_History2);
-
-	var _Lifecycle2 = __webpack_require__(83);
-
-	var _Lifecycle3 = _interopRequireDefault(_Lifecycle2);
-
-	var _RouteContext2 = __webpack_require__(84);
-
-	var _RouteContext3 = _interopRequireDefault(_RouteContext2);
-
-	var _useRoutes2 = __webpack_require__(85);
-
-	var _useRoutes3 = _interopRequireDefault(_useRoutes2);
-
-	var _RouterContext2 = __webpack_require__(71);
-
-	var _RouterContext3 = _interopRequireDefault(_RouterContext2);
-
-	var _RoutingContext2 = __webpack_require__(86);
-
-	var _RoutingContext3 = _interopRequireDefault(_RoutingContext2);
-
-	var _PropTypes3 = _interopRequireDefault(_PropTypes2);
-
-	var _match2 = __webpack_require__(87);
-
-	var _match3 = _interopRequireDefault(_match2);
-
-	var _useRouterHistory2 = __webpack_require__(91);
-
-	var _useRouterHistory3 = _interopRequireDefault(_useRouterHistory2);
-
-	var _applyRouterMiddleware2 = __webpack_require__(92);
-
-	var _applyRouterMiddleware3 = _interopRequireDefault(_applyRouterMiddleware2);
-
-	var _browserHistory2 = __webpack_require__(93);
-
-	var _browserHistory3 = _interopRequireDefault(_browserHistory2);
-
-	var _hashHistory2 = __webpack_require__(96);
-
-	var _hashHistory3 = _interopRequireDefault(_hashHistory2);
-
-	var _createMemoryHistory2 = __webpack_require__(88);
-
-	var _createMemoryHistory3 = _interopRequireDefault(_createMemoryHistory2);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.Router = _Router3.default; /* components */
-
-	exports.Link = _Link3.default;
-	exports.IndexLink = _IndexLink3.default;
-	exports.withRouter = _withRouter3.default;
-
-	/* components (configuration) */
-
-	exports.IndexRedirect = _IndexRedirect3.default;
-	exports.IndexRoute = _IndexRoute3.default;
-	exports.Redirect = _Redirect3.default;
-	exports.Route = _Route3.default;
-
-	/* mixins */
-
-	exports.History = _History3.default;
-	exports.Lifecycle = _Lifecycle3.default;
-	exports.RouteContext = _RouteContext3.default;
-
-	/* utils */
-
-	exports.useRoutes = _useRoutes3.default;
-	exports.RouterContext = _RouterContext3.default;
-	exports.RoutingContext = _RoutingContext3.default;
-	exports.PropTypes = _PropTypes3.default;
-	exports.match = _match3.default;
-	exports.useRouterHistory = _useRouterHistory3.default;
-	exports.applyRouterMiddleware = _applyRouterMiddleware3.default;
-
-	/* histories */
-
-	exports.browserHistory = _browserHistory3.default;
-	exports.hashHistory = _hashHistory3.default;
-	exports.createMemoryHistory = _createMemoryHistory3.default;
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	exports.__esModule = true;
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	exports.isReactChildren = isReactChildren;
-	exports.createRouteFromReactElement = createRouteFromReactElement;
-	exports.createRoutesFromReactChildren = createRoutesFromReactChildren;
-	exports.createRoutes = createRoutes;
-
-	var _react = __webpack_require__(3);
-=======
 	var _react = __webpack_require__(1);
->>>>>>> master
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -12045,11 +11846,6 @@
 	module.exports = focusNode;
 
 /***/ },
-<<<<<<< HEAD
-/* 97 */,
-/* 98 */
-/***/ function(module, exports, __webpack_require__) {
-=======
 /* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -12129,7 +11925,6 @@
 	    if (warnedStyleValues.hasOwnProperty(value) && warnedStyleValues[value]) {
 	      return;
 	    }
->>>>>>> master
 
 	    warnedStyleValues[value] = true;
 	    process.env.NODE_ENV !== 'production' ? warning(false, 'Style property values shouldn\'t contain a semicolon.%s ' + 'Try "%s: %s" instead.', checkRenderMessage(owner), name, value.replace(badStyleValueWithSemicolonPattern, '')) : void 0;
@@ -27349,13 +27144,14 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
 	          'h1',
 	          null,
-	          'Unique Nails, A Place for friends!!!'
+	          'Unique Nails'
 	        ),
 	        _react2.default.createElement(
 	          _reactBootstrap.Nav,
@@ -27414,6 +27210,8 @@
 	Home.contextTypes = {
 	  router: _react2.default.PropTypes.object.isRequired
 	};
+
+	/// In the render() method
 
 /***/ },
 /* 236 */
