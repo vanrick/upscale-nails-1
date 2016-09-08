@@ -60,6 +60,10 @@
 
 	var _index2 = _interopRequireDefault(_index);
 
+	var _index3 = __webpack_require__(500);
+
+	var _index4 = _interopRequireDefault(_index3);
+
 	var _bootstrap = __webpack_require__(489);
 
 	var _bootstrap2 = _interopRequireDefault(_bootstrap);
@@ -70,8 +74,9 @@
 
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
-	  { history: _reactRouter.browserHistory },
-	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _index2.default })
+	  { history: _reactRouter.hashHistory },
+	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _index2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/admin', component: _index4.default })
 	), document.getElementById('app'));
 
 /***/ },
@@ -27134,8 +27139,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Home = function (_Component) {
-	  _inherits(Home, _Component);
+	var Home = function (_React$Component) {
+	  _inherits(Home, _React$Component);
 
 	  function Home() {
 	    _classCallCheck(this, Home);
@@ -27164,7 +27169,7 @@
 	  }]);
 
 	  return Home;
-	}(_react.Component);
+	}(_react2.default.Component);
 
 	/// In the render() method
 
@@ -27304,12 +27309,12 @@
 	  return NavComponent;
 	}(_react.Component);
 
-	// NavComponent.contextTypes = {
-	//   router: React.PropTypes.object.isRequired,
-	// }
-
-
 	exports.default = NavComponent;
+
+
+	NavComponent.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 /***/ },
 /* 237 */
@@ -46173,12 +46178,12 @@
 	  return ModalInstance;
 	}(_react.Component);
 
-	// ModalInstance.contextTypes = {
-	//   router: React.PropTypes.object.isRequired,
-	// }
-
-
 	exports.default = ModalInstance;
+
+
+	ModalInstance.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 /***/ },
 /* 489 */
@@ -46597,6 +46602,68 @@
 
 	// exports
 
+
+/***/ },
+/* 500 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _currentUsers = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./adminComponents/currentUsers\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _currentUsers2 = _interopRequireDefault(_currentUsers);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Admin = function (_React$Component) {
+	  _inherits(Admin, _React$Component);
+
+	  function Admin() {
+	    _classCallCheck(this, Admin);
+
+	    return _possibleConstructorReturn(this, (Admin.__proto__ || Object.getPrototypeOf(Admin)).apply(this, arguments));
+	  }
+
+	  _createClass(Admin, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_currentUsers2.default, null)
+	      );
+	    }
+	  }]);
+
+	  return Admin;
+	}(_react2.default.Component);
+
+	// Admin.contextTypes = {
+	//   router: React.PropTypes.object.isRequired,
+	// }
+
+
+	exports.default = Admin;
 
 /***/ }
 /******/ ]);
