@@ -1,17 +1,34 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Button, Form, FormGroup, FormControl, MenuItem, ControlLabel } from 'react-bootstrap';
 
 export default class LogInForm extends Component {
   render() {
     return (
       <div>
-        <h1>This is the login</h1>
+      
+  <Form inline>
+   <FormGroup controlId="formInlineName">
+     <ControlLabel>Name</ControlLabel>
+     {' '}
+     <FormControl type="text" placeholder="Jane Doe" />
+   </FormGroup>
+   {' '}
+   <FormGroup controlId="formInlineEmail">
+     <ControlLabel>Password</ControlLabel>
+     {' '}
+     <FormControl type="password" placeholder="password" />
+   </FormGroup>
+   {' '}
+   <Button type="submit">
+     Submit
+   </Button>
+ </Form>
       </div>
     )
   };
 }
 
-NavComponent.contextTypes = {
+LogInForm.contextTypes = {
   router: React.PropTypes.object.isRequired,
 }
