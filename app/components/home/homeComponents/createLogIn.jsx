@@ -6,7 +6,7 @@ export default class CreateLoginForm extends Component {
   render() {
     return (
       <div>
-        
+
         <h1>Create Login</h1>
       </div>
     )
