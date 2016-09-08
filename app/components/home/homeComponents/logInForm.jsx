@@ -6,12 +6,12 @@ export default class LogInForm extends Component {
   render() {
     return (
       <div>
-        <h1>This is the login</h1>
+        <button className="btn btn-primary"></button>
       </div>
     )
   };
 }
 
-NavComponent.contextTypes = {
-  router: React.PropTypes.object.isRequired,
-}
+// NavComponent.contextTypes = {
+//   router: React.PropTypes.object.isRequired,
+// }

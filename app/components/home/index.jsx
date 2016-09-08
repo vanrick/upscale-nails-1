@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import NavComponent from './homeComponents/navbar';
+import LogInForm from './homeComponents/logInForm';
 
 export default class Home extends Component {
 
@@ -13,6 +14,7 @@ export default class Home extends Component {
     return (
       <div>
         <NavComponent />
+        <LogInForm />
       </div>
     )
   };

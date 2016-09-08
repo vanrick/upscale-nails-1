@@ -7,7 +7,6 @@ export default class NavComponent extends Component {
   render() {
     return (
       <div>
-        <h1>Unique Nails, A Place for friends!!!</h1>
         <Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
           <NavItem eventKey="Home" href="#">Home</NavItem>
           <NavItem eventKey="Services" href="#">Services</NavItem>
