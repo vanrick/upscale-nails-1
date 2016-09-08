@@ -27136,6 +27136,12 @@
 	  }
 
 	  _createClass(Home, [{
+	    key: 'handleSelect',
+	    value: function handleSelect(eventKey) {
+	      event.preventDefault();
+	      alert('selected ' + eventKey);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -27147,107 +27153,46 @@
 	          'Unique Nails, A Place for friends!!!'
 	        ),
 	        _react2.default.createElement(
-	          'button',
-	          { className: 'btn btn-danger' },
-	          'Click Me!'
-	        ),
-	        _react2.default.createElement(
-	          'nav',
-	          { className: 'navbar navbar-default', role: 'navigation' },
+	          _reactBootstrap.Nav,
+	          { bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'navbar-header' },
-	            _react2.default.createElement(
-	              'a',
-	              { className: 'navbar-brand', href: '#' },
-	              'Upscale Nails'
-	            )
+	            _reactBootstrap.NavItem,
+	            { eventKey: 'Home', href: '#' },
+	            'Home'
 	          ),
 	          _react2.default.createElement(
-	            'div',
-	            null,
+	            _reactBootstrap.NavItem,
+	            { eventKey: 'Services', href: '#' },
+	            'Services'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.NavItem,
+	            { eventKey: 'About Us' },
+	            'About Us'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.NavDropdown,
+	            { eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
 	            _react2.default.createElement(
-	              'ul',
-	              { className: 'nav navbar-nav' },
-	              _react2.default.createElement(
-	                'li',
-	                { className: 'active' },
-	                _react2.default.createElement(
-	                  'a',
-	                  { href: '#' },
-	                  'Home'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'a',
-	                  { href: '#' },
-	                  'Services'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                { className: 'dropdown' },
-	                _react2.default.createElement(
-	                  'a',
-	                  { href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
-	                  'Contact',
-	                  _react2.default.createElement('b', { className: 'caret' })
-	                ),
-	                _react2.default.createElement(
-	                  'ul',
-	                  { className: 'dropdown-menu' },
-	                  _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: '#' },
-	                      'About Us'
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: '#' },
-	                      'Location'
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: '#' },
-	                      'Directions'
-	                    )
-	                  ),
-	                  _react2.default.createElement('li', { className: 'divider' }),
-	                  _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: '#' },
-	                      'Yelp'
-	                    )
-	                  ),
-	                  _react2.default.createElement('li', { className: 'divider' }),
-	                  _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: '#' },
-	                      'Facebook'
-	                    )
-	                  )
-	                )
-	              )
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.1' },
+	              'Hours & Location'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.2' },
+	              'Directions'
+	            ),
+	            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
+	            _react2.default.createElement(
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.3' },
+	              'Facebook'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.MenuItem,
+	              { eventKey: '4.4' },
+	              'Yelp'
 	            )
 	          )
 	        )

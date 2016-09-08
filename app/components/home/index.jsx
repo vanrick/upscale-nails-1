@@ -1,36 +1,30 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 export default class Home extends Component {
+
+  handleSelect(eventKey) {
+    event.preventDefault();
+    alert(`selected ${eventKey}`);
+  }
+
   render() {
     return (
       <div>
         <h1>Unique Nails, A Place for friends!!!</h1>
-        <button className="btn btn-danger">Click Me!</button>
-        <nav className = "navbar navbar-default" role = "navigation">
-          <div className = "navbar-header">
-            <a className = "navbar-brand" href = "#">Upscale Nails</a>
-          </div>
-          <div>
-            <ul className = "nav navbar-nav">
-              <li className = "active"><a href = "#">Home</a></li>
-              <li><a href = "#">Services</a></li>
-              <li className = "dropdown">
-                <a href = "#" className = "dropdown-toggle" data-toggle = "dropdown">Contact<b className = "caret"></b></a>
-                <ul className = "dropdown-menu">
-                  <li><a href = "#">About Us</a></li>
-                  <li><a href = "#">Location</a></li>
-                  <li><a href = "#">Directions</a></li>
-                  <li className = "divider"></li>
-                  <li><a href = "#">Yelp</a></li>
-                  <li className = "divider"></li>
-                  <li><a href = "#">Facebook</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
+          <NavItem eventKey="Home" href="#">Home</NavItem>
+          <NavItem eventKey="Services" href="#">Services</NavItem>
+          <NavItem eventKey="About Us">About Us</NavItem>
+          <NavDropdown eventKey="4" title="Contact" id="nav-dropdown">
+            <MenuItem eventKey="4.1">Hours & Location</MenuItem>
+            <MenuItem eventKey="4.2">Directions</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey="4.3">Facebook</MenuItem>
+            <MenuItem eventKey="4.4">Yelp</MenuItem>
+          </NavDropdown>
+        </Nav>
       </div>
     )
   }
