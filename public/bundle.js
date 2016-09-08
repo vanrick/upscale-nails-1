@@ -27312,12 +27312,12 @@
 	  return NavComponent;
 	}(_react.Component);
 
+	// NavComponent.contextTypes = {
+	//   router: React.PropTypes.object.isRequired,
+	// }
+
+
 	exports.default = NavComponent;
-
-
-	NavComponent.contextTypes = {
-	  router: _react2.default.PropTypes.object.isRequired
-	};
 
 /***/ },
 /* 237 */
@@ -46124,12 +46124,12 @@
 	  return ModalInstance;
 	}(_react.Component);
 
+	// ModalInstance.contextTypes = {
+	//   router: React.PropTypes.object.isRequired,
+	// }
+
+
 	exports.default = ModalInstance;
-
-
-	ModalInstance.contextTypes = {
-	  router: _react2.default.PropTypes.object.isRequired
-	};
 
 /***/ },
 /* 489 */

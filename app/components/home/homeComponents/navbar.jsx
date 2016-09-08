@@ -47,6 +47,6 @@ export default class NavComponent extends Component {
   };
 }
 
-NavComponent.contextTypes = {
-  router: React.PropTypes.object.isRequired,
-}
+// NavComponent.contextTypes = {
+//   router: React.PropTypes.object.isRequired,
+// }

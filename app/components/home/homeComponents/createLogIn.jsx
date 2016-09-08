@@ -43,6 +43,6 @@ export default class ModalInstance extends Component{
   }
 }
 
-ModalInstance.contextTypes = {
-  router: React.PropTypes.object.isRequired,
-}
+// ModalInstance.contextTypes = {
+//   router: React.PropTypes.object.isRequired,
+// }
