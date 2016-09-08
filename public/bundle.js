@@ -27120,15 +27120,9 @@
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
-<<<<<<< HEAD
-	var _logInForm = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./homeComponents/logInForm\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _createLogIn = __webpack_require__(488);
 
-	var _logInForm2 = _interopRequireDefault(_logInForm);
-=======
-	var _createLogin = __webpack_require__(488);
-
-	var _createLogin2 = _interopRequireDefault(_createLogin);
->>>>>>> 7e5c2f2ccb5e84362e891707cc7fefdbc7f9fae9
+	var _createLogIn2 = _interopRequireDefault(_createLogIn);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27161,7 +27155,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_navbar2.default, null),
-	        _react2.default.createElement(_createLogin2.default, null)
+	        _react2.default.createElement(_createLogIn2.default, null)
 	      );
 	    }
 	  }]);
@@ -46025,8 +46019,7 @@
 	exports.ValidComponentChildren = _ValidComponentChildren3['default'];
 
 /***/ },
-/* 488 */,
-/* 489 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46034,7 +46027,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.CreateLogin = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
@@ -46048,72 +46042,70 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var CreateLogin = _react2.default.createClass({
-	  displayName: 'CreateLogin',
-	  getInitialState: function getInitialState() {
-	    return { show: null };
-	  },
-	  render: function render() {
-	    var _this = this;
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    var close = function close() {
-	      return _this.setState({ show: false });
-	    };
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'modal-container', style: { height: 200 } },
-	      _react2.default.createElement(
-	        _reactBootstrap.Button,
-	        {
-	          bsStyle: 'primary',
-	          bsSize: 'large',
-	          onClick: function onClick() {
-	            return _this.setState({ show: true });
-	          }
-	        },
-	        'Launch contained modal'
-	      ),
-	      _react2.default.createElement(
-	        _reactBootstrap.Modal,
-	        {
-	          show: this.state.show,
-	          onHide: close,
-	          container: this,
-	          'aria-labelledby': 'contained-modal-title'
-	        },
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalInstance = function (_Component) {
+	  _inherits(ModalInstance, _Component);
+
+	  function ModalInstance() {
+	    _classCallCheck(this, ModalInstance);
+
+	    return _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).apply(this, arguments));
+	  }
+
+	  _createClass(ModalInstance, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'static-modal' },
 	        _react2.default.createElement(
-	          _reactBootstrap.Modal.Header,
-	          { closeButton: true },
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Title,
-	            { id: 'contained-modal-title' },
-	            'Contained Modal'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Modal.Body,
-	          null,
-	          'Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Modal.Footer,
+	          _reactBootstrap.Modal.Dialog,
 	          null,
 	          _react2.default.createElement(
-	            _reactBootstrap.Button,
-	            { onClick: close },
-	            'Close'
+	            _reactBootstrap.Modal.Header,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Modal.Title,
+	              null,
+	              'Modal title'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Body,
+	            null,
+	            'One fine body...'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Footer,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              null,
+	              'Close'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { bsStyle: 'primary' },
+	              'Save changes'
+	            )
 	          )
 	        )
-	      )
-	    );
-	  }
-	});
+	      );
+	    }
+	  }]);
 
-	exports.CreateLogin = CreateLogin;
+	  return ModalInstance;
+	}(_react.Component);
+
+	exports.default = ModalInstance;
 
 
-	CreateLogin.contextTypes = {
+	ModalInstance.contextTypes = {
 	  router: _react2.default.PropTypes.object.isRequired
 	};
 

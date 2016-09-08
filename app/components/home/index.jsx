@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import NavComponent from './homeComponents/navbar';
-import CreateLogin from './homeComponents/createLogin';
+import ModalInstance from './homeComponents/createLogIn';
 
 
 export default class Home extends Component {
@@ -15,7 +15,7 @@ export default class Home extends Component {
     return (
       <div>
         <NavComponent />
-        <CreateLogin />
+        <ModalInstance />
       </div>
     )
   };
