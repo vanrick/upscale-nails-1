@@ -37,10 +37,7 @@ export default class NavComponent extends Component {
            </Button>
          </Form>
         </Nav>
-        <div className="pull-right">
-          <a href="#">
-          <p>Click Here to Create A New Account</p></a>
-       </div>
+        
 
   </div>
     )
