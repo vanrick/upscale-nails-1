@@ -46413,19 +46413,6 @@
 	              'Submit'
 	            )
 	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'pull-right' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: '#' },
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              'Click Here to Create A New Account'
-	            )
-	          )
 	        )
 	      );
 	    }
@@ -46477,44 +46464,123 @@
 	  function ModalInstance() {
 	    _classCallCheck(this, ModalInstance);
 
-	    return _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this));
+
+	    _this.state = {
+	      show: false
+	    };
+	    return _this;
 	  }
 
 	  _createClass(ModalInstance, [{
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
+	      var close = function close() {
+	        return _this2.setState({ show: false });
+	      };
+
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'static-modal' },
+	        { className: 'modal-container', style: { height: 400 } },
 	        _react2.default.createElement(
-	          _reactBootstrap.Modal.Dialog,
-	          null,
+	          _reactBootstrap.Button,
+	          {
+	            className: 'pull-right btn-danger',
+	            bsStyle: 'primary',
+	            bsSize: 'medium',
+	            onClick: function onClick() {
+	              return _this2.setState({ show: true });
+	            }
+	          },
+	          'Create New Account'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal,
+	          {
+	            show: this.state.show,
+	            onHide: close,
+	            container: this,
+	            'aria-labelledby': 'contained-modal-title'
+	          },
 	          _react2.default.createElement(
 	            _reactBootstrap.Modal.Header,
-	            null,
+	            { closeButton: true },
 	            _react2.default.createElement(
 	              _reactBootstrap.Modal.Title,
-	              null,
-	              'Modal title'
+	              { id: 'contained-modal-title' },
+	              'New Customer Information'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Modal.Body,
 	            null,
-	            'One fine body...'
+	            _react2.default.createElement(
+	              _reactBootstrap.Form,
+	              { inline: true, className: 'pull-right' },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { 'class': 'pull-left' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Name'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane Doe' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { className: 'pull-right' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Password'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Email'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { className: 'pull-right' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Telephone Number'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999' })
+	              ),
+	              ' '
+	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Modal.Footer,
 	            null,
 	            _react2.default.createElement(
 	              _reactBootstrap.Button,
-	              null,
-	              'Close'
+	              { className: 'btn btn-danger', onClick: close },
+	              'Cancel'
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Button,
-	              { bsStyle: 'primary' },
-	              'Save changes'
+	              { className: 'btn btn-info', type: 'submit' },
+	              'Submit'
 	            )
 	          )
 	        )
