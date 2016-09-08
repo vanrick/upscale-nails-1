@@ -14,7 +14,6 @@ export default class Home extends Component {
     return (
       <div>
         <NavComponent />
-        <LogInForm />
       </div>
     )
   };
