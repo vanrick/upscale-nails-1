@@ -2,11 +2,10 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Modal} from 'react-bootstrap';
 
-var CreateLogin = React.createClass({
 
-  getInitialState() {
-    return { show: null };
-  },
+
+export default class CreateLogin extends Component{
+
 
   render() {
     let close = () => this.setState({ show: false});
@@ -40,9 +39,9 @@ var CreateLogin = React.createClass({
       </div>
     );
   }
-})
 
-export {CreateLogin}
+}
+
 
 CreateLogin.contextTypes = {
   router: React.PropTypes.object.isRequired,

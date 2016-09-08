@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import NavComponent from './homeComponents/navbar';
-import CreateLogin from './homeComponents/createLogin';
+// import CreateLogin from './homeComponents/createLogIn'
+import SplashPage from './homeComponents/splashPage';
 
 export default class Home extends Component {
 
@@ -12,10 +13,18 @@ export default class Home extends Component {
 
   render() {
     return (
+    <div>
       <div>
         <NavComponent />
-        <CreateLogin />
       </div>
+      <div>
+        <SplashPage />
+      </div>
+      <div>
+      </div>
+    </div>
+
+
     )
   };
 }
