@@ -27120,9 +27120,15 @@
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
+<<<<<<< HEAD
 	var _logInForm = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./homeComponents/logInForm\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _logInForm2 = _interopRequireDefault(_logInForm);
+=======
+	var _createLogin = __webpack_require__(488);
+
+	var _createLogin2 = _interopRequireDefault(_createLogin);
+>>>>>>> 7e5c2f2ccb5e84362e891707cc7fefdbc7f9fae9
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27154,7 +27160,8 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_navbar2.default, null)
+	        _react2.default.createElement(_navbar2.default, null),
+	        _react2.default.createElement(_createLogin2.default, null)
 	      );
 	    }
 	  }]);
@@ -46019,6 +46026,98 @@
 
 /***/ },
 /* 488 */,
+/* 489 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.CreateLogin = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(237);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var CreateLogin = _react2.default.createClass({
+	  displayName: 'CreateLogin',
+	  getInitialState: function getInitialState() {
+	    return { show: null };
+	  },
+	  render: function render() {
+	    var _this = this;
+
+	    var close = function close() {
+	      return _this.setState({ show: false });
+	    };
+
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'modal-container', style: { height: 200 } },
+	      _react2.default.createElement(
+	        _reactBootstrap.Button,
+	        {
+	          bsStyle: 'primary',
+	          bsSize: 'large',
+	          onClick: function onClick() {
+	            return _this.setState({ show: true });
+	          }
+	        },
+	        'Launch contained modal'
+	      ),
+	      _react2.default.createElement(
+	        _reactBootstrap.Modal,
+	        {
+	          show: this.state.show,
+	          onHide: close,
+	          container: this,
+	          'aria-labelledby': 'contained-modal-title'
+	        },
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal.Header,
+	          { closeButton: true },
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Title,
+	            { id: 'contained-modal-title' },
+	            'Contained Modal'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal.Body,
+	          null,
+	          'Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal.Footer,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Button,
+	            { onClick: close },
+	            'Close'
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.CreateLogin = CreateLogin;
+
+
+	CreateLogin.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
+
+/***/ },
 /* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
