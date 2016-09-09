@@ -4,42 +4,33 @@ import ReactDOM from 'react-dom';
 import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import $ from 'jquery';
 
-
 export default class CurrentUsers extends Component {
+
 
   constructor() {
     super();
     this.state = {
-      users: 'Heloo'
+      users: ''
     }
   }
-
-  componentDidMount() {
-    this.serverRequest = $.get( 'https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-    //   log: (results) => {
-    //    console.log('Results:', results);
-    //  }
-      var allUsers = results.forEach(function(x) {
-        var userArr = [];
-        for(var userData in x){
-          userArr.push(x[userData]);
-        }
-        return userArr
-      }.bind())
+  componentDidMount () {
+    this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+      log: results => {
+        console.log("results:", results);
+      }
       this.setState({
-        users: allUsers
+        users: results[0].first_name.toString()
       })
-  })
-}
-  componentWillUnmount() {
+    }.bind(this))
+  }
+
+  componentWillUnmount () {
     this.serverRequest.abort();
   }
 
-  render() {
-    return (
-      <div>
-        {this.state.users}
-      </div>
-    );
+
+  render () {
+    return <div>{this.state.users}</div>
   }
+
 }
