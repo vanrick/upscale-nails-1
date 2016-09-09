@@ -27135,10 +27135,6 @@
 
 	var _services2 = _interopRequireDefault(_services);
 
-	var _CurrentUsers = __webpack_require__(503);
-
-	var _CurrentUsers2 = _interopRequireDefault(_CurrentUsers);
-
 	var _productsApiCall = __webpack_require__(506);
 
 	var _productsApiCall2 = _interopRequireDefault(_productsApiCall);
@@ -27168,7 +27164,6 @@
 	    // Import all of the bootstrap components in the file that will be using it
 	    // Create the class which is the folder that holds the file
 	    // list all components that will be used on the index page
-
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
@@ -27176,8 +27171,7 @@
 	        _react2.default.createElement(_navbar2.default, null),
 	        _react2.default.createElement(_createLogIn2.default, null),
 	        _react2.default.createElement(_services2.default, null),
-	        _react2.default.createElement(_productsApiCall2.default, null),
-	        _react2.default.createElement(_CurrentUsers2.default, null)
+	        _react2.default.createElement(_productsApiCall2.default, null)
 	      );
 	    }
 	  }]);
@@ -46408,10 +46402,10 @@
 	              _react2.default.createElement(
 	                _reactBootstrap.ControlLabel,
 	                null,
-	                'Name'
+	                'Email'
 	              ),
 	              ' ',
-	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane Doe' })
+	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: 'UpscaleNails@gmail.com' })
 	            ),
 	            ' ',
 	            _react2.default.createElement(
@@ -46497,7 +46491,7 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'modal-container', style: { height: 400 } },
+	        { className: 'modal-container', style: { height: 500 } },
 	        _react2.default.createElement(
 	          _reactBootstrap.Button,
 	          {
@@ -46532,29 +46526,29 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactBootstrap.Form,
-	              { inline: true, className: 'pull-right' },
+	              null,
 	              _react2.default.createElement(
 	                _reactBootstrap.FormGroup,
-	                { className: 'pull-left' },
+	                null,
 	                _react2.default.createElement(
 	                  _reactBootstrap.ControlLabel,
 	                  null,
-	                  'Name'
+	                  'First Name'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane Doe' })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane' })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
 	                _reactBootstrap.FormGroup,
-	                { className: 'pull-right' },
+	                null,
 	                _react2.default.createElement(
 	                  _reactBootstrap.ControlLabel,
 	                  null,
-	                  'Password'
+	                  'Last Name'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Doe' })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46571,7 +46565,19 @@
 	              ' ',
 	              _react2.default.createElement(
 	                _reactBootstrap.FormGroup,
-	                { className: 'pull-right' },
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Password'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
 	                _react2.default.createElement(
 	                  _reactBootstrap.ControlLabel,
 	                  null,
@@ -46580,21 +46586,17 @@
 	                ' ',
 	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999' })
 	              ),
-	              ' '
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Footer,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { className: 'btn btn-danger', onClick: close },
-	              'Cancel'
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { className: 'btn btn-info', type: 'submit' },
-	              'Submit'
+	              ' ',
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'btn btn-info' },
+	                'Submit'
+	              ),
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'btn btn-danger' },
+	                'Cancel'
+	              )
 	            )
 	          )
 	        )
@@ -46761,94 +46763,7 @@
 	exports.default = Services;
 
 /***/ },
-/* 503 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _reactBootstrap = __webpack_require__(236);
-
-	var _jquery = __webpack_require__(504);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var CurrentUsers = function (_Component) {
-	  _inherits(CurrentUsers, _Component);
-
-	  function CurrentUsers() {
-	    _classCallCheck(this, CurrentUsers);
-
-	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this));
-
-	    _this.state = {
-	      users: ''
-	    };
-	    return _this;
-	  }
-
-	  _createClass(CurrentUsers, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-
-	        var allUsers = results.forEach(function (x) {
-	          var userArr = [];
-	          for (var userData in x) {
-	            userArr.push(x[userData]);
-	          }
-	          // console.log(userArr);
-	          return userArr;
-	        });
-
-	        this.setState({
-	          users: allUsers
-	        });
-	      }.bind(this));
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      this.serverRequest.abort();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        this.state.users
-	      );
-	    }
-	  }]);
-
-	  return CurrentUsers;
-	}(_react.Component);
-
-	exports.default = CurrentUsers;
-
-/***/ },
+/* 503 */,
 /* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -56986,7 +56901,7 @@
 	          for (var products in x) {
 	            prodArr.push(x[products]);
 	          }
-	          console.log(prodArr);
+	          // console.log(prodArr);
 	          return prodArr;
 	        });
 

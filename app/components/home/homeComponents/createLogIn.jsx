@@ -13,7 +13,7 @@ export default class ModalInstance extends Component{
     let close = () => this.setState({ show: false});
 
     return (
-      <div className="modal-container" style={{height: 400}}>
+      <div className="modal-container" style={{height: 500}}>
         <Button
           className="pull-right btn-danger"
           bsStyle="primary"
@@ -32,17 +32,17 @@ export default class ModalInstance extends Component{
             <Modal.Title id="contained-modal-title">New Customer Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form inline  className="pull-right">
-             <FormGroup className="pull-left">
-               <ControlLabel>Name</ControlLabel>
+            <Form>
+             <FormGroup>
+               <ControlLabel>First Name</ControlLabel>
                {' '}
-               <FormControl type="text" placeholder="Jane Doe" />
+               <FormControl type="text" placeholder="Jane" />
              </FormGroup>
              {' '}
-             <FormGroup className="pull-right">
-               <ControlLabel>Password</ControlLabel>
+             <FormGroup>
+               <ControlLabel>Last Name</ControlLabel>
                {' '}
-               <FormControl type="password" placeholder="password" />
+               <FormControl type="text" placeholder="Doe" />
              </FormGroup>
              {' '}
              <FormGroup>
@@ -51,19 +51,23 @@ export default class ModalInstance extends Component{
                <FormControl type="email" placeholder="123@gmail.com" />
              </FormGroup>
              {' '}
-             <FormGroup className="pull-right">
+             <FormGroup>
+               <ControlLabel>Password</ControlLabel>
+               {' '}
+               <FormControl type="password" placeholder="password" />
+             </FormGroup>
+             {' '}
+             <FormGroup>
                <ControlLabel>Telephone Number</ControlLabel>
                {' '}
                <FormControl type="number" placeholder="999-999-9999" />
              </FormGroup>
              {' '}
+             <button className="btn btn-info">Submit</button>
+             <button className="btn btn-danger">Cancel</button>
            </Form>
          </Modal.Body>
-         <Modal.Footer>
-          <Button className="btn btn-danger" onClick={close}>Cancel</Button>
-          <Button className="btn btn-info" type="submit">Submit</Button>
-        </Modal.Footer>
-        </Modal>
+       </Modal>
       </div>
     );
   }

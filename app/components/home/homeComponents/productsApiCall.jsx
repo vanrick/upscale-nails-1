@@ -19,7 +19,7 @@ export default class AllProducts extends Component {
         for(var products in x){
           prodArr.push(x[products]);
         }
-        console.log(prodArr);
+        // console.log(prodArr);
         return prodArr
       });
 
