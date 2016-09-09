@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import $ from 'jquery';
 
-
 export default class CurrentUsers extends Component {
+
 
   constructor() {
     super();
@@ -12,6 +12,7 @@ export default class CurrentUsers extends Component {
       users: ''
     };
   }
+
 
   componentDidMount() {
     this.serverRequest = $.get( 'https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
@@ -21,26 +22,22 @@ export default class CurrentUsers extends Component {
         for(var userData in x){
           userArr.push(x[userData]);
         }
-        // console.log(userArr);
         return userArr
 
       });
-
-      this.setState({
-        users: allUsers
-      });
-    }.bind(this));
+    this.setState({
+        users: results[0].first_name.toString()
+      })
+    }.bind(this))
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this.serverRequest.abort();
   }
 
-  render() {
-    return (
-      <div>
-        {this.state.users}
-      </div>
-    );
+
+  render () {
+    return <div>{this.state.users}</div>
   }
+
 }

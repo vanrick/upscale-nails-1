@@ -46714,7 +46714,28 @@
 	    return _possibleConstructorReturn(this, (Services.__proto__ || Object.getPrototypeOf(Services)).apply(this, arguments));
 	  }
 
+<<<<<<< HEAD
 	  _createClass(Services, [{
+=======
+	  _createClass(CurrentUsers, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+	        log: (function (results) {
+	          console.log("results:", results);
+	        });
+	        this.setState({
+	          users: results[0].first_name.toString()
+	        });
+	      }.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.serverRequest.abort();
+	    }
+	  }, {
+>>>>>>> aeaa4b1586175ee633f3f5cb0b742a3c3127137a
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
