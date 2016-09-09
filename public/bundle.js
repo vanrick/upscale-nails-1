@@ -46279,13 +46279,13 @@
 	var CurrentUsers = function (_Component) {
 	  _inherits(CurrentUsers, _Component);
 
-	  function CurrentUsers() {
+	  function CurrentUsers(props) {
 	    _classCallCheck(this, CurrentUsers);
 
-	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this));
+	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this, props));
 
 	    _this.state = {
-	      users: 'Heloo'
+	      users: 'hey'
 	    };
 	    return _this;
 	  }
@@ -46294,20 +46294,11 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-	        //   log: (results) => {
-	        //    console.log('Results:', results);
-	        //  }
-	        var allUsers = results.forEach(function (x) {
-	          var userArr = [];
-	          for (var userData in x) {
-	            userArr.push(x[userData]);
-	          }
-	          return userArr;
-	        }.bind());
+	        console.log("hi there ", results);
 	        this.setState({
-	          users: allUsers
+	          users: users
 	        });
-	      });
+	      }.bind(this));
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
@@ -46317,10 +46308,103 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+
+	      var usersArr = this.props.users;
+	      console.log("in the render ", usersArr);
+	      // for(var i=0; i < usersArr.length; i++) {
+	      //   console.log(usersArr[i])
+	      // }
+	      // var getUserInfo = usersArr.forEach(function(user) {
+	      //   console.log("yo buddy "+ usersArr)
+	      //     for(var joe in user) {
+	      // return(
+	      //   <CurrentUsers
+	      //     key={user[joe].id}
+	      //     firstName={user[joe].first_name}
+	      //     lastName={user[joe].last_name}
+	      //     email={user[joe].email}
+	      //     telephone={user[joe].telephone}
+	      //     isAdmin={user[joe].is_admin}
+	      //     isTech={user[joe].is_tech}
+	      //     notes={user[joe].notes} />
+	      // )
+	      //     }
+	      //   })
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        this.state.users
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Table,
+	            { striped: true, bordered: true, condensed: true, hover: true },
+	            _react2.default.createElement(
+	              'thead',
+	              null,
+	              _react2.default.createElement(
+	                'tr',
+	                null,
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  '#'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'ID'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'First Name'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Last Name'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Email'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Telephone'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Admin?'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Tech?'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Notes'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'tbody',
+	              null,
+	              _react2.default.createElement('tr', null)
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.state.users
+	        )
 	      );
 	    }
 	  }]);
