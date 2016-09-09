@@ -1,33 +1,52 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import {getUsers} from '../../../databaseUtilities/databaseRequests';
+// import {getUsers} from '../../../databaseUtilities/databaseRequests';
 import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import $ from 'jquery';
 
 
 export default class CurrentUsers extends Component {
 
 
   constructor() {
-    super()
-    this.state = {users: []}
+    super();
+    this.state = {
+      users: ''
+    };
   }
 
-  getUsers().then(function(users) {
-    this.setState({users});
-  });
+  componentDidMount() {
+    this.serverRequest = $.get( 'https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+      log: (results) => {
+       console.log('Results:', results);
+     }
+      var allUsers = results.forEach(function(x) {
+        var userArr = [];
+        for(var userData in x){
+          userArr.push(x[userData]);
+          console.log(x[userData])
+        }
+        return userArr
+      //   x.map(function(data) {
+      //     for(var userData in data) {
+      //       return data[userData]
+      //   }
+      // })
+      });
+      this.setState({
+        users: allUsers
+      });
+    }.bind(this));
+  }
 
-  componentWillMount() {
-    this.getUsers();
+  componentWillUnmount() {
+    this.serverRequest.abort();
   }
 
   render() {
-    const {users} = this.state
     return (
       <div>
-        <ul className="list-unstyled">
-          <li>{users[0]}</li>
-        </ul>
-        <h1>React is working</h1>
+        {this.state.users}
       </div>
     );
   }
