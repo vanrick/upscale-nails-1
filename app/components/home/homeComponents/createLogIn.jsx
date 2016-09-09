@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Modal, Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
+import { Button, Modal, Form, FormGroup, FormControl, ControlLabel, ValidatedInput} from 'react-bootstrap';
 
 export default class ModalInstance extends Component{
   constructor(){
@@ -36,7 +36,7 @@ export default class ModalInstance extends Component{
              <FormGroup>
                <ControlLabel>First Name</ControlLabel>
                {' '}
-               <FormControl type="text" placeholder="Jane" />
+               <FormControl  type="text" placeholder="Jane" />
              </FormGroup>
              {' '}
              <FormGroup>
@@ -63,8 +63,8 @@ export default class ModalInstance extends Component{
                <FormControl type="number" placeholder="999-999-9999" />
              </FormGroup>
              {' '}
-             <button className="btn btn-info">Submit</button>
-             <button className="btn btn-danger">Cancel</button>
+             <button className="btn btn-info btn-spacer" onClick={close} >Submit</button>
+             <button className="btn btn-danger" onClick={close}>Cancel</button>
            </Form>
          </Modal.Body>
        </Modal>

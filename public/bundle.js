@@ -46300,7 +46300,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n\n}\n", ""]);
 
 	// exports
 
@@ -46589,12 +46589,12 @@
 	              ' ',
 	              _react2.default.createElement(
 	                'button',
-	                { className: 'btn btn-info' },
+	                { className: 'btn btn-info btn-spacer', onClick: close },
 	                'Submit'
 	              ),
 	              _react2.default.createElement(
 	                'button',
-	                { className: 'btn btn-danger' },
+	                { className: 'btn btn-danger', onClick: close },
 	                'Cancel'
 	              )
 	            )
