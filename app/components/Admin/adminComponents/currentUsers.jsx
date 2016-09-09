@@ -7,7 +7,6 @@ import $ from 'jquery';
 
 export default class CurrentUsers extends Component {
 
-
   constructor() {
     super();
     this.state = {
@@ -17,22 +16,19 @@ export default class CurrentUsers extends Component {
 
   componentDidMount() {
     this.serverRequest = $.get( 'https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-      log: (results) => {
-       console.log('Results:', results);
-     }
+    //   log: (results) => {
+    //    console.log('Results:', results);
+    //  }
       var allUsers = results.forEach(function(x) {
         var userArr = [];
         for(var userData in x){
           userArr.push(x[userData]);
-          console.log(x[userData])
         }
+        console.log(userArr);
         return userArr
-      //   x.map(function(data) {
-      //     for(var userData in data) {
-      //       return data[userData]
-      //   }
-      // })
+
       });
+
       this.setState({
         users: allUsers
       });

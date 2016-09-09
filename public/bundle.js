@@ -68,7 +68,7 @@
 
 	var _bootstrap2 = _interopRequireDefault(_bootstrap);
 
-	__webpack_require__(501);
+	__webpack_require__(500);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46269,7 +46269,7 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
-	var _jquery = __webpack_require__(500);
+	var _jquery = __webpack_require__(502);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -46301,22 +46301,18 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-	        log: (function (results) {
-	          console.log('Results:', results);
-	        });
+	        //   log: (results) => {
+	        //    console.log('Results:', results);
+	        //  }
 	        var allUsers = results.forEach(function (x) {
 	          var userArr = [];
 	          for (var userData in x) {
 	            userArr.push(x[userData]);
-	            console.log(x[userData]);
 	          }
+	          console.log(userArr);
 	          return userArr;
-	          //   x.map(function(data) {
-	          //     for(var userData in data) {
-	          //       return data[userData]
-	          //   }
-	          // })
 	        });
+
 	        this.setState({
 	          users: allUsers
 	        });
@@ -46723,6 +46719,46 @@
 
 /***/ },
 /* 500 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(501);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(499)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./style.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 501 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(493)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
@@ -56799,46 +56835,6 @@
 
 	return jQuery;
 	} );
-
-
-/***/ },
-/* 501 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(502);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(499)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./style.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 502 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(493)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n", ""]);
-
-	// exports
 
 
 /***/ }

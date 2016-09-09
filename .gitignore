@@ -4,3 +4,4 @@ node_modules
 *.ttf
 *.eot
 *.woff
+bundle.js
