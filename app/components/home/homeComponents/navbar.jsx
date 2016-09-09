@@ -37,13 +37,9 @@ export default class NavComponent extends Component {
            </Button>
          </Form>
         </Nav>
-        
+
 
   </div>
     )
   };
-}
-
-NavComponent.contextTypes = {
-  router: React.PropTypes.object.isRequired,
 }

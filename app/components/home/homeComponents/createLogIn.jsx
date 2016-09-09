@@ -17,7 +17,7 @@ export default class ModalInstance extends Component{
         <Button
           className="pull-right btn-danger"
           bsStyle="primary"
-          bsSize="medium"
+          bsSize="small"
           onClick={() => this.setState({ show: true})}
         >
           Create New Account
@@ -33,7 +33,7 @@ export default class ModalInstance extends Component{
           </Modal.Header>
           <Modal.Body>
             <Form inline  className="pull-right">
-             <FormGroup class="pull-left">
+             <FormGroup className="pull-left">
                <ControlLabel>Name</ControlLabel>
                {' '}
                <FormControl type="text" placeholder="Jane Doe" />

@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import CurrentUsers from './adminComponents/currentUsers';
+// import CurrentUsers from './adminComponents/currentUsers';
 
 export default class Admin extends React.Component {
 

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-bootstrap';
 import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
-
+import Services from './homeComponents/services';
 
 
 export default class Home extends React.Component {
@@ -19,6 +19,7 @@ export default class Home extends React.Component {
       <div>
         <NavComponent />
         <ModalInstance />
+        <Services />
       </div>
     )
   };
