@@ -56984,7 +56984,7 @@
 	        var allProducts = results.forEach(function (x) {
 	          var prodArr = [];
 	          for (var products in x) {
-	            userArr.push(x[products]);
+	            prodArr.push(x[products]);
 	          }
 	          console.log(prodArr);
 	          return prodArr;
