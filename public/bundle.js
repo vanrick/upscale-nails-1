@@ -46293,7 +46293,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.redTom{\n  color: red\n}\n", ""]);
 
 	// exports
 
@@ -46747,7 +46747,23 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        this.state.users
+	        _react2.default.createElement(
+	          _reactBootstrap.Grid,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            { className: 'show-grid' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 12, className: 'text-center' },
+	              _react2.default.createElement(
+	                'h1',
+	                null,
+	                'All Users'
+	              )
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -57072,9 +57088,13 @@
 	            'Appointments'
 	          ),
 	          _react2.default.createElement(
-	            _reactBootstrap.Button,
-	            { className: 'btn btn-info pull-right', type: 'logout' },
-	            'Logout'
+	            'a',
+	            { href: '/' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-info pull-right', type: 'logout' },
+	              'Logout'
+	            )
 	          )
 	        )
 	      );

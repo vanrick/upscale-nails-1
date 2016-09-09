@@ -10,9 +10,10 @@ export default class AdminNav extends Component {
         <Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
           <NavItem eventKey="Home" href="#">Home</NavItem>
           <NavItem eventKey="Services" href="#">Appointments</NavItem>
+          <a href="/">
           <Button className="btn btn-info pull-right" type="logout">
              Logout
-          </Button>
+          </Button></a>
 
         </Nav>
 
