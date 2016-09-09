@@ -4,7 +4,8 @@ import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-boots
 import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
 import Services from './homeComponents/services';
-import CurrentUsers from '../Admin/adminComponents/CurrentUsers.jsx'
+import CurrentUsers from '../Admin/adminComponents/CurrentUsers';
+import AllProducts from './homeComponents/productsApiCall'
 
 export default class Home extends Component {
 
@@ -19,7 +20,9 @@ export default class Home extends Component {
         <NavComponent />
         <ModalInstance />
         <Services />
+        <AllProducts />
         <CurrentUsers />
+
       </div>
     )
   };

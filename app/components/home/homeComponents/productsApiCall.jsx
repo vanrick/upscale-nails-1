@@ -4,30 +4,27 @@ import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import $ from 'jquery';
 
 
-export default class CurrentUsers extends Component {
+export default class AllProducts extends Component {
 
   constructor() {
     super();
     this.state = {
-      users: ''
+      products: ''
     };
   }
-
   componentDidMount() {
-    this.serverRequest = $.get( 'https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-
-      var allUsers = results.forEach(function(x) {
-        var userArr = [];
-        for(var userData in x){
-          userArr.push(x[userData]);
+    this.serverRequest = $.get( 'https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
+      var allProducts = results.forEach(function(x) {
+        var prodArr = [];
+        for(var products in x){
+          userArr.push(x[products]);
         }
-        // console.log(userArr);
-        return userArr
-
+        console.log(prodArr);
+        return prodArr
       });
 
       this.setState({
-        users: allUsers
+        products: allProducts
       });
     }.bind(this));
   }
@@ -39,7 +36,7 @@ export default class CurrentUsers extends Component {
   render() {
     return (
       <div>
-        {this.state.users}
+        {this.state.products}
       </div>
     );
   }

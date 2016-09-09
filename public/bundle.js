@@ -27139,6 +27139,10 @@
 
 	var _CurrentUsers2 = _interopRequireDefault(_CurrentUsers);
 
+	var _productsApiCall = __webpack_require__(506);
+
+	var _productsApiCall2 = _interopRequireDefault(_productsApiCall);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27172,6 +27176,7 @@
 	        _react2.default.createElement(_navbar2.default, null),
 	        _react2.default.createElement(_createLogIn2.default, null),
 	        _react2.default.createElement(_services2.default, null),
+	        _react2.default.createElement(_productsApiCall2.default, null),
 	        _react2.default.createElement(_CurrentUsers2.default, null)
 	      );
 	    }
@@ -46788,8 +46793,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
-
 
 	var CurrentUsers = function (_Component) {
 	  _inherits(CurrentUsers, _Component);
@@ -46809,15 +46812,13 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-	        //   log: (results) => {
-	        //    console.log('Results:', results);
-	        //  }
+
 	        var allUsers = results.forEach(function (x) {
 	          var userArr = [];
 	          for (var userData in x) {
 	            userArr.push(x[userData]);
 	          }
-	          console.log(userArr);
+	          // console.log(userArr);
 	          return userArr;
 	        });
 
@@ -56926,6 +56927,94 @@
 	return jQuery;
 	} );
 
+
+/***/ },
+/* 505 */,
+/* 506 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _jquery = __webpack_require__(504);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AllProducts = function (_Component) {
+	  _inherits(AllProducts, _Component);
+
+	  function AllProducts() {
+	    _classCallCheck(this, AllProducts);
+
+	    var _this = _possibleConstructorReturn(this, (AllProducts.__proto__ || Object.getPrototypeOf(AllProducts)).call(this));
+
+	    _this.state = {
+	      products: ''
+	    };
+	    return _this;
+	  }
+
+	  _createClass(AllProducts, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
+	        var allProducts = results.forEach(function (x) {
+	          var prodArr = [];
+	          for (var products in x) {
+	            userArr.push(x[products]);
+	          }
+	          console.log(prodArr);
+	          return prodArr;
+	        });
+
+	        this.setState({
+	          products: allProducts
+	        });
+	      }.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.serverRequest.abort();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        this.state.products
+	      );
+	    }
+	  }]);
+
+	  return AllProducts;
+	}(_react.Component);
+
+	exports.default = AllProducts;
 
 /***/ }
 /******/ ]);
