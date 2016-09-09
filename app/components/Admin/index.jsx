@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 // import CurrentUsers from './adminComponents/currentUsers';
 
-export default class Admin extends React.Component {
+export default class Admin extends Component {
 
   render() {
     return (
@@ -13,6 +13,6 @@ export default class Admin extends React.Component {
   };
 }
 
-// Admin.contextTypes = {
-//   router: React.PropTypes.object.isRequired,
-// }
+Admin.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+}

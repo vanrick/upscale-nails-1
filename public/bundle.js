@@ -27143,8 +27143,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Home = function (_React$Component) {
-	  _inherits(Home, _React$Component);
+	var Home = function (_Component) {
+	  _inherits(Home, _Component);
 
 	  function Home() {
 	    _classCallCheck(this, Home);
@@ -27174,7 +27174,7 @@
 	  }]);
 
 	  return Home;
-	}(_react2.default.Component);
+	}(_react.Component);
 
 	/// In the render() method
 
@@ -46633,8 +46633,8 @@
 
 	// import CurrentUsers from './adminComponents/currentUsers';
 
-	var Admin = function (_React$Component) {
-	  _inherits(Admin, _React$Component);
+	var Admin = function (_Component) {
+	  _inherits(Admin, _Component);
 
 	  function Admin() {
 	    _classCallCheck(this, Admin);
@@ -46654,14 +46654,14 @@
 	  }]);
 
 	  return Admin;
-	}(_react2.default.Component);
-
-	// Admin.contextTypes = {
-	//   router: React.PropTypes.object.isRequired,
-	// }
-
+	}(_react.Component);
 
 	exports.default = Admin;
+
+
+	Admin.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 /***/ },
 /* 501 */,

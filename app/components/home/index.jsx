@@ -6,7 +6,7 @@ import ModalInstance from './homeComponents/createLogIn';
 import Services from './homeComponents/services';
 
 
-export default class Home extends React.Component {
+export default class Home extends Component {
 
 // Import react
 // Import all of the bootstrap components in the file that will be using it
