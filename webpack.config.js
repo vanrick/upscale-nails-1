@@ -47,6 +47,9 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=image/svg+xml'
+      },
+      { test: /vendor\/.+\.(jsx|js)$/,
+        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
       }
     ]
   }
