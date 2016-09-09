@@ -4,7 +4,7 @@ import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-boots
 import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
 import Services from './homeComponents/services';
-
+import CurrentUsers from '../Admin/adminComponents/CurrentUsers.jsx'
 
 export default class Home extends Component {
 
@@ -14,12 +14,12 @@ export default class Home extends Component {
 // list all components that will be used on the index page
 
   render() {
-
     return (
       <div>
         <NavComponent />
         <ModalInstance />
         <Services />
+        <CurrentUsers />
       </div>
     )
   };
