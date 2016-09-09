@@ -35,7 +35,9 @@ export default class CurrentUsers extends Component {
       <Grid>
     <Row className="show-grid">
       <Col md={12} className="text-center"><h1>All Users</h1></Col>
-
+    </Row>
+    <Row>
+      <Col md={6} className="text-left"><h3>User Name: {this.state.users}</h3></Col>
     </Row>
     </Grid>
 
