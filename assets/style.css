@@ -4,3 +4,21 @@
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute;
 }
+.blue{
+  color: cornflowerblue;
+}
+.centered{
+ position: relative;
+}
+.centered img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.black{
+  color: black;
+  display: inline;
+  padding-left: 38%;
+  margin-right: auto;
+  background-color: white;
+}

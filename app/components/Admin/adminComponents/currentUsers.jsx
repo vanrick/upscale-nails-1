@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 // import {getUsers} from '../../../databaseUtilities/databaseRequests';
 import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 
 export default class CurrentUsers extends Component {
