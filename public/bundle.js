@@ -46301,20 +46301,11 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-	        //   log: (results) => {
-	        //    console.log('Results:', results);
-	        //  }
-	        var allUsers = results.forEach(function (x) {
-	          var userArr = [];
-	          for (var userData in x) {
-	            userArr.push(x[userData]);
-	          }
-	          console.log(userArr);
-	          return userArr;
+	        log: (function (results) {
+	          console.log("results:", results);
 	        });
-
 	        this.setState({
-	          users: allUsers
+	          users: results[0].first_name.toString()
 	        });
 	      }.bind(this));
 	    }
