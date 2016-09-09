@@ -10,8 +10,8 @@ export default class CurrentUsers extends Component {
   constructor() {
     super();
     this.state = {
-      users: ''
-    };
+      users: 'Heloo'
+    }
   }
 
   componentDidMount() {
@@ -24,17 +24,13 @@ export default class CurrentUsers extends Component {
         for(var userData in x){
           userArr.push(x[userData]);
         }
-        console.log(userArr);
         return userArr
-
-      });
-
+      }.bind())
       this.setState({
         users: allUsers
-      });
-    }.bind(this));
-  }
-
+      })
+  })
+}
   componentWillUnmount() {
     this.serverRequest.abort();
   }
