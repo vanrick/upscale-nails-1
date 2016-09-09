@@ -27139,8 +27139,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Home = function (_React$Component) {
-	  _inherits(Home, _React$Component);
+	var Home = function (_Component) {
+	  _inherits(Home, _Component);
 
 	  function Home() {
 	    _classCallCheck(this, Home);
@@ -27169,7 +27169,7 @@
 	  }]);
 
 	  return Home;
-	}(_react2.default.Component);
+	}(_react.Component);
 
 	/// In the render() method
 
@@ -46205,7 +46205,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _currentUsers = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./adminComponents/currentUsers\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _currentUsers = __webpack_require__(490);
 
 	var _currentUsers2 = _interopRequireDefault(_currentUsers);
 
@@ -46217,8 +46217,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Admin = function (_React$Component) {
-	  _inherits(Admin, _React$Component);
+	var Admin = function (_Component) {
+	  _inherits(Admin, _Component);
 
 	  function Admin() {
 	    _classCallCheck(this, Admin);
@@ -46238,17 +46238,108 @@
 	  }]);
 
 	  return Admin;
-	}(_react2.default.Component);
-
-	// Admin.contextTypes = {
-	//   router: React.PropTypes.object.isRequired,
-	// }
-
+	}(_react.Component);
 
 	exports.default = Admin;
 
+
+	Admin.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
+
 /***/ },
-/* 490 */,
+/* 490 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _jquery = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
+
+
+	var CurrentUsers = function (_Component) {
+	  _inherits(CurrentUsers, _Component);
+
+	  function CurrentUsers() {
+	    _classCallCheck(this, CurrentUsers);
+
+	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this));
+
+	    _this.state = {
+	      users: ''
+	    };
+	    return _this;
+	  }
+
+	  _createClass(CurrentUsers, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+	        //   log: (results) => {
+	        //    console.log('Results:', results);
+	        //  }
+	        var allUsers = results.forEach(function (x) {
+	          var userArr = [];
+	          for (var userData in x) {
+	            userArr.push(x[userData]);
+	          }
+	          console.log(userArr);
+	          return userArr;
+	        });
+
+	        this.setState({
+	          users: allUsers
+	        });
+	      }.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.serverRequest.abort();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        this.state.users
+	      );
+	    }
+	  }]);
+
+	  return CurrentUsers;
+	}(_react.Component);
+
+	exports.default = CurrentUsers;
+
+/***/ },
 /* 491 */
 /***/ function(module, exports, __webpack_require__) {
 

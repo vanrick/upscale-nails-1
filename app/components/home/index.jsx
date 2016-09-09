@@ -4,7 +4,9 @@ import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-boots
 import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
 
-export default class Home extends React.Component {
+
+export default class Home extends Component {
+
 
 // Import react
 // Import all of the bootstrap components in the file that will be using it
