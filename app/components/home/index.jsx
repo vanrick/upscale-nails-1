@@ -33,17 +33,3 @@ export default class Home extends Component {
     )
   };
 }
-
-
-
-
-
-
-
-
-
-/// In the render() method
-
-// Home.contextTypes = {
-//   router: React.PropTypes.object.isRequired,
-// }
