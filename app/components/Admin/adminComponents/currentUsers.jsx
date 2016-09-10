@@ -16,9 +16,6 @@ export default class CurrentUsers extends Component {
 
   componentDidMount () {
     this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-      log: results => {
-        console.log("results:", results);
-      }
       this.setState({
         users: results[0].first_name.toString()
       })
@@ -31,6 +28,7 @@ export default class CurrentUsers extends Component {
 
 
   render () {
+    
     return <div>{this.state.users}</div>
   }
 
