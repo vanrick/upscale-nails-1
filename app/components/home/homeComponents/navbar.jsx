@@ -37,7 +37,7 @@ export default class NavComponent extends Component {
            </Button>
          </Form>
         </Nav>
-        
+
 
   </div>
     )
