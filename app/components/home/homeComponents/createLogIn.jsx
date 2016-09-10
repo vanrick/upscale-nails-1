@@ -32,9 +32,9 @@ export default class ModalInstance extends Component{
             <Modal.Title id="contained-modal-title">New Customer Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
-             <FormGroup>
-               <ControlLabel>First Name</ControlLabel>
+            <Form inline  className="pull-right">
+             <FormGroup className="pull-left">
+               <ControlLabel>Name</ControlLabel>
                {' '}
                <FormControl  type="text" placeholder="Jane" />
              </FormGroup>

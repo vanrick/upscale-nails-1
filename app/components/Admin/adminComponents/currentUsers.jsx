@@ -1,9 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 // import {getUsers} from '../../../databaseUtilities/databaseRequests';
-
-import { Button, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap';
+import { Button, Nav, NavItem, NavDropdown, MenuItem, Table, Grid, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
+
 
 export default class CurrentUsers extends Component {
   constructor(props) {
