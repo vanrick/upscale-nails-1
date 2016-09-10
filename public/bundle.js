@@ -27158,20 +27158,13 @@
 
 	  _createClass(Home, [{
 	    key: 'render',
-
-
-	    // Import react
-	    // Import all of the bootstrap components in the file that will be using it
-	    // Create the class which is the folder that holds the file
-	    // list all components that will be used on the index page
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(_navbar2.default, null),
 	        _react2.default.createElement(_createLogIn2.default, null),
-	        _react2.default.createElement(_services2.default, null),
-	        _react2.default.createElement(_productsApiCall2.default, null)
+	        _react2.default.createElement(_services2.default, null)
 	      );
 	    }
 	  }]);
@@ -46661,7 +46654,6 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_adminNav2.default, null),
-	        _react2.default.createElement(_currentUsers2.default, null),
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -46899,6 +46891,29 @@
 	          'p',
 	          { className: 'text-center' },
 	          'With just one of our services you will leave refreshed and ready to take on your day.'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Grid,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            { className: 'show-grid' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xs: 6, md: 4, className: 'text-left' },
+	              '1'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xs: 6, md: 4, className: 'text-center' },
+	              '2'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xsHidden: true, md: 4, className: 'text-right' },
+	              '3'
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -57061,30 +57076,15 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-
 	      if (this.state.ready === true) {
 	        var usersArr = this.state.users;
 	        console.log("in the render ", usersArr);
 
 	        var usersList = usersArr.map(function (name) {
-	          return;
-	          _react2.default.createElement(
-	            _reactBootstrap.Grid,
+	          return _react2.default.createElement(
+	            'td',
 	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Row,
-	              { className: 'show-grid' },
-	              _react2.default.createElement(
-	                _reactBootstrap.Col,
-	                { md: 6, mdPush: 6, className: 'text-right' },
-	                name.name
-	              ),
-	              _react2.default.createElement(
-	                _reactBootstrap.Col,
-	                { md: 6, mdPull: 6 },
-	                'Hello! 1'
-	              )
-	            )
+	            name.name
 	          );
 	        });
 	        return _react2.default.createElement(

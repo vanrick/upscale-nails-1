@@ -11,7 +11,6 @@ export default class Admin extends Component {
     return (
       <div>
         <AdminNav />
-        <CurrentUsers />
         <div>
         <Table striped bordered condensed hover>
           <thead>

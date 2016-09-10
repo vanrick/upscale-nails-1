@@ -29,19 +29,13 @@ export default class CurrentUsers extends Component {
   }
 
   render () {
-
     if(this.state.ready === true){
     var usersArr = this.state.users;
     console.log("in the render ", usersArr);
 
     var usersList = usersArr.map(function(name) {
-        return
-          <Grid>
-            <Row className="show-grid">
-              <Col md={6} mdPush={6} className="text-right">{name.name}</Col>
-              <Col md={6} mdPull={6}>Hello! 1</Col>
-            </Row>
-          </Grid>
+        return <td>{name.name}</td>
+
       })
     return <tr>{usersList}</tr>
     }else{

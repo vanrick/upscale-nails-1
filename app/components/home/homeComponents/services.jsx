@@ -11,7 +11,18 @@ render (){
       <h1 className="text-center">Unique Nails Services</h1>
           <p className="text-center">At Unique Nails we want to provide you with the best service in Fort Myers Florida.</p>
           <p className="text-center">With just one of our services you will leave refreshed and ready to take on your day.</p>
-  
+            <Grid>
+              <Row className="show-grid">
+                <Col xs={6} md={4} className="text-left">1
+
+
+
+                </Col>
+                <Col xs={6} md={4} className="text-center">2</Col>
+                <Col xsHidden md={4} className="text-right">3</Col>
+              </Row>
+            </Grid>
+
 
 
     </div>
