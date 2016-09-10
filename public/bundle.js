@@ -57007,18 +57007,14 @@
 	  _createClass(AllProducts, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
+	      var arr = [];
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
-	        var allProducts = results.forEach(function (x) {
-	          var prodArr = [];
-	          for (var products in x) {
-	            prodArr.push(x[products]);
-	          }
-	          // console.log(prodArr);
-	          return prodArr;
-	        });
+	        for (var key in results) {
+	          arr.push(results[key]);
+	        }
 
 	        this.setState({
-	          products: allProducts
+	          arr: arr
 	        });
 	      }.bind(this));
 	    }

@@ -12,24 +12,21 @@ export default class AllProducts extends Component {
       products: ''
     };
   }
-  componentDidMount() {
-    this.serverRequest = $.get( 'https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
-      var allProducts = results.forEach(function(x) {
-        var prodArr = [];
-        for(var products in x){
-          prodArr.push(x[products]);
-        }
-        // console.log(prodArr);
-        return prodArr
-      });
+  componentDidMount () {
+    var arr = []
+    this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
+      for(var key in results){
+        arr.push(results[key])
+      }
 
       this.setState({
-        products: allProducts
-      });
-    }.bind(this));
+        arr: arr,
+      })
+
+    }.bind(this))
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this.serverRequest.abort();
   }
 

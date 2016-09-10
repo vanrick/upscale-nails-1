@@ -16,6 +16,8 @@ render (){
         <Col md={6} mdPull={6}>Hello! 1</Col>
       </Row>
     </Grid>
+      
+
     </div>
     )
   }
