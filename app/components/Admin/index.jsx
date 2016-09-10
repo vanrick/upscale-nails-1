@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import CurrentUsers from './adminComponents/currentUsers';
 import AdminNav from './adminComponents/adminNav';
 
+import { Button, Nav, NavItem, NavDropdown, MenuItem, Table } from 'react-bootstrap';
+
 export default class Admin extends Component {
 
   render() {
@@ -10,6 +12,27 @@ export default class Admin extends Component {
       <div>
         <AdminNav />
         <CurrentUsers />
+        <div>
+        <Table striped bordered condensed hover>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Telephone</th>
+              <th>Admin?</th>
+              <th>Tech?</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <CurrentUsers />
+          </tbody>
+        </Table>
+      </div>
+
       </div>
     )
   };

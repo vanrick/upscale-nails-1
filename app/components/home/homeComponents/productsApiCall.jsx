@@ -1,40 +1,51 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+// import {getUsers} from '../../../databaseUtilities/databaseRequests';
+
+import { Button, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
 
-
-export default class AllProducts extends Component {
-
-  constructor() {
-    super();
+export default class CurrentUsers extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      products: ''
-    };
+      users: 'hey',
+      ready: false
+    }
   }
   componentDidMount () {
-    var arr = []
     this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
-      for(var key in results){
-        arr.push(results[key])
-      }
-
+      console.log("from the top: ", results);
       this.setState({
-        arr: arr,
-      })
-
+          users: results,
+          ready: true
+        })
     }.bind(this))
+    console.log("hello from the top: ", this.state.users);
   }
 
   componentWillUnmount () {
     this.serverRequest.abort();
   }
 
-  render() {
-    return (
-      <div>
-        {this.state.products}
-      </div>
-    );
+  render () {
+
+    if(this.state.ready === true){
+    var usersArr = this.state.users;
+    console.log("in the render ", usersArr);
+
+    var usersList = usersArr.map(function(name) {
+        return
+          <Grid>
+            <Row className="show-grid">
+              <Col md={6} mdPush={6} className="text-right">{name.name}</Col>
+              <Col md={6} mdPull={6}>Hello! 1</Col>
+            </Row>
+          </Grid>
+      })
+    return <tr>{usersList}</tr>
+    }else{
+      return null
+    }
   }
 }

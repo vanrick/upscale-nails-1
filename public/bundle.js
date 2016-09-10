@@ -46635,6 +46635,8 @@
 
 	var _adminNav2 = _interopRequireDefault(_adminNav);
 
+	var _reactBootstrap = __webpack_require__(236);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46659,7 +46661,73 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_adminNav2.default, null),
-	        _react2.default.createElement(_currentUsers2.default, null)
+	        _react2.default.createElement(_currentUsers2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Table,
+	            { striped: true, bordered: true, condensed: true, hover: true },
+	            _react2.default.createElement(
+	              'thead',
+	              null,
+	              _react2.default.createElement(
+	                'tr',
+	                null,
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  '#'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'ID'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'First Name'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Last Name'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Email'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Telephone'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Admin?'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Tech?'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Notes'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'tbody',
+	              null,
+	              _react2.default.createElement(_currentUsers2.default, null)
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -46709,17 +46777,17 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
 
-
 	var CurrentUsers = function (_Component) {
 	  _inherits(CurrentUsers, _Component);
 
-	  function CurrentUsers() {
+	  function CurrentUsers(props) {
 	    _classCallCheck(this, CurrentUsers);
 
-	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this));
+	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this, props));
 
 	    _this.state = {
-	      users: ''
+	      users: 'hey',
+	      ready: false
 	    };
 	    return _this;
 	  }
@@ -46728,13 +46796,13 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-	        log: (function (results) {
-	          console.log("results:", results);
-	        });
+	        console.log("from the top: ", results);
 	        this.setState({
-	          users: results[0].first_name.toString()
+	          users: results,
+	          ready: true
 	        });
 	      }.bind(this));
+	      console.log("hello from the top: ", this.state.users);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
@@ -46744,41 +46812,26 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _reactBootstrap.Grid,
-	          null,
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
-	            { className: 'show-grid' },
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { md: 12, className: 'text-center' },
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                'All Users'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
+
+	      if (this.state.ready === true) {
+	        var usersArr = this.state.users;
+	        console.log("in the render ", usersArr);
+
+	        var usersList = usersArr.map(function (name) {
+	          return _react2.default.createElement(
+	            'td',
 	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { md: 6, className: 'text-left' },
-	              _react2.default.createElement(
-	                'h3',
-	                null,
-	                'User Name: ',
-	                this.state.users
-	              )
-	            )
-	          )
-	        )
-	      );
+	            name.last_name
+	          );
+	        });
+	        return _react2.default.createElement(
+	          'tr',
+	          null,
+	          usersList
+	        );
+	      } else {
+	        return null;
+	      }
 	    }
 	  }]);
 
@@ -46846,24 +46899,6 @@
 	          'p',
 	          { className: 'text-center' },
 	          'With just one of our services you will leave refreshed and ready to take on your day.'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Grid,
-	          null,
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
-	            { className: 'show-grid' },
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { md: 6, mdPush: 6, className: 'text-right' },
-	              'Hello! 2'
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { md: 6, mdPull: 6 },
-	              'Hello! 1'
-	            )
-	          )
 	        )
 	      );
 	    }
@@ -56989,34 +57024,34 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
 
-	var AllProducts = function (_Component) {
-	  _inherits(AllProducts, _Component);
+	var CurrentUsers = function (_Component) {
+	  _inherits(CurrentUsers, _Component);
 
-	  function AllProducts() {
-	    _classCallCheck(this, AllProducts);
+	  function CurrentUsers(props) {
+	    _classCallCheck(this, CurrentUsers);
 
-	    var _this = _possibleConstructorReturn(this, (AllProducts.__proto__ || Object.getPrototypeOf(AllProducts)).call(this));
+	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this, props));
 
 	    _this.state = {
-	      products: ''
+	      users: 'hey',
+	      ready: false
 	    };
 	    return _this;
 	  }
 
-	  _createClass(AllProducts, [{
+	  _createClass(CurrentUsers, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      var arr = [];
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
-	        for (var key in results) {
-	          arr.push(results[key]);
-	        }
-
+	        console.log("from the top: ", results);
 	        this.setState({
-	          arr: arr
+	          users: results,
+	          ready: true
 	        });
 	      }.bind(this));
+	      console.log("hello from the top: ", this.state.users);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
@@ -57026,18 +57061,47 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        this.state.products
-	      );
+
+	      if (this.state.ready === true) {
+	        var usersArr = this.state.users;
+	        console.log("in the render ", usersArr);
+
+	        var usersList = usersArr.map(function (name) {
+	          return;
+	          _react2.default.createElement(
+	            _reactBootstrap.Grid,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Row,
+	              { className: 'show-grid' },
+	              _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { md: 6, mdPush: 6, className: 'text-right' },
+	                name.name
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { md: 6, mdPull: 6 },
+	                'Hello! 1'
+	              )
+	            )
+	          );
+	        });
+	        return _react2.default.createElement(
+	          'tr',
+	          null,
+	          usersList
+	        );
+	      } else {
+	        return null;
+	      }
 	    }
 	  }]);
 
-	  return AllProducts;
+	  return CurrentUsers;
 	}(_react.Component);
 
-	exports.default = AllProducts;
+	exports.default = CurrentUsers;
 
 /***/ },
 /* 507 */

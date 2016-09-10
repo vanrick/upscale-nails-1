@@ -1,47 +1,45 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 // import {getUsers} from '../../../databaseUtilities/databaseRequests';
+
 import { Button, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
 
 export default class CurrentUsers extends Component {
-
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      users: ''
-    };
+      users: 'hey',
+      ready: false
+    }
   }
-
   componentDidMount () {
     this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-      log: results => {
-        console.log("results:", results);
-      }
+      console.log("from the top: ", results);
       this.setState({
-        users: results[0].first_name.toString()
-      })
+          users: results,
+          ready: true
+        })
     }.bind(this))
+    console.log("hello from the top: ", this.state.users);
   }
 
   componentWillUnmount () {
     this.serverRequest.abort();
   }
 
-
   render () {
-    return <div>
-      <Grid>
-    <Row className="show-grid">
-      <Col md={12} className="text-center"><h1>All Users</h1></Col>
-    </Row>
-    <Row>
-      <Col md={6} className="text-left"><h3>User Name: {this.state.users}</h3></Col>
-    </Row>
-    </Grid>
 
+    if(this.state.ready === true){
+    var usersArr = this.state.users;
+    console.log("in the render ", usersArr);
 
-    </div>
+    var usersList = usersArr.map(function(name) {
+        return <td>{name.last_name}</td>
+      })
+    return <tr>{usersList}</tr>
+    }else{
+      return null
+    }
   }
 }
