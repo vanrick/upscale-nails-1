@@ -27171,13 +27171,6 @@
 	  return Home;
 	}(_react.Component);
 
-	/// In the render() method
-
-	// Home.contextTypes = {
-	//   router: React.PropTypes.object.isRequired,
-	// }
-
-
 	exports.default = Home;
 
 /***/ },
@@ -46209,6 +46202,8 @@
 
 	var _currentUsers2 = _interopRequireDefault(_currentUsers);
 
+	var _reactBootstrap = __webpack_require__(236);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46232,7 +46227,72 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_currentUsers2.default, null)
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Table,
+	            { striped: true, bordered: true, condensed: true, hover: true },
+	            _react2.default.createElement(
+	              'thead',
+	              null,
+	              _react2.default.createElement(
+	                'tr',
+	                null,
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  '#'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'ID'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'First Name'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Last Name'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Email'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Telephone'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Admin?'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Tech?'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Notes'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'tbody',
+	              null,
+	              _react2.default.createElement(_currentUsers2.default, null)
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -46286,13 +46346,14 @@
 	var CurrentUsers = function (_Component) {
 	  _inherits(CurrentUsers, _Component);
 
-	  function CurrentUsers() {
+	  function CurrentUsers(props) {
 	    _classCallCheck(this, CurrentUsers);
 
-	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this));
+	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this, props));
 
 	    _this.state = {
-	      users: ''
+	      users: 'hey',
+	      ready: false
 	    };
 	    return _this;
 	  }
@@ -46301,13 +46362,13 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-	        log: (function (results) {
-	          console.log("results:", results);
-	        });
+	        console.log("from the top: ", results);
 	        this.setState({
-	          users: results[0].first_name.toString()
+	          users: results,
+	          ready: true
 	        });
 	      }.bind(this));
+	      console.log("hello from the top: ", this.state.users);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
@@ -46317,11 +46378,25 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        this.state.users
-	      );
+	      if (this.state.ready === true) {
+	        var usersArr = this.state.users;
+	        console.log("in the render ", usersArr);
+
+	        var usersList = usersArr.map(function (name) {
+	          return _react2.default.createElement(
+	            'td',
+	            null,
+	            name.first_name
+	          );
+	        });
+	        return _react2.default.createElement(
+	          'tr',
+	          null,
+	          usersList
+	        );
+	      } else {
+	        return null;
+	      }
 	    }
 	  }]);
 
