@@ -2,11 +2,11 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem, Grid, Row, Col } from 'react-bootstrap';
 import NavComponent from './homeComponents/navbar';
-import ModalInstance from './homeComponents/createLogIn';
+// import ModalInstance from './homeComponents/createLogIn';
 import Services from './homeComponents/services';
 import AllProducts from './homeComponents/productsApiCall';
 import UserReviews from './homeComponents/userReviews';
-
+import SplashPage from './homeComponents/SplashPage';
 
 
 export default class Home extends Component {
@@ -21,7 +21,8 @@ export default class Home extends Component {
     return (
       <div>
         <NavComponent />
-        <ModalInstance />
+        <SplashPage />
+
         <Services
           pictures='services pictures'
           img1='https://hd.unsplash.com/photo-1457972729786-0411a3b2b626'

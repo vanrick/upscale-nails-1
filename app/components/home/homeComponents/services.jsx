@@ -19,18 +19,18 @@ render (){
                   <h3 className="text-center">Nails</h3>
                   <img src={img1} height={300} width={350}/>
                   <hr></hr>
-                  <ul className="ul-style">
-                    <li>Ladies Haircut $50</li>
-                    <li>Gentlemans Haircut $35</li>
-                    <li>Full Color $65</li>
-                    <li>Partial Hi-Lite $80</li>
-                    <li>Full Hi-Lite $100 </li>
-                    <li>Blowdry $40</li>
-                    <li>Perm $75</li>
-                    <li>Relaxer $80</li>
-                    <li>Deep Conditioning $35</li>
-                  </ul>
-                </Col>
+                    <ul className="ul-style text-left">
+                      <li>Acrylic Full Set $50</li>
+                      <li> Acrylic Full Set with Gel $55</li>
+                      <li>Rebase $30</li>
+                      <li>pedicure $50</li>
+                      <li>Manicure $30</li>
+                      <li>Buff and Polish $15</li>
+                      <li>Nail Repair $5</li>
+                      <li>Toe Polish Change $20</li>
+                      <li>Finger Polish Change $12</li>
+                    </ul>
+                  </Col>
                 <Col xs={6} md={4} className="text-center">
                   <h3 className="text-center">Skin</h3>
                   <img src={img2} height={300} width={350} />
@@ -51,14 +51,21 @@ render (){
                   <h3 className="text-center">Hair</h3>
                   <img src={img3} height={300} width={350} />
                   <hr></hr>
-
+                    <ul className="ul-style text-left">
+                      <li>Ladies Haircut $50</li>
+                      <li>Gentlemans Haircut $35</li>
+                      <li>Full Color $65</li>
+                      <li>Partial Hi-Lite $80</li>
+                      <li>Full Hi-Lite $100 </li>
+                      <li>Blowdry $40</li>
+                      <li>Perm $75</li>
+                      <li>Relaxer $80</li>
+                      <li>Deep Conditioning $35</li>
+                    </ul>
                 </Col>
               </Row>
             </Grid>
-
-
-
-    </div>
+          </div>
     )
   }
 }

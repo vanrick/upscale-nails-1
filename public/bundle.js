@@ -27127,10 +27127,6 @@
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
-	var _createLogIn = __webpack_require__(488);
-
-	var _createLogIn2 = _interopRequireDefault(_createLogIn);
-
 	var _services = __webpack_require__(489);
 
 	var _services2 = _interopRequireDefault(_services);
@@ -27143,6 +27139,10 @@
 
 	var _userReviews2 = _interopRequireDefault(_userReviews);
 
+	var _SplashPage = __webpack_require__(507);
+
+	var _SplashPage2 = _interopRequireDefault(_SplashPage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27150,6 +27150,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import ModalInstance from './homeComponents/createLogIn';
+
 
 	var Home = function (_Component) {
 	  _inherits(Home, _Component);
@@ -27174,7 +27176,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_navbar2.default, null),
-	        _react2.default.createElement(_createLogIn2.default, null),
+	        _react2.default.createElement(_SplashPage2.default, null),
 	        _react2.default.createElement(_services2.default, {
 	          pictures: 'services pictures',
 	          img1: 'https://hd.unsplash.com/photo-1457972729786-0411a3b2b626',
@@ -46031,184 +46033,7 @@
 	exports.default = NavComponent;
 
 /***/ },
-/* 488 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _reactBootstrap = __webpack_require__(236);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ModalInstance = function (_Component) {
-	  _inherits(ModalInstance, _Component);
-
-	  function ModalInstance() {
-	    _classCallCheck(this, ModalInstance);
-
-	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this));
-
-	    _this.state = {
-	      show: false
-	    };
-	    return _this;
-	  }
-
-	  _createClass(ModalInstance, [{
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      var close = function close() {
-	        return _this2.setState({ show: false });
-	      };
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'modal-container', style: { height: 500 } },
-	        _react2.default.createElement(
-	          _reactBootstrap.Button,
-	          {
-	            className: 'pull-right btn-danger',
-	            bsStyle: 'primary',
-	            bsSize: 'small',
-	            onClick: function onClick() {
-	              return _this2.setState({ show: true });
-	            }
-	          },
-	          'Create New Account'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Modal,
-	          {
-	            show: this.state.show,
-	            onHide: close,
-	            container: this,
-	            'aria-labelledby': 'contained-modal-title'
-	          },
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Header,
-	            { closeButton: true },
-	            _react2.default.createElement(
-	              _reactBootstrap.Modal.Title,
-	              { id: 'contained-modal-title' },
-	              'New Customer Information'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Body,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Form,
-	              { inline: true, className: 'pull-right' },
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                { className: 'pull-left' },
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Name'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane' })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Last Name'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Doe' })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Email'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com' })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Password'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Telephone Number'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999' })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                'button',
-	                { className: 'btn btn-info btn-spacer', onClick: close },
-	                'Submit'
-	              ),
-	              _react2.default.createElement(
-	                'button',
-	                { className: 'btn btn-danger', onClick: close },
-	                'Cancel'
-	              )
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return ModalInstance;
-	}(_react.Component);
-
-	exports.default = ModalInstance;
-
-
-	ModalInstance.contextTypes = {
-	  router: _react2.default.PropTypes.object.isRequired
-	};
-
-/***/ },
+/* 488 */,
 /* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -46293,51 +46118,51 @@
 	              _react2.default.createElement('hr', null),
 	              _react2.default.createElement(
 	                'ul',
-	                { className: 'ul-style' },
+	                { className: 'ul-style text-left' },
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Ladies Haircut $50'
+	                  'Acrylic Full Set $50'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Gentlemans Haircut $35'
+	                  ' Acrylic Full Set with Gel $55'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Full Color $65'
+	                  'Rebase $30'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Partial Hi-Lite $80'
+	                  'pedicure $50'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Full Hi-Lite $100 '
+	                  'Manicure $30'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Blowdry $40'
+	                  'Buff and Polish $15'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Perm $75'
+	                  'Nail Repair $5'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Relaxer $80'
+	                  'Toe Polish Change $20'
 	                ),
 	                _react2.default.createElement(
 	                  'li',
 	                  null,
-	                  'Deep Conditioning $35'
+	                  'Finger Polish Change $12'
 	                )
 	              )
 	            ),
@@ -46410,7 +46235,56 @@
 	                'Hair'
 	              ),
 	              _react2.default.createElement('img', { src: img3, height: 300, width: 350 }),
-	              _react2.default.createElement('hr', null)
+	              _react2.default.createElement('hr', null),
+	              _react2.default.createElement(
+	                'ul',
+	                { className: 'ul-style text-left' },
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Ladies Haircut $50'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Gentlemans Haircut $35'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Full Color $65'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Partial Hi-Lite $80'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Full Hi-Lite $100 '
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Blowdry $40'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Perm $75'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Relaxer $80'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'Deep Conditioning $35'
+	                )
+	              )
 	            )
 	          )
 	        )
@@ -57443,6 +57317,140 @@
 
 	// exports
 
+
+/***/ },
+/* 507 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SplashPage = function (_Component) {
+	  _inherits(SplashPage, _Component);
+
+	  function SplashPage() {
+	    _classCallCheck(this, SplashPage);
+
+	    return _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).apply(this, arguments));
+	  }
+
+	  _createClass(SplashPage, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _reactBootstrap.Carousel,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Carousel.Item,
+	            null,
+	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1449179391249-52328aae1c16' }),
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Healthy Skin'
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Our skin services will make you feel younger and rejuvinated.'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Carousel.Item,
+	            null,
+	            _react2.default.createElement('img', { width: 1445, height: 500, src: 'https://hd.unsplash.com/photo-1467015806515-b6effeb01f5f' }),
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Nails'
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'With a wide selection of services we can accomodate all needs.'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Carousel.Item,
+	            null,
+	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1452794441448-9a21ecfff6e3' }),
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Pedicures'
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Your feet will thank you after getting one of our pedicures.'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Carousel.Item,
+	            null,
+	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1459164648438-af647b154e96' }),
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Special Designs'
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Our technicians will create any design for the occassion to make your nails look stunning.'
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SplashPage;
+	}(_react.Component);
+
+	exports.default = SplashPage;
 
 /***/ }
 /******/ ]);
