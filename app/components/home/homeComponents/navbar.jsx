@@ -23,16 +23,16 @@ export default class NavComponent extends Component {
            <FormGroup controlId="formInlineName">
              <ControlLabel className="nav-form-text" nav-text>Email</ControlLabel>
              {' '}
-             <FormControl type="email" placeholder="UpscaleNails@gmail.com" />
+             <FormControl className="nav-form-text" type="email" placeholder="UpscaleNails@gmail.com" />
            </FormGroup>
            {' '}
            <FormGroup controlId="formInlineEmail">
              <ControlLabel className="nav-form-text">Password</ControlLabel>
              {' '}
-             <FormControl type="password" placeholder="password" />
+             <FormControl className="nav-form-text" type="password" placeholder="password" />
            </FormGroup>
            {' '}
-           <Button className="btn btn-info" type="submit">
+           <Button  className="btn btn-info nav-form-text" type="submit">
              Submit
            </Button>
          </Form>

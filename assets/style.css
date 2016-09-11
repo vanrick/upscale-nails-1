@@ -8,6 +8,7 @@
 
 .modal-bucket {
   z-index: 2050;
+  margin-top: 10vh;
 }
 
 .modal .modal-backdrop {
@@ -43,7 +44,8 @@
 
 .nav-form-text{
   color: #fff;
-  margin-right: 5px;
+  margin-right: 1px;
+  margin-top: 2vh;
 }
 
 .nav-bar-text{
@@ -55,5 +57,16 @@
   margin-top: -2.5vh;
   padding-bottom: 10vh;
   padding-top: 8vh;
+}
 
+.reviews-background{
+  background-color: #98aeab;
+  padding-top: 30vh;
+  padding-bottom: 25vh;
+}
+.user-reviews-header{
+  margin-top: -10%;
+}
+.user-review-slogan{
+  margin-top: -5%;
 }
