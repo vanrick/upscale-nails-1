@@ -57313,7 +57313,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -110vh;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n", ""]);
 
 	// exports
 
@@ -57369,13 +57369,22 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Carousel.Item,
 	            null,
-	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1449179391249-52328aae1c16' }),
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h1',
+	                { className: 'carousel-header-styling' },
+	                'Upscale Nails and Spa'
+	              )
+	            ),
+	            _react2.default.createElement('img', { width: 1445, height: 500, src: 'https://hd.unsplash.com/photo-1449179391249-52328aae1c16' }),
 	            _react2.default.createElement(
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
 	                'h3',
-	                null,
+	                { className: 'carousel-picture-text-header' },
 	                'Healthy Skin'
 	              ),
 	              _react2.default.createElement(
@@ -57388,13 +57397,22 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Carousel.Item,
 	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h1',
+	                { className: 'carousel-header-styling' },
+	                'Upscale Nails and Spa'
+	              )
+	            ),
 	            _react2.default.createElement('img', { width: 1445, height: 500, src: 'https://hd.unsplash.com/photo-1467015806515-b6effeb01f5f' }),
 	            _react2.default.createElement(
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
 	                'h3',
-	                null,
+	                { className: 'carousel-picture-text-header' },
 	                'Nails'
 	              ),
 	              _react2.default.createElement(
@@ -57407,13 +57425,22 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Carousel.Item,
 	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h1',
+	                { className: 'carousel-header-styling' },
+	                'Upscale Nails and Spa'
+	              )
+	            ),
 	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1452794441448-9a21ecfff6e3' }),
 	            _react2.default.createElement(
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
 	                'h3',
-	                null,
+	                { className: 'carousel-picture-text-header' },
 	                'Pedicures'
 	              ),
 	              _react2.default.createElement(
@@ -57426,13 +57453,22 @@
 	          _react2.default.createElement(
 	            _reactBootstrap.Carousel.Item,
 	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Carousel.Caption,
+	              null,
+	              _react2.default.createElement(
+	                'h1',
+	                { className: 'carousel-header-styling' },
+	                'Upscale Nails and Spa'
+	              )
+	            ),
 	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1459164648438-af647b154e96' }),
 	            _react2.default.createElement(
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
 	                'h3',
-	                null,
+	                { className: 'carousel-picture-text-header' },
 	                'Special Designs'
 	              ),
 	              _react2.default.createElement(

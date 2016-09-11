@@ -12,3 +12,11 @@
 .ul-style{
   list-style-type: none;
 }
+
+.carousel-header-styling{
+  margin-top: -110vh;
+}
+
+.carousel-picture-text-header{
+  margin-top: -60vh;
+}
