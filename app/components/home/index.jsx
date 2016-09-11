@@ -24,8 +24,7 @@ export default class Home extends Component {
         <NavComponent />
         <ModalInstance />
         <SplashPage />
-
-        <Services
+        <Services 
           pictures='services pictures'
           img1='https://hd.unsplash.com/photo-1457972729786-0411a3b2b626'
           img2='https://hd.unsplash.com/photo-1440508319978-8b67875e39d7'

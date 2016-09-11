@@ -1,15 +1,16 @@
 .modal-container {
   position: absolute;
-  z-index: 2000;
-  height: 110vh;
+  z-index: 4000;
+  height: 100vh;
   width: 100vw;
+  margin-top: 4vh;
 }
 
 .modal-bucket {
   z-index: 2050;
 }
 
-.modal-container .modal, .modal-container .modal-backdrop {
+.modal .modal-backdrop {
   position: absolute;
 }
 
@@ -32,5 +33,27 @@
 
 .carousel-text-description{
   font-size: 1.5em;
+}
+
+.nav-position{
+  position: fixed;
+  z-index: 5000;
+  padding-top: 1vh;
+}
+
+.nav-form-text{
+  color: #fff;
+  margin-right: 5px;
+}
+
+.nav-bar-text{
+  font-size: 1.5em;
+}
+
+#services{
+  background-color: #ded7d1;
+  margin-top: -2.5vh;
+  padding-bottom: 10vh;
+  padding-top: 8vh;
 
 }

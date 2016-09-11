@@ -6,12 +6,12 @@ export default class NavComponent extends Component {
 
   render() {
     return (
-      <div>
-        <Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
-          <NavItem eventKey="Home" href="#">Home</NavItem>
-          <NavItem eventKey="Services" href="#">Services</NavItem>
-          <NavItem eventKey="About Us">About Us</NavItem>
-          <NavDropdown eventKey="4" title="Contact" id="nav-dropdown">
+      <div id="top">
+        <Nav className="nav-position" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
+          <NavItem className="nav-bar-text" eventKey="Home" href="#top">Home</NavItem>
+          <NavItem className="nav-bar-text" eventKey="Services" href="#services">Services</NavItem>
+          <NavItem className="nav-bar-text" eventKey="About Us">About Us</NavItem>
+          <NavDropdown  className="nav-bar-text" eventKey="4" title="Contact" id="nav-dropdown">
             <MenuItem eventKey="4.1">Hours & Location</MenuItem>
             <MenuItem eventKey="4.2">Directions</MenuItem>
             <MenuItem divider />
@@ -21,13 +21,13 @@ export default class NavComponent extends Component {
 
           <Form inline  className="pull-right">
            <FormGroup controlId="formInlineName">
-             <ControlLabel>Email</ControlLabel>
+             <ControlLabel className="nav-form-text" nav-text>Email</ControlLabel>
              {' '}
              <FormControl type="email" placeholder="UpscaleNails@gmail.com" />
            </FormGroup>
            {' '}
            <FormGroup controlId="formInlineEmail">
-             <ControlLabel>Password</ControlLabel>
+             <ControlLabel className="nav-form-text">Password</ControlLabel>
              {' '}
              <FormControl type="password" placeholder="password" />
            </FormGroup>

@@ -45948,28 +45948,28 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { id: 'top' },
 	        _react2.default.createElement(
 	          _reactBootstrap.Nav,
-	          { bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
+	          { className: 'nav-position', bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
 	          _react2.default.createElement(
 	            _reactBootstrap.NavItem,
-	            { eventKey: 'Home', href: '#' },
+	            { className: 'nav-bar-text', eventKey: 'Home', href: '#top' },
 	            'Home'
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.NavItem,
-	            { eventKey: 'Services', href: '#' },
+	            { className: 'nav-bar-text', eventKey: 'Services', href: '#services' },
 	            'Services'
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.NavItem,
-	            { eventKey: 'About Us' },
+	            { className: 'nav-bar-text', eventKey: 'About Us' },
 	            'About Us'
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.NavDropdown,
-	            { eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
+	            { className: 'nav-bar-text', eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
 	            _react2.default.createElement(
 	              _reactBootstrap.MenuItem,
 	              { eventKey: '4.1' },
@@ -46000,7 +46000,7 @@
 	              { controlId: 'formInlineName' },
 	              _react2.default.createElement(
 	                _reactBootstrap.ControlLabel,
-	                null,
+	                { className: 'nav-form-text', 'nav-text': true },
 	                'Email'
 	              ),
 	              ' ',
@@ -46012,7 +46012,7 @@
 	              { controlId: 'formInlineEmail' },
 	              _react2.default.createElement(
 	                _reactBootstrap.ControlLabel,
-	                null,
+	                { className: 'nav-form-text' },
 	                'Password'
 	              ),
 	              ' ',
@@ -46269,7 +46269,7 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { id: 'services' },
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'text-center' },
@@ -57498,7 +57498,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 2000;\n  height: 110vh;\n  width: 100vw;\n}\n\n.modal-bucket {\n  z-index: 2050;\n}\n\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -110vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -110vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 5px;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n\n}\n", ""]);
 
 	// exports
 

@@ -9,7 +9,7 @@ render (){
   var {pictures, img1, img2, img3} = this.props
 
   return (
-    <div>
+    <div id="services">
       <h1 className="text-center">Upscale Nails and Spa Services</h1>
           <p className="text-center">At Upscale Nails we want to provide you with the best service in Fort Myers Florida.</p>
           <p className="text-center">With just one of our services you will leave refreshed and ready to take on your day.</p>
