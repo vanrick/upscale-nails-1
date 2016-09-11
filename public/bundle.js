@@ -27127,6 +27127,10 @@
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
+	var _createLogIn = __webpack_require__(488);
+
+	var _createLogIn2 = _interopRequireDefault(_createLogIn);
+
 	var _services = __webpack_require__(489);
 
 	var _services2 = _interopRequireDefault(_services);
@@ -27150,8 +27154,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import ModalInstance from './homeComponents/createLogIn';
-
 
 	var Home = function (_Component) {
 	  _inherits(Home, _Component);
@@ -27176,6 +27178,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_navbar2.default, null),
+	        _react2.default.createElement(_createLogIn2.default, null),
 	        _react2.default.createElement(_SplashPage2.default, null),
 	        _react2.default.createElement(_services2.default, {
 	          pictures: 'services pictures',
@@ -46033,7 +46036,189 @@
 	exports.default = NavComponent;
 
 /***/ },
-/* 488 */,
+/* 488 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalInstance = function (_Component) {
+	  _inherits(ModalInstance, _Component);
+
+	  function ModalInstance() {
+	    _classCallCheck(this, ModalInstance);
+
+	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this));
+
+	    _this.state = {
+	      show: false
+	    };
+	    return _this;
+	  }
+
+	  _createClass(ModalInstance, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var close = function close() {
+	        return _this2.setState({ show: false });
+	      };
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'modal-container' },
+	        _react2.default.createElement(
+	          _reactBootstrap.Button,
+	          {
+	            className: 'pull-right btn-danger',
+	            bsStyle: 'primary',
+	            bsSize: 'medium',
+	            onClick: function onClick() {
+	              return _this2.setState({ show: true });
+	            }
+	          },
+	          'Create New Account'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Modal,
+	          {
+	            show: this.state.show,
+	            onHide: close,
+	            container: this,
+	            'aria-labelledby': 'contained-modal-title',
+	            className: 'modal-bucket'
+	          },
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Header,
+	            { closeButton: true },
+	            _react2.default.createElement(
+	              _reactBootstrap.Modal.Title,
+	              { id: 'contained-modal-title' },
+	              'New Customer Information'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Body,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Form,
+	              null,
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'First Name'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Last Name'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Doe' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Password'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Email'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Telephone Number'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999' })
+	              ),
+	              ' '
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Footer,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-danger', onClick: close },
+	              'Cancel'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-info', type: 'submit' },
+	              'Submit'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ModalInstance;
+	}(_react.Component);
+
+	exports.default = ModalInstance;
+
+
+	ModalInstance.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
+
+/***/ },
 /* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -57313,7 +57498,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: relative;\n}\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -110vh;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 2000;\n  height: 110vh;\n  width: 100vw;\n}\n\n.modal-bucket {\n  z-index: 2050;\n}\n\n.modal-container .modal, .modal-container .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -110vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n\n}\n", ""]);
 
 	// exports
 
@@ -57383,13 +57568,13 @@
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
-	                'h3',
+	                'h1',
 	                { className: 'carousel-picture-text-header' },
 	                'Healthy Skin'
 	              ),
 	              _react2.default.createElement(
 	                'p',
-	                null,
+	                { className: 'carousel-text-description' },
 	                'Our skin services will make you feel younger and rejuvinated.'
 	              )
 	            )
@@ -57411,13 +57596,13 @@
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
-	                'h3',
+	                'h1',
 	                { className: 'carousel-picture-text-header' },
 	                'Nails'
 	              ),
 	              _react2.default.createElement(
 	                'p',
-	                null,
+	                { className: 'carousel-text-description' },
 	                'With a wide selection of services we can accomodate all needs.'
 	              )
 	            )
@@ -57439,13 +57624,13 @@
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
-	                'h3',
+	                'h1',
 	                { className: 'carousel-picture-text-header' },
 	                'Pedicures'
 	              ),
 	              _react2.default.createElement(
 	                'p',
-	                null,
+	                { className: 'carousel-text-description' },
 	                'Your feet will thank you after getting one of our pedicures.'
 	              )
 	            )
@@ -57467,13 +57652,13 @@
 	              _reactBootstrap.Carousel.Caption,
 	              null,
 	              _react2.default.createElement(
-	                'h3',
+	                'h1',
 	                { className: 'carousel-picture-text-header' },
 	                'Special Designs'
 	              ),
 	              _react2.default.createElement(
 	                'p',
-	                null,
+	                { className: 'carousel-text-description' },
 	                'Our technicians will create any design for the occassion to make your nails look stunning.'
 	              )
 	            )
