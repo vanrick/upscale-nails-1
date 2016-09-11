@@ -27147,6 +27147,10 @@
 
 	var _SplashPage2 = _interopRequireDefault(_SplashPage);
 
+	var _map = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./homeComponents/map\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _map2 = _interopRequireDefault(_map);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27195,7 +27199,8 @@
 	          revw1: 'Nini was great! she really helped me find the right color for the right occasion and my nails looked beautuful. Thank You!',
 	          revw2: 'I hate it when my feet get rough. The pedicure by the expert staff was much needed and the massage chair was a BONUS.',
 	          revw3: 'Always a great experience. I enjoy the atmosphere and the technicians. I was in and out and on with my day looking beautiful.'
-	        })
+	        }),
+	        _react2.default.createElement(_map2.default, null)
 	      );
 	    }
 	  }]);
@@ -57524,7 +57529,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -110vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n", ""]);
 
 	// exports
 
