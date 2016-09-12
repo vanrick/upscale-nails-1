@@ -15,6 +15,11 @@
   position: absolute;
 }
 
+.nav-main {
+  background-color: #ACB0BC;
+  width: 100%;
+}
+
 .btn-spacer{
   margin-right: 3%;
 }
@@ -70,23 +75,48 @@
 .user-review-slogan{
   margin-top: -5%;
 }
-
-.GMap {
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-.GMap-canvas {
-  top: 20px;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
 .UpdatedText {
   color: red;
 }
 
-.gm-style {
-  height: 40vh;
-  width: 40vw;
+.googleMap{
+  height: 60vh;
+  width: 100vw;
+}
+
+.bottom-section-color{
+  background-color: #a8adaf;
+}
+
+.location-style{
+  background-color: #dbbab3;
+  padding-top: .5vh;
+  padding-bottom: 1vh;
+  font-size: 1.7em;
+}
+
+.contact-style{
+  background-color: #dbbab3;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  font-size: 1.7em;
+}
+
+.footer-background{
+  background-color: #dbbab3;
+  padding-bottom: 10vh;
+}
+
+.menuTable {
+  background-color: #DED7D1;
+  margin-bottom: -5px;
+}
+
+.menu-heading {
+  background-color: #DED7D1;
+  margin: -5px 0 -5px 0;
+}
+
+.menu-container {
+  background-color: #DED7D1;
 }
