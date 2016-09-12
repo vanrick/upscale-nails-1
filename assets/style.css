@@ -85,3 +85,8 @@
 .UpdatedText {
   color: red;
 }
+
+.gm-style {
+  height: 40vh;
+  width: 40vw;
+}

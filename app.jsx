@@ -10,6 +10,6 @@ ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Home} />
     <Route path="/admin" component={Admin} />
-  </Router>,
-  document.getElementById('app')
+  </Router>
+document.getElementById('app')
 );
