@@ -22,3 +22,6 @@
   margin-right: auto;
   background-color: white;
 }
+.borderIt{
+  border: 2px solid black;
+}

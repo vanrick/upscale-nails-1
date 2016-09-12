@@ -4,6 +4,8 @@ import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-boots
 import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
 import UserReviews from './homeComponents/userReviews'
+import GoogleMaps from './homeComponents/googleMaps'
+import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps"
 
 
 export default class Home extends Component {
@@ -18,6 +20,7 @@ export default class Home extends Component {
 
     return (
       <div>
+         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <NavComponent />
         <ModalInstance />
         <UserReviews
@@ -29,6 +32,7 @@ export default class Home extends Component {
           revw2='My husband hates it when my feet gets rough so the pedicure was much needed and the massage chair was a BONUS!'
           revw3='Never had a bad experience. I was in and out and on with my day.'
           />
+        <GoogleMaps />
       </div>
     )
   };
