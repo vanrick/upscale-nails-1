@@ -17,7 +17,7 @@ export default class ModalInstance extends Component{
         <Button
           className="pull-right btn-danger"
           bsStyle="primary"
-          bsSize="medium"
+          bsSize="small"
           onClick={() => this.setState({ show: true})}
         >
           Create New Account

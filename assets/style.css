@@ -70,3 +70,18 @@
 .user-review-slogan{
   margin-top: -5%;
 }
+
+.GMap {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.GMap-canvas {
+  top: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.UpdatedText {
+  color: red;
+}
