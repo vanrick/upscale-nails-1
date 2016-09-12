@@ -10,6 +10,7 @@ export default class CurrentUsers extends Component {
 
   render () {
     var Nambo = this.props.hey;
+    
 
     var Mambo = Nambo.map(function(user, i) {
       return (
