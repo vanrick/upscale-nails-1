@@ -64,6 +64,10 @@
 
 	var _index4 = _interopRequireDefault(_index3);
 
+	var _index5 = __webpack_require__(565);
+
+	var _index6 = _interopRequireDefault(_index5);
+
 	var _bootstrap = __webpack_require__(554);
 
 	var _bootstrap2 = _interopRequireDefault(_bootstrap);
@@ -76,7 +80,8 @@
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
 	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _index2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/admin', component: _index4.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/admin', component: _index4.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/user', component: _index6.default })
 	), document.getElementById('app'));
 
 /***/ },
@@ -27131,6 +27136,12 @@
 
 	var _createLogIn2 = _interopRequireDefault(_createLogIn);
 
+	var _userReviews = __webpack_require__(492);
+
+	var _userReviews2 = _interopRequireDefault(_userReviews);
+
+	var _reactGoogleMaps = __webpack_require__(498);
+
 	var _services = __webpack_require__(489);
 
 	var _services2 = _interopRequireDefault(_services);
@@ -27138,10 +27149,6 @@
 	var _productsApiCall = __webpack_require__(490);
 
 	var _productsApiCall2 = _interopRequireDefault(_productsApiCall);
-
-	var _userReviews = __webpack_require__(492);
-
-	var _userReviews2 = _interopRequireDefault(_userReviews);
 
 	var _SplashPage = __webpack_require__(493);
 
@@ -27154,6 +27161,10 @@
 	var _menuCall = __webpack_require__(544);
 
 	var _menuCall2 = _interopRequireDefault(_menuCall);
+
+	var _SimpleMap = __webpack_require__(497);
+
+	var _SimpleMap2 = _interopRequireDefault(_SimpleMap);
 
 	var _LocationSpacer = __webpack_require__(546);
 
@@ -27170,8 +27181,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import SimpleMap from './homeComponents/SimpleMap';
-
 
 	var Home = function (_Component) {
 	  _inherits(Home, _Component);
@@ -27195,6 +27204,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        _react2.default.createElement('script', { src: 'https://maps.googleapis.com/maps/api/js' }),
 	        _react2.default.createElement(_navbar2.default, null),
 	        _react2.default.createElement(_createLogIn2.default, null),
 	        _react2.default.createElement(_SplashPage2.default, null),
@@ -62043,9 +62053,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
-
-
 	var CurrentUsers = function (_Component) {
 	  _inherits(CurrentUsers, _Component);
 
@@ -62092,12 +62099,12 @@
 	          _react2.default.createElement(
 	            'td',
 	            null,
-	            user.is_admin
+	            user.is_admin.toString()
 	          ),
 	          _react2.default.createElement(
 	            'td',
 	            null,
-	            user.is_tech
+	            user.is_tech.toString()
 	          ),
 	          _react2.default.createElement(
 	            'td',
@@ -63012,10 +63019,346 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-reviews-header{\n  margin-top: -18%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -5%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: .5vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-reviews-header{\n  margin-top: -18%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -5%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: .5vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n/*        profile page       */\n.smallImg{\n  height: 15vh;\n  width: 15vw;\n}\n\n.user-row {\n    margin-bottom: 14px;\n}\n\n.user-row:last-child {\n    margin-bottom: 0;\n}\n\n.dropdown-user {\n    margin: 13px 0;\n    padding: 5px;\n    height: 100%;\n}\n\n.dropdown-user:hover {\n    cursor: pointer;\n}\n\n.table-user-information > tbody > tr {\n    border-top: 1px solid rgb(221, 221, 221);\n}\n\n.table-user-information > tbody > tr:first-child {\n    border-top: 0;\n}\n\n\n.table-user-information > tbody > tr > td {\n    border-top: 0;\n}\n.toppad\n{margin-top:20px;\n}\n.borderIt{\n  border: 2px solid black;\n}\n.userBody{\n  background-color: #ACB0BC;\n  height: 100vh;\n  width: 100%;\n}\n.userBlue{\n  background-color: #5BC0DE;\n  border: none;\n  color: white;\n}\n.userRed{\n  background-color: #D9534F;\n  color: white;\n  border: none;\n}\n.userOrange{\n  color: #BB6A28;\n}\n.userGray{\n  color: #ACB0BC;\n}\n\n/*blue: 5BC0DE\nred: D9534F\norange: BB6A28\ngray: ACB0BC\n*/\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 565 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _showAll = __webpack_require__(566);
+
+	var _showAll2 = _interopRequireDefault(_showAll);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var User = function (_Component) {
+	  _inherits(User, _Component);
+
+	  function User() {
+	    _classCallCheck(this, User);
+
+	    return _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).apply(this, arguments));
+	  }
+
+	  _createClass(User, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_showAll2.default, {
+	          name: 'WORKS',
+	          img: 'http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png'
+	        })
+	      );
+	    }
+	  }]);
+
+	  return User;
+	}(_react.Component);
+
+	exports.default = User;
+
+
+	User.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
+
+/***/ },
+/* 566 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ShowAll = function (_Component) {
+	  _inherits(ShowAll, _Component);
+
+	  function ShowAll() {
+	    _classCallCheck(this, ShowAll);
+
+	    return _possibleConstructorReturn(this, (ShowAll.__proto__ || Object.getPrototypeOf(ShowAll)).apply(this, arguments));
+	  }
+
+	  _createClass(ShowAll, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var name = _props.name;
+	      var img = _props.img;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container userBody' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'toppad pull-right' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 12, mdOffset: 0 },
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'userBlue', href: '#' },
+	                'Edit Profile'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'userRed', href: '#' },
+	                'Log Out'
+	              ),
+	              _react2.default.createElement('br', null),
+	              _react2.default.createElement(
+	                'p',
+	                { className: 'text-infto ' },
+	                'May 05,2016 03:00 pm '
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xs: 5, sm: 12, md: 6, lg: 8 },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'panel panel-info' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-heading' },
+	                  _react2.default.createElement(
+	                    'h3',
+	                    { className: 'panel-title' },
+	                    'Mertile Escobar'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-body' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      null,
+	                      _react2.default.createElement(
+	                        _reactBootstrap.Col,
+	                        { md: 3, lg: 3 },
+	                        _react2.default.createElement('img', { src: img, className: 'img-circle img-responsive smallImg' })
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      null,
+	                      _react2.default.createElement(
+	                        _reactBootstrap.Col,
+	                        { md: 9, lg: 9 },
+	                        _react2.default.createElement(
+	                          'table',
+	                          { className: 'table table-user-information' },
+	                          _react2.default.createElement(
+	                            'tbody',
+	                            null,
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Appointments:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Sept 14, 2016 Weds @ 3:30pm'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Technician:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Nini'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Services:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Pedicure and Manicure package'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Polish Color:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '#4403'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Email:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                _react2.default.createElement(
+	                                  'a',
+	                                  { href: '#' },
+	                                  'Mertile@support.com'
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Phone Number:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '123-4567-8900(Mobile)'
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          _reactBootstrap.Button,
+	                          { className: 'userBlue btn btn-primary', href: '#' },
+	                          'Change Appointments'
+	                        ),
+	                        _react2.default.createElement(
+	                          _reactBootstrap.Button,
+	                          { className: 'userBlue btn btn-primary', href: '#' },
+	                          'Notes For Nail Tech'
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-footer' },
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-primary' },
+	                    _react2.default.createElement('i', { className: 'glyphicon glyphicon-phone' })
+	                  ),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'pull-right' },
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-warning' },
+	                      _react2.default.createElement(
+	                        'i',
+	                        { className: 'glyphicon glyphicon-flash' },
+	                        'FACEBOOK'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#', type: 'button', className: 'btn btn-lg btn-warning' },
+	                      _react2.default.createElement(
+	                        'i',
+	                        { className: 'glyphicon glyphicon-star-empty' },
+	                        'SPECIALS'
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ShowAll;
+	}(_react.Component);
+
+	exports.default = ShowAll;
 
 /***/ }
 /******/ ]);

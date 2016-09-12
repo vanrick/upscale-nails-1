@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem, Grid, Row, Col } from 'react-bootstrap';
 import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
+import UserReviews from './homeComponents/userReviews'
+import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps"
+
 import Services from './homeComponents/services';
 import AllProducts from './homeComponents/productsApiCall';
-import UserReviews from './homeComponents/userReviews';
 import SplashPage from './homeComponents/SplashPage';
 import App from './homeComponents/app';
 import MenuCall from './homeComponents/menuCall';
-// import SimpleMap from './homeComponents/SimpleMap';
+import SimpleMap from './homeComponents/SimpleMap';
 import LocationSpacer from './homeComponents/LocationSpacer';
 import Footer from './homeComponents/footer';
 export default class Home extends Component {
@@ -23,6 +25,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <NavComponent />
         <ModalInstance />
         <SplashPage />
@@ -43,6 +46,7 @@ export default class Home extends Component {
           revw2='I hate it when my feet get rough. The pedicure by the expert staff was much needed and the massage chair was a BONUS.'
           revw3='Always a great experience. I enjoy the atmosphere and the technicians. I was in and out and on with my day looking beautiful.'
           />
+
         <LocationSpacer />
         <Col className="pull-right">
             <div className="googleMap bottom-section-color">
@@ -51,8 +55,8 @@ export default class Home extends Component {
         </Col>
         <Footer pictures="footer pictures"
           img1 = 'https://hd.unsplash.com/photo-1457972729786-0411a3b2b626'/>
-    </div>
 
+      </div>
     )
   };
 
