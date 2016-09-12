@@ -46204,6 +46204,10 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
+	var _jquery = __webpack_require__(503);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46215,19 +46219,38 @@
 	var Admin = function (_Component) {
 	  _inherits(Admin, _Component);
 
-	  function Admin() {
+	  function Admin(props) {
 	    _classCallCheck(this, Admin);
 
-	    return _possibleConstructorReturn(this, (Admin.__proto__ || Object.getPrototypeOf(Admin)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Admin.__proto__ || Object.getPrototypeOf(Admin)).call(this, props));
+
+	    _this.state = {
+	      users: '',
+	      ready: false
+	    };
+	    return _this;
 	  }
 
 	  _createClass(Admin, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+	        this.setState({
+	          users: results,
+	          ready: true
+	        });
+	      }.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.serverRequest.abort();
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
+	      if (this.state.ready === true) {
+	        return _react2.default.createElement(
 	          'div',
 	          null,
 	          _react2.default.createElement(
@@ -46239,11 +46262,6 @@
 	              _react2.default.createElement(
 	                'tr',
 	                null,
-	                _react2.default.createElement(
-	                  'th',
-	                  null,
-	                  '#'
-	                ),
 	                _react2.default.createElement(
 	                  'th',
 	                  null,
@@ -46286,14 +46304,12 @@
 	                )
 	              )
 	            ),
-	            _react2.default.createElement(
-	              'tbody',
-	              null,
-	              _react2.default.createElement(_currentUsers2.default, null)
-	            )
+	            _react2.default.createElement(_currentUsers2.default, { hey: this.state.users })
 	          )
-	        )
-	      );
+	        );
+	      } else {
+	        return null;
+	      }
 	    }
 	  }]);
 
@@ -46327,11 +46343,19 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _tableData = __webpack_require__(502);
+
+	var _tableData2 = _interopRequireDefault(_tableData);
+
 	var _reactBootstrap = __webpack_require__(236);
 
-	var _jquery = __webpack_require__(502);
+	var _jquery = __webpack_require__(503);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(489);
+
+	var _index2 = _interopRequireDefault(_index);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46340,63 +46364,153 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
-
 
 	var CurrentUsers = function (_Component) {
 	  _inherits(CurrentUsers, _Component);
 
-	  function CurrentUsers(props) {
+	  function CurrentUsers() {
 	    _classCallCheck(this, CurrentUsers);
 
-	    var _this = _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).call(this, props));
-
-	    _this.state = {
-	      users: 'hey',
-	      ready: false
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, (CurrentUsers.__proto__ || Object.getPrototypeOf(CurrentUsers)).apply(this, arguments));
 	  }
 
 	  _createClass(CurrentUsers, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-	        console.log("from the top: ", results);
-	        this.setState({
-	          users: results,
-	          ready: true
-	        });
-	      }.bind(this));
-	      console.log("hello from the top: ", this.state.users);
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      this.serverRequest.abort();
-	    }
-	  }, {
 	    key: 'render',
-	    value: function render() {
-	      if (this.state.ready === true) {
-	        var usersArr = this.state.users;
-	        console.log("in the render ", usersArr);
 
-	        var usersList = usersArr.map(function (name) {
-	          return _react2.default.createElement(
-	            'td',
-	            null,
-	            name.first_name
-	          );
-	        });
+
+	    // constructor(props) {
+	    //   super(props);
+	    //   this.state = {
+	    //     users: 'hey',
+	    //     ready: false
+	    //   }
+	    // }
+	    // componentDidMount () {
+	    //   this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+	    //     this.setState({
+	    //         users: results,
+	    //         ready: true
+	    //       })
+	    //   }.bind(this))
+	    // }
+	    //
+	    // componentWillUnmount () {
+	    //   this.serverRequest.abort();
+	    // }
+
+	    value: function render() {
+	      var Nambo = this.props.hey;
+
+	      var Mambo = Nambo.map(function (user, i) {
 	        return _react2.default.createElement(
 	          'tr',
 	          null,
-	          usersList
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.id
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.first_name
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.last_name
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.email
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.telephone
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.is_admin
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.is_tech
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            user.notes
+	          )
 	        );
-	      } else {
-	        return null;
-	      }
+	      });
+	      console.log(Mambo);
+	      console.log(Nambo);
+	      return _react2.default.createElement(
+	        'tbody',
+	        null,
+	        Mambo
+	      );
+	      // if(this.state.ready === true){
+	      // var usersArr = this.state.users;
+	      // // var arrayOfUserObj = [];
+	      // var usersList = usersArr.map(function(row, i) {
+	      //   // console.log(row)
+	      //   var displayData = {
+	      //   id: row.id,
+	      //   firstName: row.first_name,
+	      //   lastName: row.last_name,
+	      //   email: row.email,
+	      //   telephone: row.telephone,
+	      //   isAdmin: row.is_admin,
+	      //   isTech: row.is_tech,
+	      //   notes: row.notes
+	      // }
+	      // return displayData
+	      // arrayOfUserObj.push(displayData);
+
+
+	      // console.log("HERE IS OUR OBJECT: ", displayData);
+	      // for(var key in row){
+	      //   console.log(key)
+	      //   return <td key={i}>{row[key]}</td>
+	      // }
+	      // })
+	      // function formatDisplayData(usersArrOfObjects){
+	      //   console.log("this is my array of objects", usersArrOfObjects)
+	      //   usersArrOfObjects.map(function(user, i){
+	      //     console.log("This is each user Object", user)
+	      //     console.log("Hello")
+	      //     console.log(user.id);
+	      //
+	      //     var blah = `<tr><td>${user.id}</td><td>${user.firstName}</td><td>${user.lastName}</td><td>${user.email}</td><td>${user.telephone}</td><td>${user.isAdmin}</td><td>${user.isTech}</td><td>${user.notes}</td></tr>`
+	      //
+	      //
+	      //   })
+	      //   return blah
+	      //
+	      // }
+	      // console.log("the function results: ")
+	      // var foo = formatDisplayData(usersList)
+	      // console.log("foo is: ", {foo})
+	      // var userRows = arrayOfUserObj.map(function(col, j){
+	      //   var user = []
+	      //   for(var key in col) {
+	      //     user.push(`<td>${col[key]}</td>`)
+	      //   }
+	      //   return user
+	      // })
+	      //
+	      // var parseUsers = userRows.map(function(curr, i) {
+	      //   return <tr>{curr}</tr>
+	      // })
+
+	      // } else {
+	      //   return null
+	      // }
 	    }
 	  }]);
 
@@ -46825,6 +46939,123 @@
 
 /***/ },
 /* 502 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _jquery = __webpack_require__(503);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
+
+
+	var TableData = function (_Component) {
+	  _inherits(TableData, _Component);
+
+	  function TableData(props) {
+	    _classCallCheck(this, TableData);
+
+	    var _this = _possibleConstructorReturn(this, (TableData.__proto__ || Object.getPrototypeOf(TableData)).call(this, props));
+
+	    _this.state = {
+	      users: 'hey',
+	      ready: false
+	    };
+	    return _this;
+	  }
+
+	  _createClass(TableData, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+	        this.setState({
+	          users: results,
+	          ready: true
+	        });
+	      }.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.serverRequest.abort();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      if (this.state.ready === true) {
+	        var usersArr = this.state.users;
+	        var arrayOfUserObj = [];
+	        var usersList = usersArr.map(function (row, i) {
+	          // console.log(row)
+	          var displayData = {
+	            id: row.id,
+	            firstName: row.first_name,
+	            lastName: row.last_name,
+	            email: row.email,
+	            telephone: row.telephone,
+	            isAdmin: row.is_admin,
+	            isTech: row.is_tech,
+	            notes: row.notes
+	          };
+
+	          arrayOfUserObj.push(displayData);
+
+	          // var userRows = Object.keys(displayData).map(function(col, j){
+	          //   return (
+	          //     <td key={j}>{displayData[col]}</td>
+	          //   )
+	          // })
+	          //
+	          // return (
+	          //   <tr>{userRows}</tr>
+	          // )
+
+	          // console.log("HERE IS OUR OBJECT: ", displayData);
+	          // for(var key in row){
+	          //   console.log(key)
+	          //   return <td key={i}>{row[key]}</td>
+	          // }
+	        });
+	        // console.log({arrayOfUserObj});
+	        console.log("we're cookin");
+	        return this.props.onUserData(arrayOfUserObj);
+	      } else {
+	        return null;
+	      }
+	    }
+	  }]);
+
+	  return TableData;
+	}(_react.Component);
+
+	exports.default = TableData;
+
+/***/ },
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
