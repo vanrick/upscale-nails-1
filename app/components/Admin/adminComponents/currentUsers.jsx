@@ -29,15 +29,22 @@ export default class CurrentUsers extends Component {
 
   render () {
     if(this.state.ready === true){
-    var usersArr = this.state.users;
-    console.log("in the render ", usersArr);
-
-    var usersList = usersArr.map(function(name) {
-        return <td>{name.first_name}</td>
-      })
-    return <tr>{usersList}</tr>
+      var usersList = usersArr.forEach(function(row, i) {
+        // console.log(row)
+        var displayData = {
+          id: row.id,
+          firstName: row.first_name,
+          lastName: row.last_name,
+          email: row.email,
+          telephone: row.telephone,
+          isAdmin: row.is_admin,
+          isTech: row.is_tech,
+          notes: row.notes
+        }
+        console.log(usersList)
+      }
+    // return <tr>{usersList.firstName}</tr>
     }else{
       return null
     }
-  }
 }
