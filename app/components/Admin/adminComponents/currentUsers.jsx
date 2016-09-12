@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, NavItem, NavDropdown, MenuItem, Table } from 'react-bootstrap';
 import $ from 'jquery';
-import Admin from '../index'
+import UserCall from './userCall'
 
 export default class CurrentUsers extends Component {
 
