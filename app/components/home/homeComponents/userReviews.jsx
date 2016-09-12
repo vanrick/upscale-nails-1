@@ -6,7 +6,9 @@ export default class UserReviews extends Component {
   render(){
     var {pictures, img1, img2, img3, revw1, revw2, revw3} = this.props
     return (
-    <div>
+    <div id="about">
+      <br></br>
+      <br></br>
       <div className="reviews-background">
         <Grid>
           <Row>
