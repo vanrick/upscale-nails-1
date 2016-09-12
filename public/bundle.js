@@ -27204,9 +27204,13 @@
 	          revw3: 'Always a great experience. I enjoy the atmosphere and the technicians. I was in and out and on with my day looking beautiful.'
 	        }),
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'googleMap' },
-	          _react2.default.createElement(_app2.default, null)
+	          _reactBootstrap.Col,
+	          { className: 'pull-right' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'googleMap bottom-section-color' },
+	            _react2.default.createElement(_app2.default, null)
+	          )
 	        )
 	      );
 	    }
@@ -57039,10 +57043,10 @@
 	    _this.state = {
 	      markers: [{
 	        position: {
-	          lat: 25.0112183,
-	          lng: 121.52067570000001
+	          lat: 26.5144029,
+	          lng: -81.9014407
 	        },
-	        key: 'Taiwan',
+	        key: 'Fort Myers',
 	        defaultAnimation: 2
 	      }]
 	    };
@@ -57084,7 +57088,8 @@
 	        $push: [{
 	          position: event.latLng,
 	          defaultAnimation: 2,
-	          key: Date.now() }]
+	          key: Date.now()
+	        }]
 	      });
 	      this.setState({ markers: markers });
 	    }
@@ -57296,8 +57301,8 @@
 	          ref: function ref(map) {
 	            return console.log(map);
 	          },
-	          defaultZoom: 3,
-	          defaultCenter: { lat: -25.363882, lng: 131.044922 },
+	          defaultZoom: 10,
+	          defaultCenter: { lat: 26.5144029, lng: -81.9014407 },
 	          onClick: props.onMapClick
 	        },
 	        props.markers.map(function (marker, index) {
@@ -62484,7 +62489,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n\n.GMap {\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.GMap-canvas {\n  top: 20px;\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.UpdatedText {\n  color: red;\n}\n\n.googleMap{\n  height: 40vh;\n  width: 40vw;\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n.UpdatedText {\n  color: red;\n}\n\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n}\n", ""]);
 
 	// exports
 
