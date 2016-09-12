@@ -9,7 +9,6 @@ import UserReviews from './homeComponents/userReviews';
 import SplashPage from './homeComponents/SplashPage';
 import App from './homeComponents/app';
 import MenuCall from './homeComponents/menuCall';
-// import SimpleMap from './homeComponents/SimpleMap';
 import LocationSpacer from './homeComponents/LocationSpacer';
 import Footer from './homeComponents/footer';
 export default class Home extends Component {

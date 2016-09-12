@@ -15,8 +15,8 @@ export default class NavComponent extends Component {
             <MenuItem eventKey="4.1" href="#map"> Map </MenuItem>
             <MenuItem eventKey="4.2" href="#hours">Hours & Location</MenuItem>
             <MenuItem divider />
-            <MenuItem eventKey="4.3">Facebook</MenuItem>
-            <MenuItem eventKey="4.4">Yelp</MenuItem>
+            <MenuItem eventKey="4.3" href="https://www.facebook.com/Upscale-Nails-1029696537094258/">Facebook</MenuItem>
+            <MenuItem eventKey="4.4" href="https://www.yelp.com/biz/upscale-nails-fort-myers">Yelp</MenuItem>
           </NavDropdown>
 
           <Form inline  className="pull-right">

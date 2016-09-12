@@ -91,8 +91,6 @@
   margin-top: -5%;
   font-family: 'Petit Formal Script', cursive;
 }
-
-
 .googleMap{
   height: 60vh;
   width: 100vw;
@@ -160,4 +158,13 @@
 
 .button-margin{
   margin-right: 3%;
+}
+
+.icons{
+  margin-right: 2%;
+}
+
+.contact-pic{
+  margin-top: 4%;
+
 }
