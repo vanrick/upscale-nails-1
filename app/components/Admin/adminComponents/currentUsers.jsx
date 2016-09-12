@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // import {getUsers} from '../../../databaseUtilities/databaseRequests';
 import { Button, Nav, NavItem, NavDropdown, MenuItem, Table, Grid, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
-import UserCall from './userCall'
+import UserCall from './userCall';
 
 export default class CurrentUsers extends Component {
 

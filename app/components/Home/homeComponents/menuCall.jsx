@@ -1,21 +1,21 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import CurrentUsers from './currentUsers';
+import CurrentMenu from './currentMenu';
 import { Button, Nav, NavItem, NavDropdown, MenuItem, Table } from 'react-bootstrap';
 import $ from 'jquery';
 
-export default class UserCall extends Component {
+export default class MenuCall extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: '',
+      items: '',
       ready: false
     }
   }
   componentDidMount () {
-    this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+    this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/products', function (results) {
       this.setState({
-          users: results,
+          items: results,
           ready: true
         })
     }.bind(this))
@@ -28,23 +28,17 @@ export default class UserCall extends Component {
   render() {
     if(this.state.ready === true){
     return (
-
-      <div>
-
-        <Table striped bordered condensed hover>
+      <div menu-container>        
+        <h2 className="menu-heading">Service Menu</h2>
+        <Table className="menuTable">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Telephone</th>
-              <th>Admin?</th>
-              <th>Tech?</th>
-              <th>Notes</th>
+              <th>Service</th>
+              <th>Cost</th>
+              <th>Description</th>
             </tr>
           </thead>
-          <CurrentUsers hey={this.state.users} />
+          <CurrentMenu howdy={this.state.items} />
         </Table>
       </div>
     )

@@ -83,10 +83,10 @@ export default class App extends Component {
     var handleMarkerRightclick = this.handleMarkerRightclick.bind(this);
     return (
         <SimpleMap
-            markers={this.state.markers}
-            onMapClick={this.handleMapClick}
-            onMarkerRightclick={this.handleMarkerRightclick}
-          />
-      );
-    }
+          markers={this.state.markers}
+          onMapClick={this.handleMapClick}
+          onMarkerRightclick={this.handleMarkerRightclick}
+        />
+    );
+  }
 }

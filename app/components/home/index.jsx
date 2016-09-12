@@ -8,6 +8,8 @@ import AllProducts from './homeComponents/productsApiCall';
 import UserReviews from './homeComponents/userReviews';
 import SplashPage from './homeComponents/SplashPage';
 import App from './homeComponents/app';
+import MenuCall from './homeComponents/menuCall';
+// import SimpleMap from './homeComponents/SimpleMap';
 import LocationSpacer from './homeComponents/LocationSpacer';
 import Footer from './homeComponents/footer';
 export default class Home extends Component {
@@ -31,6 +33,7 @@ export default class Home extends Component {
           img3='https://hd.unsplash.com/photo-1470259078422-826894b933aa'
 
           />
+        <MenuCall />
         <UserReviews
           pictures='review pictures'
           img1='https://hd.unsplash.com/photo-1465829284245-fc3c780208d5'
