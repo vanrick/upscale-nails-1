@@ -92,7 +92,7 @@ handleSubmit(event){
         <Button
           className="pull-right btn-danger"
           bsStyle="primary"
-          bsSize="small"
+          bsSize="med"
           onClick={() => this.setState({ show: true})}
         >
           Create New Account
