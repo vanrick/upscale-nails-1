@@ -14,13 +14,13 @@ export default class ModalInstance extends Component{
      email: '',
      phone: '',
 
-  };
+  }
   this.setFirstName = this.setFirstName.bind(this);
   this.setLastName = this.setLastName.bind(this);
   this.setPassword = this.setPassword.bind(this);
   this.setEmail = this.setEmail.bind(this);
   this.setPhone = this.setPhone.bind(this);
-  
+
 }
 setFirstName(e){
   console.log("First")
@@ -69,7 +69,7 @@ setEmail(e){
 }
 handleSubmit(event){
   event.preventDefault();
-  console.log(this.state)
+  console.log(state)
 
   // $.ajax({
   //   url: 'https://rocky-escarpment-34849.herokuapp.com/users',
