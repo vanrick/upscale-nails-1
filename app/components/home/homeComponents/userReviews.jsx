@@ -21,10 +21,7 @@ export default class UserReviews extends Component {
             </Row>
           </Grid>
         </div>
-
-
-
-    </div>
+      </div>
     )
   }
 }

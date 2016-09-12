@@ -158,3 +158,72 @@
   font-family: 'Petit Formal Script', cursive;
 
 }
+/*        profile page       */
+.smallImg{
+  height: 15vh;
+  width: 15vw;
+}
+
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+.toppad
+{margin-top:20px;
+}
+.borderIt{
+  border: 2px solid black;
+}
+.userBody{
+  background-color: #ACB0BC;
+  height: 100vh;
+  width: 100%;
+}
+.userBlue{
+  background-color: #5BC0DE;
+  border: none;
+  color: white;
+}
+.userRed{
+  background-color: #D9534F;
+  color: white;
+  border: none;
+}
+.userOrange{
+  color: #BB6A28;
+}
+.userGray{
+  color: #ACB0BC;
+}
+
+/*blue: 5BC0DE
+red: D9534F
+orange: BB6A28
+gray: ACB0BC
+*/
