@@ -27151,6 +27151,14 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
+	var _LocationSpacer = __webpack_require__(562);
+
+	var _LocationSpacer2 = _interopRequireDefault(_LocationSpacer);
+
+	var _footer = __webpack_require__(563);
+
+	var _footer2 = _interopRequireDefault(_footer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27158,9 +27166,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// import SimpleMap from './homeComponents/SimpleMap';
-
 
 	var Home = function (_Component) {
 	  _inherits(Home, _Component);
@@ -27203,11 +27208,18 @@
 	          revw2: 'I hate it when my feet get rough. The pedicure by the expert staff was much needed and the massage chair was a BONUS.',
 	          revw3: 'Always a great experience. I enjoy the atmosphere and the technicians. I was in and out and on with my day looking beautiful.'
 	        }),
+	        _react2.default.createElement(_LocationSpacer2.default, null),
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'googleMap' },
-	          _react2.default.createElement(_app2.default, null)
-	        )
+	          _reactBootstrap.Col,
+	          { className: 'pull-right' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'googleMap bottom-section-color' },
+	            _react2.default.createElement(_app2.default, null)
+	          )
+	        ),
+	        _react2.default.createElement(_footer2.default, { pictures: 'footer pictures',
+	          img1: 'https://hd.unsplash.com/photo-1457972729786-0411a3b2b626' })
 	      );
 	    }
 	  }]);
@@ -56812,82 +56824,86 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'reviews-background' },
+	        null,
 	        _react2.default.createElement(
-	          _reactBootstrap.Grid,
-	          null,
+	          'div',
+	          { className: 'reviews-background' },
 	          _react2.default.createElement(
-	            _reactBootstrap.Row,
+	            _reactBootstrap.Grid,
 	            null,
 	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { className: 'text-center user-reviews-header', md: 12 },
+	              _reactBootstrap.Row,
+	              null,
 	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                'User Reviews'
+	                _reactBootstrap.Col,
+	                { className: 'text-center user-reviews-header', md: 12 },
+	                _react2.default.createElement(
+	                  'h1',
+	                  null,
+	                  'User Reviews'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { className: 'text-center user-review-slogan', md: 12 },
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'Stop by our location to see what all the hype is about'
+	                )
 	              )
 	            ),
+	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { className: 'text-center user-review-slogan', md: 12 },
+	              _reactBootstrap.Row,
+	              null,
 	              _react2.default.createElement(
-	                'h3',
-	                null,
-	                'Stop by our location to see what all the hype is about'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { className: 'text-center', xs: 6, md: 4 },
-	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                'Caitlin'
+	                _reactBootstrap.Col,
+	                { className: 'text-center', xs: 6, md: 4 },
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'Caitlin'
+	                ),
+	                _react2.default.createElement('img', { src: img1, height: 170, width: 190 }),
+	                _react2.default.createElement('hr', null),
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  revw1
+	                )
 	              ),
-	              _react2.default.createElement('img', { src: img1, height: 170, width: 190 }),
-	              _react2.default.createElement('hr', null),
 	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                revw1
-	              )
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { className: 'text-center', xs: 6, md: 4 },
-	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                'Samantha'
+	                _reactBootstrap.Col,
+	                { className: 'text-center', xs: 6, md: 4 },
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'Samantha'
+	                ),
+	                _react2.default.createElement('img', { src: img2, height: 170, width: 190 }),
+	                _react2.default.createElement('hr', null),
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  revw2
+	                )
 	              ),
-	              _react2.default.createElement('img', { src: img2, height: 170, width: 190 }),
-	              _react2.default.createElement('hr', null),
 	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                revw2
-	              )
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { className: 'text-center', xs: 6, md: 4 },
-	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                'Avery'
-	              ),
-	              _react2.default.createElement('img', { src: img3, height: 170, width: 190 }),
-	              _react2.default.createElement('hr', null),
-	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                revw3
+	                _reactBootstrap.Col,
+	                { className: 'text-center', xs: 6, md: 4 },
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'Avery'
+	                ),
+	                _react2.default.createElement('img', { src: img3, height: 170, width: 190 }),
+	                _react2.default.createElement('hr', null),
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  revw3
+	                )
 	              )
 	            )
 	          )
@@ -57122,10 +57138,10 @@
 	    _this.state = {
 	      markers: [{
 	        position: {
-	          lat: 25.0112183,
-	          lng: 121.52067570000001
+	          lat: 26.5144029,
+	          lng: -81.9014407
 	        },
-	        key: 'Taiwan',
+	        key: 'Fort Myers',
 	        defaultAnimation: 2
 	      }]
 	    };
@@ -57167,7 +57183,8 @@
 	        $push: [{
 	          position: event.latLng,
 	          defaultAnimation: 2,
-	          key: Date.now() }]
+	          key: Date.now()
+	        }]
 	      });
 	      this.setState({ markers: markers });
 	    }
@@ -57379,8 +57396,8 @@
 	          ref: function ref(map) {
 	            return console.log(map);
 	          },
-	          defaultZoom: 3,
-	          defaultCenter: { lat: -25.363882, lng: 131.044922 },
+	          defaultZoom: 10,
+	          defaultCenter: { lat: 26.5144029, lng: -81.9014407 },
 	          onClick: props.onMapClick
 	        },
 	        props.markers.map(function (marker, index) {
@@ -62567,10 +62584,179 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n\n.GMap {\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.GMap-canvas {\n  top: 20px;\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.UpdatedText {\n  color: red;\n}\n\n.googleMap{\n  height: 40vh;\n  width: 40vw;\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n.UpdatedText {\n  color: red;\n}\n\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: .5vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n}\n\n.contact-style{\n  background-color: #dbbab3;\n  padding-top: 1vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n}\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 559 */,
+/* 560 */,
+/* 561 */,
+/* 562 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var LocationSpacer = function (_Component) {
+	  _inherits(LocationSpacer, _Component);
+
+	  function LocationSpacer() {
+	    _classCallCheck(this, LocationSpacer);
+
+	    return _possibleConstructorReturn(this, (LocationSpacer.__proto__ || Object.getPrototypeOf(LocationSpacer)).apply(this, arguments));
+	  }
+
+	  _createClass(LocationSpacer, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'location-style' },
+	          _react2.default.createElement(
+	            'h1',
+	            { className: 'text-center location-style' },
+	            'Location'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return LocationSpacer;
+	}(_react.Component);
+
+	exports.default = LocationSpacer;
+
+/***/ },
+/* 563 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footer = function (_Component) {
+	  _inherits(Footer, _Component);
+
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+
+	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	  }
+
+	  _createClass(Footer, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var pictures = _props.pictures;
+	      var img1 = _props.img1;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'footer-background' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'contact-style' },
+	          _react2.default.createElement(
+	            'h1',
+	            { className: 'text-center' },
+	            'Contact Upscale Nails'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Grid,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Row,
+	              { className: 'show-grid' },
+	              _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { md: 6 },
+	                _react2.default.createElement('img', { src: img1, height: 300, width: 350 })
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { md: 6, className: 'text-left' },
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'Address: 15880 Summerlin Rd #109, Fort Myers, FL 33908'
+	                ),
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'Telephone Number: 999-999-9999'
+	                ),
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'Hours of Opperation: M-F 9:00am-6:30pm'
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Footer;
+	}(_react.Component);
+
+	exports.default = Footer;
 
 /***/ }
 /******/ ]);
