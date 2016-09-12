@@ -46074,6 +46074,10 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
+	var _jquery = __webpack_require__(491);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46085,18 +46089,104 @@
 	var ModalInstance = function (_Component) {
 	  _inherits(ModalInstance, _Component);
 
-	  function ModalInstance() {
+	  function ModalInstance(props) {
 	    _classCallCheck(this, ModalInstance);
 
-	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this));
+	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this, props));
 
 	    _this.state = {
-	      show: false
+	      show: false,
+	      first_name: '',
+	      last_name: '',
+	      password: '',
+	      email: '',
+	      phone: ''
+
 	    };
+	    _this.setFirstName = _this.setFirstName.bind(_this);
+	    _this.setLastName = _this.setLastName.bind(_this);
+	    _this.setPassword = _this.setPassword.bind(_this);
+	    _this.setEmail = _this.setEmail.bind(_this);
+	    _this.setPhone = _this.setPhone.bind(_this);
+
 	    return _this;
 	  }
 
 	  _createClass(ModalInstance, [{
+	    key: 'setFirstName',
+	    value: function setFirstName(e) {
+	      console.log("First");
+	      console.log(e);
+	      this.setState({
+	        show: true,
+	        first_name: e.target.value
+	      });
+	      console.log(this.state);
+	    }
+	  }, {
+	    key: 'setPhone',
+	    value: function setPhone(e) {
+	      console.log("Phone");
+	      console.log(e);
+	      this.setState({
+	        show: true,
+	        phone: e.target.value
+	      });
+	      console.log(this.state);
+	    }
+	  }, {
+	    key: 'setLastName',
+	    value: function setLastName(e) {
+	      console.log("Last");
+	      console.log(e);
+	      this.setState({
+	        show: true,
+	        last_name: e.target.value
+	      });
+	      console.log(this.state);
+	    }
+	  }, {
+	    key: 'setPassword',
+	    value: function setPassword(e) {
+	      console.log("Password");
+	      console.log(e);
+	      this.setState({
+	        show: true,
+	        password: e.target.value
+	      });
+	      console.log(this.state);
+	    }
+	  }, {
+	    key: 'setEmail',
+	    value: function setEmail(e) {
+	      console.log("Email");
+	      console.log(e);
+	      this.setState({
+	        show: true,
+	        email: e.target.value
+	      });
+	      console.log(this.state);
+	    }
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit(event) {
+	      event.preventDefault();
+	      console.log(this.state);
+
+	      // $.ajax({
+	      //   url: 'https://rocky-escarpment-34849.herokuapp.com/users',
+	      //   dataType: 'json',
+	      //   type: 'POST',
+	      //   data: newUserData,
+	      //   success: function(userData) {
+	      //     this.setState({userData: userData});
+	      //   }.bind(this),
+	      //   error: function(xhr, status, err) {
+	      //     console.error(this.props.url, status, err.toString());
+	      //   }.bind(this)
+	      // });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -46143,7 +46233,7 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactBootstrap.Form,
-	              null,
+	              { onSubmit: this.handleSubmit },
 	              _react2.default.createElement(
 	                _reactBootstrap.FormGroup,
 	                null,
@@ -46153,7 +46243,7 @@
 	                  'First Name'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane' })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane', onChange: this.setFirstName })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46165,7 +46255,7 @@
 	                  'Last Name'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Doe' })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Doe', onChange: this.setLastName })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46177,7 +46267,7 @@
 	                  'Password'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password', onChange: this.setPassword })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46189,7 +46279,7 @@
 	                  'Email'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com' })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com', onChange: this.setEmail })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46201,25 +46291,18 @@
 	                  'Telephone Number'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999' })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999', onChange: this.setPhone })
 	              ),
-	              ' '
+	              ' ',
+	              _react2.default.createElement('input', { className: 'btn btn-info', type: 'submit', value: 'Submit' }),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'btn btn-danger', onClick: close },
+	                'Cancel'
+	              )
 	            )
 	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Footer,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { className: 'btn btn-danger', onClick: close },
-	              'Cancel'
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { className: 'btn btn-info', type: 'submit' },
-	              'Submit'
-	            )
-	          )
+	          _react2.default.createElement(_reactBootstrap.Modal.Footer, null)
 	        )
 	      );
 	    }
