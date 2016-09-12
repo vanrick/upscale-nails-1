@@ -1,13 +1,19 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
+
 import CurrentUsers from './adminComponents/currentUsers';
-import { Button, Nav, NavItem, NavDropdown, MenuItem, Table } from 'react-bootstrap';
+import AdminNav from './adminComponents/adminNav';
+
+import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem, Table } from 'react-bootstrap';
+import UserCall from './adminComponents/userCall';
 
 export default class Admin extends Component {
 
   render() {
+
     return (
       <div>
+        <AdminNav />
         <div>
         <Table striped bordered condensed hover>
           <thead>
@@ -29,9 +35,13 @@ export default class Admin extends Component {
         </Table>
       </div>
 
+        <UserCall />
       </div>
     )
   };
+
+
+
 }
 
 Admin.contextTypes = {

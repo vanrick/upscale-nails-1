@@ -13,7 +13,7 @@ export default class ModalInstance extends Component{
     let close = () => this.setState({ show: false});
 
     return (
-      <div className="modal-container" style={{height: 400}}>
+      <div className="modal-container">
         <Button
           className="pull-right btn-danger"
           bsStyle="primary"
@@ -27,19 +27,26 @@ export default class ModalInstance extends Component{
           onHide={close}
           container={this}
           aria-labelledby="contained-modal-title"
+          className="modal-bucket"
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title">New Customer Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form inline  className="pull-right">
-             <FormGroup className="pull-left">
-               <ControlLabel>Name</ControlLabel>
+            <Form>
+             <FormGroup>
+               <ControlLabel>First Name</ControlLabel>
                {' '}
-               <FormControl type="text" placeholder="Jane Doe" />
+               <FormControl type="text" placeholder="Jane" />
              </FormGroup>
              {' '}
-             <FormGroup className="pull-right">
+             <FormGroup>
+               <ControlLabel>Last Name</ControlLabel>
+               {' '}
+               <FormControl type="text" placeholder="Doe" />
+             </FormGroup>
+             {' '}
+             <FormGroup>
                <ControlLabel>Password</ControlLabel>
                {' '}
                <FormControl type="password" placeholder="password" />
@@ -51,7 +58,7 @@ export default class ModalInstance extends Component{
                <FormControl type="email" placeholder="123@gmail.com" />
              </FormGroup>
              {' '}
-             <FormGroup className="pull-right">
+             <FormGroup>
                <ControlLabel>Telephone Number</ControlLabel>
                {' '}
                <FormControl type="number" placeholder="999-999-9999" />

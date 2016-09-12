@@ -1,26 +1,94 @@
 .modal-container {
-  position: relative;
+  position: absolute;
+  z-index: 4000;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 4vh;
 }
-.modal-container .modal, .modal-container .modal-backdrop {
+
+.modal-bucket {
+  z-index: 2050;
+  margin-top: 10vh;
+}
+
+.modal .modal-backdrop {
   position: absolute;
 }
-.blue{
-  color: cornflowerblue;
+
+.btn-spacer{
+  margin-right: 3%;
 }
-.centered{
- position: relative;
+
+.ul-style{
+  list-style-type: none;
 }
-.centered img{
+
+.carousel-header-styling{
+  margin-top: -105vh;
+  font-size: 3em;
+}
+
+.carousel-picture-text-header{
+  margin-top: -60vh;
+}
+
+.carousel-text-description{
+  font-size: 1.5em;
+}
+
+.nav-position{
+  position: fixed;
+  z-index: 5000;
+  padding-top: 1vh;
+}
+
+.nav-form-text{
+  color: #fff;
+  margin-right: 1px;
+  margin-top: 2vh;
+}
+
+.nav-bar-text{
+  font-size: 1.5em;
+}
+
+#services{
+  background-color: #ded7d1;
+  margin-top: -2.5vh;
+  padding-bottom: 10vh;
+  padding-top: 8vh;
+}
+
+.reviews-background{
+  background-color: #98aeab;
+  padding-top: 30vh;
+  padding-bottom: 25vh;
+}
+.user-reviews-header{
+  margin-top: -10%;
+}
+.user-review-slogan{
+  margin-top: -5%;
+}
+
+.GMap {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.GMap-canvas {
+  top: 20px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: 100%;
 }
-.black{
-  color: black;
-  display: inline;
-  padding-left: 38%;
-  margin-right: auto;
-  background-color: white;
+.UpdatedText {
+  color: red;
+}
+
+.gm-style {
+  height: 40vh;
+  width: 40vw;
 }
 .borderIt{
   border: 2px solid black;
