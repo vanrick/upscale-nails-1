@@ -10,8 +10,8 @@ export default class UserReviews extends Component {
       <div className="reviews-background">
         <Grid>
           <Row>
-            <Col className="text-center user-reviews-header" md={12}><h1>User Reviews</h1></Col>
-            <Col className="text-center user-review-slogan" md={12}><h3>Stop by our location to see what all the hype is about</h3></Col>
+            <Col className="text-center user-reviews-header" md={12}><h1>User Reviews</h1><hr></hr></Col>
+            <Col className="text-center user-review-slogan" md={12}><h3>At Upscale nails we strive to provide you with the best service in Fort Myers. If you are not satisfied with the end result we will give you your money back!</h3></Col>
           </Row>
             <br></br>
             <Row>

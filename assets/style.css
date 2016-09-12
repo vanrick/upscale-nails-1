@@ -4,20 +4,25 @@
   height: 100vh;
   width: 100vw;
   margin-top: 10vh;
+  font-family: 'Petit Formal Script', cursive;
+
 }
 
 .modal-bucket {
   z-index: 2050;
   margin-top: 10vh;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .modal .modal-backdrop {
   position: absolute;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .nav-main {
-  background-color: #ACB0BC;
+  background-color: #DED7D1;
   width: 100%;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .btn-spacer{
@@ -26,35 +31,42 @@
 
 .ul-style{
   list-style-type: none;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .carousel-header-styling{
   margin-top: -105vh;
   font-size: 3em;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .carousel-picture-text-header{
   margin-top: -60vh;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .carousel-text-description{
   font-size: 1.5em;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .nav-position{
   position: fixed;
   z-index: 5000;
   padding-top: 1vh;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .nav-form-text{
-  color: #fff;
-  margin-right: 1px;
-  margin-top: 2vh;
+  color: black;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .nav-bar-text{
   font-size: 1.5em;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 #services{
@@ -62,22 +74,24 @@
   margin-top: -2.5vh;
   padding-bottom: 10vh;
   padding-top: 8vh;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .reviews-background{
   background-color: #98aeab;
   padding-top: 30vh;
   padding-bottom: 25vh;
+  font-family: 'Petit Formal Script', cursive;
 }
 .user-reviews-header{
-  margin-top: -10%;
+  margin-top: -18%;
+  font-family: 'Petit Formal Script', cursive;
 }
 .user-review-slogan{
   margin-top: -5%;
+  font-family: 'Petit Formal Script', cursive;
 }
-.UpdatedText {
-  color: red;
-}
+
 
 .googleMap{
   height: 60vh;
@@ -86,6 +100,7 @@
 
 .bottom-section-color{
   background-color: #a8adaf;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .location-style{
@@ -93,32 +108,55 @@
   padding-top: .5vh;
   padding-bottom: 1vh;
   font-size: 1.7em;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .contact-style{
-  background-color: #dbbab3;
-  padding-top: 1vh;
+  background-color: #DBBAB3;
   padding-bottom: 1vh;
-  font-size: 1.7em;
+  font-size: 3em;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .footer-background{
   background-color: #dbbab3;
   padding-bottom: 10vh;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .menuTable {
   background-color: #DED7D1;
   margin-bottom: -5px;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .menu-heading {
   background-color: #DED7D1;
   margin: -5px 0 -5px 0;
+  font-family: 'Petit Formal Script', cursive;
 }
 
 .menu-container {
   background-color: #DED7D1;
+  font-family: 'Petit Formal Script', cursive;
+}
+
+.contact-location{
+  margin-top: 10vh;
+  font-family: 'Petit Formal Script', cursive;
+}
+
+.service-menu-header{
+  margin-top: -4%;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 1.9em;
+  margin-bottom: 3.5vh;
+}
+
+.service-name{
+  font-size: 1.6em;
+  font-family: 'Petit Formal Script', cursive;
+
 }
 /*        profile page       */
 .smallImg{
