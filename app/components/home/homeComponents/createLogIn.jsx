@@ -7,86 +7,63 @@ export default class ModalInstance extends Component{
   constructor(props){
     super(props);
     this.state = {
-     show: false,
-     first_name: '',
-     last_name: '',
-     password: '',
-     email: '',
-     phone: '',
-
+       show: false,
+       first_name: '',
+       last_name: '',
+       password: '',
+       email: '',
+       telephone: '',
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.setFirstName = this.setFirstName.bind(this);
+    this.setLastName = this.setLastName.bind(this);
+    this.setPassword = this.setPassword.bind(this);
+    this.setEmail = this.setEmail.bind(this);
+    this.setPhone = this.setPhone.bind(this);
   }
-  this.setFirstName = this.setFirstName.bind(this);
-  this.setLastName = this.setLastName.bind(this);
-  this.setPassword = this.setPassword.bind(this);
-  this.setEmail = this.setEmail.bind(this);
-  this.setPhone = this.setPhone.bind(this);
+  setFirstName(e){
+    this.setState({
+      first_name: e.target.value
+    })
+  }
+  setPhone(e){
+    this.setState({
+      telephone: e.target.value
+    })
+  }
+  setLastName(e){
+    this.setState({
+      last_name: e.target.value
+    })
+  }
+  setPassword(e){
+    this.setState({
+      password: e.target.value
+    })
+  }
+  setEmail(e){
+    this.setState({
+      email: e.target.value
+    })
+  }
+  handleSubmit(){
+    console.log(this.state)
+    $.ajax({
+      url: 'https://rocky-escarpment-34849.herokuapp.com/users',
+      dataType: 'json',
+      type: 'POST',
+      data: this.state,
+      success: function(userData) {
+        this.setState({userData: userData});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  }
 
-}
-setFirstName(e){
-  console.log("First")
-  console.log(e)
-  this.setState({
-    show: true,
-    first_name: e.target.value
-  })
-  console.log(this.state);
-}
-setPhone(e){
-  console.log("Phone")
-  console.log(e)
-  this.setState({
-    show: true,
-    phone: e.target.value
-  })
-  console.log(this.state);
-}
-setLastName(e){
-  console.log("Last")
-  console.log(e)
-  this.setState({
-    show: true,
-    last_name: e.target.value
-  })
-  console.log(this.state);
-}
-setPassword(e){
-  console.log("Password")
-  console.log(e)
-  this.setState({
-    show: true,
-    password: e.target.value
-  })
-  console.log(this.state);
-}
-setEmail(e){
-  console.log("Email")
-  console.log(e)
-  this.setState({
-    show: true,
-    email: e.target.value
-  })
-  console.log(this.state);
-}
-handleSubmit(event){
-  event.preventDefault();
-  console.log(state)
-
-  // $.ajax({
-  //   url: 'https://rocky-escarpment-34849.herokuapp.com/users',
-  //   dataType: 'json',
-  //   type: 'POST',
-  //   data: newUserData,
-  //   success: function(userData) {
-  //     this.setState({userData: userData});
-  //   }.bind(this),
-  //   error: function(xhr, status, err) {
-  //     console.error(this.props.url, status, err.toString());
-  //   }.bind(this)
-  // });
-}
   render (){
     let close = () => this.setState({ show: false});
-
     return (
       <div className="modal-container">
         <Button
