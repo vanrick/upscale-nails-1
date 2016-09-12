@@ -1,32 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
+
 // import {getUsers} from '../../../databaseUtilities/databaseRequests';
 import { Button, Nav, NavItem, NavDropdown, MenuItem, Table, Grid, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
+import UserCall from './userCall'
 
 
 export default class CurrentUsers extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: 'hey',
-      ready: false
-    }
-  }
-  componentDidMount () {
-    this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
-      console.log("from the top: ", results);
-      this.setState({
-          users: results,
-          ready: true
-        })
-    }.bind(this))
-    console.log("hello from the top: ", this.state.users);
-  }
-
-  componentWillUnmount () {
-    this.serverRequest.abort();
-  }
 
   render () {
 
@@ -41,5 +22,26 @@ export default class CurrentUsers extends Component {
     }else{
       return null
     }
+    var Nambo = this.props.hey;
+
+    var Mambo = Nambo.map(function(user, i) {
+      return (
+        <tr>
+          <td>{user.id}</td>
+          <td>{user.first_name}</td>
+          <td>{user.last_name}</td>
+          <td>{user.email}</td>
+          <td>{user.telephone}</td>
+          <td>{user.is_admin}</td>
+          <td>{user.is_tech}</td>
+          <td>{user.notes}</td>
+        </tr>
+      )
+    })
+    console.log(Mambo);
+    console.log(Nambo);
+    return(
+      <tbody>{Mambo}</tbody>
+    )
   }
 }

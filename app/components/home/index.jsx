@@ -45,6 +45,7 @@ export default class Home extends Component {
 
     )
   };
+  
 }
 
 Home.contextTypes = {
