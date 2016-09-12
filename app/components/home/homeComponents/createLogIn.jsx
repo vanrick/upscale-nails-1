@@ -117,7 +117,7 @@ export default class ModalInstance extends Component{
                <FormControl type="number" ref="telephone" placeholder="999-999-9999" onChange={this.setPhone}/>
              </FormGroup>
              {' '}
-             <input className="btn btn-info" type="submit"/>
+             <input className="btn btn-info" onClick={close} type="submit"/>
              <Button className="btn btn-danger" onClick={close}>Cancel</Button>
            </Form>
          </Modal.Body>
