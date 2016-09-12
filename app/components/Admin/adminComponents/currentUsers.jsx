@@ -24,6 +24,15 @@ export default class CurrentUsers extends Component {
     }
     var Nambo = this.props.hey;
 
+import { Button, Nav, NavItem, NavDropdown, MenuItem, Table } from 'react-bootstrap';
+import $ from 'jquery';
+import UserCall from './userCall'
+
+export default class CurrentUsers extends Component {
+
+  render () {
+    var Nambo = this.props.hey;
+
     var Mambo = Nambo.map(function(user, i) {
       return (
         <tr>
