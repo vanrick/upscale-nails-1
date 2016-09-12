@@ -2,17 +2,38 @@ import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import CurrentUsers from './adminComponents/currentUsers';
 import { Button, Nav, NavItem, NavDropdown, MenuItem, Table } from 'react-bootstrap';
+import $ from 'jquery';
 
 export default class Admin extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: '',
+      ready: false
+    }
+  }
+  componentDidMount () {
+    this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+      this.setState({
+          users: results,
+          ready: true
+        })
+    }.bind(this))
+  }
+
+  componentWillUnmount () {
+    this.serverRequest.abort();
+  }
 
   render() {
+    if(this.state.ready === true){
     return (
+
       <div>
-        <div>
+
         <Table striped bordered condensed hover>
           <thead>
             <tr>
-              <th>#</th>
               <th>ID</th>
               <th>First Name</th>
               <th>Last Name</th>
@@ -23,14 +44,13 @@ export default class Admin extends Component {
               <th>Notes</th>
             </tr>
           </thead>
-          <tbody>
-            <CurrentUsers />
-          </tbody>
+          <CurrentUsers hey= {this.state.users} />
         </Table>
       </div>
-
-      </div>
     )
+  }else{
+    return null
+  }
   };
 }
 
