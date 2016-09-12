@@ -7,7 +7,7 @@ export default class NavComponent extends Component {
   render() {
     return (
       <div id="top">
-        <Nav className="nav-position" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
+        <Nav className="nav-position" bsStyle="tabs" onSelect={this.handleSelect}>
           <NavItem className="nav-bar-text" eventKey="Home" href="#top">Home</NavItem>
           <NavItem className="nav-bar-text" eventKey="Services" href="#services">Services</NavItem>
           <NavItem className="nav-bar-text" eventKey="About Us">About Us</NavItem>
@@ -21,7 +21,7 @@ export default class NavComponent extends Component {
 
           <Form inline  className="pull-right">
            <FormGroup controlId="formInlineName">
-             <ControlLabel className="nav-form-text" nav-text>Email</ControlLabel>
+             <ControlLabel className="nav-form-text">Email</ControlLabel>
              {' '}
              <FormControl className="nav-form-text" type="email" placeholder="UpscaleNails@gmail.com" />
            </FormGroup>
