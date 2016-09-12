@@ -162,3 +162,30 @@
 .borderIt{
   border: 2px solid black;
 }
+.userBody{
+  background-color: #ACB0BC;
+  height: 100vh;
+  width: 100%;
+}
+.userBlue{
+  background-color: #5BC0DE;
+  border: none;
+  color: white;
+}
+.userRed{
+  background-color: #D9534F;
+  color: white;
+  border: none;
+}
+.userOrange{
+  color: #BB6A28;
+}
+.userGray{
+  color: #ACB0BC;
+}
+
+/*blue: 5BC0DE
+red: D9534F
+orange: BB6A28
+gray: ACB0BC
+*/

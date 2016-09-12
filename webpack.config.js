@@ -1,8 +1,4 @@
 module.exports = {
-  output: {
-  library: 'GoogleMapReact',
-  libraryTarget: 'umd'
-  },
   entry: 'app.jsx',
   output: {
     path: __dirname,
@@ -54,9 +50,6 @@ module.exports = {
       },
       { test: /vendor\/.+\.(jsx|js)$/,
         loader: 'imports?jQuery=jquery,$=jquery,this=>window'
-      },
-      { test: /\.js$/, exclude: /node_modules/,
-        loader: 'babel'
       }
     ]
   }

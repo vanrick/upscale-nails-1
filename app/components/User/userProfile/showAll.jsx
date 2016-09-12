@@ -1,19 +1,19 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import {A, p, br, dt, dd, dl, table, tbody, tr, Grid, Row, Col, code,img, Button } from 'react-bootstrap';
+import {a, i, A, p, br, dt, dd, dl, table, tbody, tr, Grid, Row, Col, code,img, Button } from 'react-bootstrap';
 
 export default class ShowAll extends Component {
   render(){
     var { name, img } = this.props
     return (
-        <div className="container">
+        <div className="container userBody">
           <div className='row'>
             <div className='toppad pull-right'>
               <Col md={12} mdOffset={0}>
-              <Button href="#">Edit Profile</Button>
-              <Button href="#">Log Out</Button>
+              <Button className='userBlue' href="#">Edit Profile</Button>
+              <Button className='userRed'href="#">Log Out</Button>
               <br/>
-              <p className="text-infto ">May 05,2016,03:00 pm </p>
+              <p className="text-infto ">May 05,2016 03:00 pm </p>
               </Col>
             </div>
              <div className="col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
@@ -62,12 +62,23 @@ export default class ShowAll extends Component {
 
                       </tbody>
                     </table>
-                    <Button className='btn btn-primary' href="#">Change Appointments</Button>
-                    <Button className='btn btn-primary' href="#">Notes For Nail Tech</Button>
+                    <Button className='userBlue btn btn-primary' href="#">Change Appointments</Button>
+                    <Button className='userBlue btn btn-primary' href="#">Notes For Nail Tech</Button>
                   </Col>
                   </div>
                   </div>
                  </div>
+
+                 <div className='panel-footer'>
+                  <a href='#' type="button" className="userBlue btn btn-lg btn-primary"><i className="glyphicon glyphicon-phone"></i></a>
+                  <span className='pull-right'>
+                  <a href='#' type="button" className="userBlue btn btn-lg btn-warning"><i className="glyphicon glyphicon-flash">FACEBOOK</i></a>
+                  <a href='#' type="button" className="btn btn-lg btn-warning"><i className="glyphicon glyphicon-star-empty">SPECIALS</i></a>
+
+
+                  </span>
+                 </div>
+
                </div>
              </Col>
              </div>

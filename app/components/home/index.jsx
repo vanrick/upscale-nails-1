@@ -4,16 +4,14 @@ import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem, Grid, Row, Col } f
 import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
 import UserReviews from './homeComponents/userReviews'
-import GoogleMaps from './homeComponents/googleMaps'
 import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps"
 
 import Services from './homeComponents/services';
 import AllProducts from './homeComponents/productsApiCall';
-import UserReviews from './homeComponents/userReviews';
 import SplashPage from './homeComponents/SplashPage';
 import App from './homeComponents/app';
 import MenuCall from './homeComponents/menuCall';
-// import SimpleMap from './homeComponents/SimpleMap';
+import SimpleMap from './homeComponents/SimpleMap';
 import LocationSpacer from './homeComponents/LocationSpacer';
 import Footer from './homeComponents/footer';
 export default class Home extends Component {
@@ -55,7 +53,6 @@ export default class Home extends Component {
               <App />
             </div>
         </Col>
-        <GoogleMaps />
         <Footer pictures="footer pictures"
           img1 = 'https://hd.unsplash.com/photo-1457972729786-0411a3b2b626'/>
 
