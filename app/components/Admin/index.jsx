@@ -39,9 +39,6 @@ export default class Admin extends Component {
       </div>
     )
   };
-
-
-
 }
 
 Admin.contextTypes = {
