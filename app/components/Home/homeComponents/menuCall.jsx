@@ -34,9 +34,9 @@ export default class MenuCall extends Component {
         <Table className="menuTable text-center">
           <thead>
             <tr>
-              <th className="text-center">Service</th>
-              <th className="text-center">Cost</th>
-              <th className="text-center">Description</th>
+              <th className="text-center service-name">Service</th>
+              <th className="text-center service-name">Cost</th>
+              <th className="text-center service-name">Description</th>
             </tr>
           </thead>
           <CurrentMenu howdy={this.state.items} />

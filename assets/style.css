@@ -148,4 +148,12 @@
 .service-menu-header{
   margin-top: -4%;
   font-family: 'Petit Formal Script', cursive;
+  font-size: 1.9em;
+  margin-bottom: 3.5vh;
+}
+
+.service-name{
+  font-size: 1.6em;
+  font-family: 'Petit Formal Script', cursive;
+
 }
