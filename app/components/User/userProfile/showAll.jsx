@@ -8,8 +8,8 @@ export default class ShowAll extends Component {
     return (
         <div className="container">
           <div className='row'>
-            <div className='toppad pull-right col-md-offset-3'>
-              <Col md={12}>
+            <div className='toppad pull-right'>
+              <Col md={12} mdOffset={0}>
               <Button href="#">Edit Profile</Button>
               <Button href="#">Log Out</Button>
               <br/>
@@ -33,7 +33,7 @@ export default class ShowAll extends Component {
                     <Col md={9} lg={9} >
                     <table className="table table-user-information">
                       <tbody>
-                        
+
                         <tr>
                           <td>Appointments:</td>
                           <td>Sept 14, 2016
