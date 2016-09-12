@@ -28,14 +28,15 @@ export default class MenuCall extends Component {
   render() {
     if(this.state.ready === true){
     return (
-      <div menu-container>        
-        <h2 className="menu-heading">Service Menu</h2>
-        <Table className="menuTable">
+      <div menu-container>
+        <h2 className="menu-heading text-center service-menu-header">Service Menu</h2>
+
+        <Table className="menuTable text-center">
           <thead>
             <tr>
-              <th>Service</th>
-              <th>Cost</th>
-              <th>Description</th>
+              <th className="text-center service-name">Service</th>
+              <th className="text-center service-name">Cost</th>
+              <th className="text-center service-name">Description</th>
             </tr>
           </thead>
           <CurrentMenu howdy={this.state.items} />
