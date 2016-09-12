@@ -20,7 +20,7 @@ export default class ModalInstance extends Component{
   this.setPassword = this.setPassword.bind(this);
   this.setEmail = this.setEmail.bind(this);
   this.setPhone = this.setPhone.bind(this);
-  
+
 }
 setFirstName(e){
   console.log("First")
@@ -139,7 +139,7 @@ handleSubmit(event){
                <FormControl type="number" placeholder="999-999-9999" onChange={this.setPhone}/>
              </FormGroup>
              {' '}
-             <input className="btn btn-info" type="submit" value="Submit"/>
+             <input className="btn btn-info button-margin" type="submit" value="Submit"/>
              <Button className="btn btn-danger" onClick={close}>Cancel</Button>
            </Form>
          </Modal.Body>

@@ -6,12 +6,11 @@ export default class Footer extends Component {
   render(){
     var {pictures, img1}= this.props
     return (
-      <div className="footer-background">
+      <div id="hours" className="footer-background">
         <div>
           <h1 className="text-center contact-style">Contact Upscale Nails</h1>
-
-      </div>
-      <div>
+        </div>
+      <div id="hours" >
         <Grid>
           <Row className="show-grid">
             <Col md={6}>
