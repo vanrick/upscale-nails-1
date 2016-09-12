@@ -21,7 +21,7 @@ export default class NavComponent extends Component {
 
           <Form inline  className="pull-right">
            <FormGroup controlId="formInlineName">
-             <ControlLabel className="nav-form-text" nav-text>Email</ControlLabel>
+             <ControlLabel className="nav-form-text">Email</ControlLabel>
              {' '}
              <FormControl className="nav-form-text" type="email" placeholder="UpscaleNails@gmail.com" />
            </FormGroup>
