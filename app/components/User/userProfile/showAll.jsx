@@ -10,7 +10,6 @@ export default class ShowAll extends Component {
           <div className='row'>
             <div className='toppad pull-right col-md-offset-3'>
               <Col md={12}>
-              {name}
               <Button href="#">Edit Profile</Button>
               <Button href="#">Log Out</Button>
               <br/>
@@ -34,9 +33,15 @@ export default class ShowAll extends Component {
                     <Col md={9} lg={9} >
                     <table className="table table-user-information">
                       <tbody>
+                        
                         <tr>
                           <td>Appointments:</td>
-                          <td>Weds 3:30pm</td>
+                          <td>Sept 14, 2016
+                            Weds @ 3:30pm</td>
+                        </tr>
+                        <tr>
+                          <td>Technician:</td>
+                          <td>Nini</td>
                         </tr>
                         <tr>
                           <td>Services:</td>
@@ -54,8 +59,11 @@ export default class ShowAll extends Component {
                           <td>Phone Number:</td>
                           <td>123-4567-8900(Mobile)</td>
                         </tr>
+
                       </tbody>
                     </table>
+                    <Button className='btn btn-primary' href="#">Change Appointments</Button>
+                    <Button className='btn btn-primary' href="#">Notes For Nail Tech</Button>
                   </Col>
                   </div>
                   </div>

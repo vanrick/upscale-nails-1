@@ -62206,7 +62206,6 @@
 	            _react2.default.createElement(
 	              _reactBootstrap.Col,
 	              { md: 12 },
-	              name,
 	              _react2.default.createElement(
 	                _reactBootstrap.Button,
 	                { href: '#' },
@@ -62281,7 +62280,21 @@
 	                              _react2.default.createElement(
 	                                'td',
 	                                null,
-	                                'Weds 3:30pm'
+	                                'Sept 14, 2016 Weds @ 3:30pm'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Technician:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Nini'
 	                              )
 	                            ),
 	                            _react2.default.createElement(
@@ -62345,6 +62358,16 @@
 	                              )
 	                            )
 	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          _reactBootstrap.Button,
+	                          { className: 'btn btn-primary', href: '#' },
+	                          'Change Appointments'
+	                        ),
+	                        _react2.default.createElement(
+	                          _reactBootstrap.Button,
+	                          { className: 'btn btn-primary', href: '#' },
+	                          'Notes For Nail Tech'
 	                        )
 	                      )
 	                    )
