@@ -7,7 +7,7 @@ export default class NavComponent extends Component {
   render() {
     return (
       <div id="top">
-        <Nav className="nav-position" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
+        <Nav className="nav-position nav-main" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
           <NavItem className="nav-bar-text" eventKey="Home" href="#top">Home</NavItem>
           <NavItem className="nav-bar-text" eventKey="Services" href="#services">Services</NavItem>
           <NavItem className="nav-bar-text" eventKey="About Us">About Us</NavItem>

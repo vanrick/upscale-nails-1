@@ -15,6 +15,11 @@
   position: absolute;
 }
 
+.nav-main {
+  background-color: #ACB0BC;
+  width: 100%;
+}
+
 .btn-spacer{
   margin-right: 3%;
 }
@@ -89,4 +94,18 @@
 .gm-style {
   height: 40vh;
   width: 40vw;
+}
+
+.menuTable {
+  background-color: #DED7D1;
+  margin-bottom: -5px;
+}
+
+.menu-heading {
+  background-color: #DED7D1;
+  margin: -5px 0 -5px 0;
+}
+
+.menu-container {
+  background-color: #DED7D1;
 }
