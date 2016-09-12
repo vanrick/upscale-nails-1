@@ -7,7 +7,6 @@ export default class ModalInstance extends Component{
   constructor(props){
     super(props);
     this.state = {
-       show: false,
        first_name: '',
        last_name: '',
        password: '',
@@ -46,8 +45,11 @@ export default class ModalInstance extends Component{
       email: e.target.value
     })
   }
-  handleSubmit(){
+  handleSubmit(e){
+    console.log("****HELLO****");
     console.log(this.state)
+    console.log("****END HELLO*****");
+    e.preventDefault()
     $.ajax({
       url: 'https://rocky-escarpment-34849.herokuapp.com/users',
       dataType: 'json',
@@ -57,7 +59,6 @@ export default class ModalInstance extends Component{
         this.setState({userData: userData});
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
   }
@@ -89,34 +90,34 @@ export default class ModalInstance extends Component{
              <FormGroup>
                <ControlLabel>First Name</ControlLabel>
                {' '}
-               <FormControl type="text" placeholder="Jane" onChange={this.setFirstName}/>
+               <FormControl type="text"  ref="first_name" placeholder="Jane" onChange={this.setFirstName}/>
              </FormGroup>
              {' '}
              <FormGroup>
                <ControlLabel>Last Name</ControlLabel>
                {' '}
-               <FormControl type="text" placeholder="Doe" onChange={this.setLastName}/>
+               <FormControl type="text" ref="last_name" placeholder="Doe" onChange={this.setLastName}/>
              </FormGroup>
              {' '}
              <FormGroup>
                <ControlLabel>Password</ControlLabel>
                {' '}
-               <FormControl type="password" placeholder="password" onChange={this.setPassword}/>
+               <FormControl type="password" ref="password" placeholder="password" onChange={this.setPassword}/>
              </FormGroup>
              {' '}
              <FormGroup>
                <ControlLabel>Email</ControlLabel>
                {' '}
-               <FormControl type="email" placeholder="123@gmail.com" onChange={this.setEmail}/>
+               <FormControl type="email" ref="email" placeholder="123@gmail.com" onChange={this.setEmail}/>
              </FormGroup>
              {' '}
              <FormGroup>
                <ControlLabel>Telephone Number</ControlLabel>
                {' '}
-               <FormControl type="number" placeholder="999-999-9999" onChange={this.setPhone}/>
+               <FormControl type="number" ref="telephone" placeholder="999-999-9999" onChange={this.setPhone}/>
              </FormGroup>
              {' '}
-             <input className="btn btn-info" type="submit" value="Submit"/>
+             <input className="btn btn-info" type="submit"/>
              <Button className="btn btn-danger" onClick={close}>Cancel</Button>
            </Form>
          </Modal.Body>
