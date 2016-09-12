@@ -27202,12 +27202,7 @@
 	          revw1: 'Nini was great! she really helped me find the right color for the right occasion and my nails looked beautuful. Thank You!',
 	          revw2: 'I hate it when my feet get rough. The pedicure by the expert staff was much needed and the massage chair was a BONUS.',
 	          revw3: 'Always a great experience. I enjoy the atmosphere and the technicians. I was in and out and on with my day looking beautiful.'
-	        }),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'googleMap' },
-	          _react2.default.createElement(_app2.default, null)
-	        )
+	        })
 	      );
 	    }
 	  }]);
@@ -45968,7 +45963,7 @@
 	        { id: 'top' },
 	        _react2.default.createElement(
 	          _reactBootstrap.Nav,
-	          { className: 'nav-position', bsStyle: 'tabs', onSelect: this.handleSelect },
+	          { className: 'nav-position', bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
 	          _react2.default.createElement(
 	            _reactBootstrap.NavItem,
 	            { className: 'nav-bar-text', eventKey: 'Home', href: '#top' },
@@ -46017,7 +46012,7 @@
 	              { controlId: 'formInlineName' },
 	              _react2.default.createElement(
 	                _reactBootstrap.ControlLabel,
-	                { className: 'nav-form-text' },
+	                { className: 'nav-form-text', 'nav-text': true },
 	                'Email'
 	              ),
 	              ' ',
@@ -46074,10 +46069,6 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
-	var _jquery = __webpack_require__(491);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46089,104 +46080,18 @@
 	var ModalInstance = function (_Component) {
 	  _inherits(ModalInstance, _Component);
 
-	  function ModalInstance(props) {
+	  function ModalInstance() {
 	    _classCallCheck(this, ModalInstance);
 
-	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this));
 
 	    _this.state = {
-	      show: false,
-	      first_name: '',
-	      last_name: '',
-	      password: '',
-	      email: '',
-	      phone: ''
-
+	      show: false
 	    };
-	    _this.setFirstName = _this.setFirstName.bind(_this);
-	    _this.setLastName = _this.setLastName.bind(_this);
-	    _this.setPassword = _this.setPassword.bind(_this);
-	    _this.setEmail = _this.setEmail.bind(_this);
-	    _this.setPhone = _this.setPhone.bind(_this);
-
 	    return _this;
 	  }
 
 	  _createClass(ModalInstance, [{
-	    key: 'setFirstName',
-	    value: function setFirstName(e) {
-	      console.log("First");
-	      console.log(e);
-	      this.setState({
-	        show: true,
-	        first_name: e.target.value
-	      });
-	      console.log(this.state);
-	    }
-	  }, {
-	    key: 'setPhone',
-	    value: function setPhone(e) {
-	      console.log("Phone");
-	      console.log(e);
-	      this.setState({
-	        show: true,
-	        phone: e.target.value
-	      });
-	      console.log(this.state);
-	    }
-	  }, {
-	    key: 'setLastName',
-	    value: function setLastName(e) {
-	      console.log("Last");
-	      console.log(e);
-	      this.setState({
-	        show: true,
-	        last_name: e.target.value
-	      });
-	      console.log(this.state);
-	    }
-	  }, {
-	    key: 'setPassword',
-	    value: function setPassword(e) {
-	      console.log("Password");
-	      console.log(e);
-	      this.setState({
-	        show: true,
-	        password: e.target.value
-	      });
-	      console.log(this.state);
-	    }
-	  }, {
-	    key: 'setEmail',
-	    value: function setEmail(e) {
-	      console.log("Email");
-	      console.log(e);
-	      this.setState({
-	        show: true,
-	        email: e.target.value
-	      });
-	      console.log(this.state);
-	    }
-	  }, {
-	    key: 'handleSubmit',
-	    value: function handleSubmit(event) {
-	      event.preventDefault();
-	      console.log(this.state);
-
-	      // $.ajax({
-	      //   url: 'https://rocky-escarpment-34849.herokuapp.com/users',
-	      //   dataType: 'json',
-	      //   type: 'POST',
-	      //   data: newUserData,
-	      //   success: function(userData) {
-	      //     this.setState({userData: userData});
-	      //   }.bind(this),
-	      //   error: function(xhr, status, err) {
-	      //     console.error(this.props.url, status, err.toString());
-	      //   }.bind(this)
-	      // });
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -46233,7 +46138,7 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactBootstrap.Form,
-	              { onSubmit: this.handleSubmit },
+	              null,
 	              _react2.default.createElement(
 	                _reactBootstrap.FormGroup,
 	                null,
@@ -46243,7 +46148,7 @@
 	                  'First Name'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane', onChange: this.setFirstName })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Jane' })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46255,7 +46160,7 @@
 	                  'Last Name'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Doe', onChange: this.setLastName })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Doe' })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46267,7 +46172,7 @@
 	                  'Password'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password', onChange: this.setPassword })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', placeholder: 'password' })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46279,7 +46184,7 @@
 	                  'Email'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com', onChange: this.setEmail })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', placeholder: '123@gmail.com' })
 	              ),
 	              ' ',
 	              _react2.default.createElement(
@@ -46291,18 +46196,25 @@
 	                  'Telephone Number'
 	                ),
 	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999', onChange: this.setPhone })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', placeholder: '999-999-9999' })
 	              ),
-	              ' ',
-	              _react2.default.createElement('input', { className: 'btn btn-info', type: 'submit', value: 'Submit' }),
-	              _react2.default.createElement(
-	                _reactBootstrap.Button,
-	                { className: 'btn btn-danger', onClick: close },
-	                'Cancel'
-	              )
+	              ' '
 	            )
 	          ),
-	          _react2.default.createElement(_reactBootstrap.Modal.Footer, null)
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Footer,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-danger', onClick: close },
+	              'Cancel'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { className: 'btn btn-info', type: 'submit' },
+	              'Submit'
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -57192,11 +57104,20 @@
 
 	      var handleMapClick = this.handleMapClick.bind(this);
 	      var handleMarkerRightclick = this.handleMarkerRightclick.bind(this);
-	      return _react2.default.createElement(_SimpleMap2.default, {
-	        markers: this.state.markers,
-	        onMapClick: this.handleMapClick,
-	        onMarkerRightclick: this.handleMarkerRightclick
-	      });
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          this.props.foo
+	        ),
+	        _react2.default.createElement(_SimpleMap2.default, {
+	          markers: this.state.markers,
+	          onMapClick: this.handleMapClick,
+	          onMarkerRightclick: this.handleMarkerRightclick
+	        })
+	      );
 	    }
 	  }]);
 
@@ -62567,7 +62488,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n\n.GMap {\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.GMap-canvas {\n  top: 20px;\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.UpdatedText {\n  color: red;\n}\n\n.googleMap{\n  height: 40vh;\n  width: 40vw;\n}\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 4vh;\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n}\n\n.nav-form-text{\n  color: #fff;\n  margin-right: 1px;\n  margin-top: 2vh;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 30vh;\n  padding-bottom: 25vh;\n}\n.user-reviews-header{\n  margin-top: -10%;\n}\n.user-review-slogan{\n  margin-top: -5%;\n}\n\n.GMap {\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.GMap-canvas {\n  top: 20px;\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.UpdatedText {\n  color: red;\n}\n\n.gm-style {\n  height: 40vh;\n  width: 40vw;\n}\n", ""]);
 
 	// exports
 
