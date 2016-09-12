@@ -3,7 +3,7 @@
   z-index: 4000;
   height: 100vh;
   width: 100vw;
-  margin-top: 4vh;
+  margin-top: 10vh;
 }
 
 .modal-bucket {
@@ -48,9 +48,9 @@
 }
 
 .nav-form-text{
-  color: #fff;
-  margin-right: 1px;
-  margin-top: 2vh;
+  color: black;
+  margin-right: 1vw;
+  margin-top: 1vh;
 }
 
 .nav-bar-text{
