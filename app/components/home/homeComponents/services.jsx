@@ -1,8 +1,6 @@
-
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Col, Row, Grid} from 'react-bootstrap';
-
 export default class Services extends Component{
 
 render (){
