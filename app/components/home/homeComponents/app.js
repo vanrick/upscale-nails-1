@@ -15,10 +15,10 @@ export default class App extends Component {
   this.state = {
     markers: [{
       position: {
-        lat: 25.0112183,
-        lng: 121.52067570000001,
+        lat: 26.5144029,
+        lng: -81.9014407,
       },
-      key: `Taiwan`,
+      key: `Fort Myers`,
       defaultAnimation: 2,
     }],
   };
@@ -55,7 +55,7 @@ export default class App extends Component {
         {
           position: event.latLng,
           defaultAnimation: 2,
-          key: Date.now(), // Add a key property for: http://fb.me/react-warning-keys
+          key: Date.now(),
         },
       ],
     });
@@ -82,14 +82,11 @@ export default class App extends Component {
     var handleMapClick = this.handleMapClick.bind(this);
     var handleMarkerRightclick = this.handleMarkerRightclick.bind(this);
     return (
-      <div>
-      <h1>{this.props.foo}</h1>
-      <SimpleMap
-        markers={this.state.markers}
-        onMapClick={this.handleMapClick}
-        onMarkerRightclick={this.handleMarkerRightclick}
-      />
-      </div>
-    );
-  }
+        <SimpleMap
+            markers={this.state.markers}
+            onMapClick={this.handleMapClick}
+            onMarkerRightclick={this.handleMarkerRightclick}
+          />
+      );
+    }
 }
