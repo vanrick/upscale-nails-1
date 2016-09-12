@@ -82,3 +82,22 @@
 .bottom-section-color{
   background-color: #a8adaf;
 }
+
+.location-style{
+  background-color: #dbbab3;
+  padding-top: .5vh;
+  padding-bottom: 1vh;
+  font-size: 1.7em;
+}
+
+.contact-style{
+  background-color: #dbbab3;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  font-size: 1.7em;
+}
+
+.footer-background{
+  background-color: #dbbab3;
+  padding-bottom: 10vh;
+}
