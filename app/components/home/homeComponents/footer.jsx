@@ -19,7 +19,9 @@ export default class Footer extends Component {
             </Col>
             <Col md={6} className="text-left contact-location">
               <h4>Address: 15880 Summerlin Rd #109, Fort Myers, FL 33908</h4>
-              <h4>Telephone Number: 999-999-9999</h4>
+              <br></br>
+              <h4>Telephone Number: (239) 985-0833</h4>
+              <br></br>
               <h4>Hours of Opperation: M-F 9:00am-6:30pm</h4>
             </Col>
           </Row>
