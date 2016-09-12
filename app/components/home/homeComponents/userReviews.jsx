@@ -22,7 +22,7 @@ export default class UserReviews extends Component {
           </Grid>
         </div>
 
-        
+
 
     </div>
     )

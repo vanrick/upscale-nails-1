@@ -24,8 +24,7 @@ export default class Footer extends Component {
           </Row>
         </Grid>
       </div>
-
-      </div>
+    </div>
     )
   }
 }
