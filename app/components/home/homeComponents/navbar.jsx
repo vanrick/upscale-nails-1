@@ -48,7 +48,7 @@ export default class NavComponent extends Component {
 
            <Link to="/admin">
            <Button  className="btn btn-info nav-form-text" type="submit">
-\             Submit
+             Submit
            </Button>
             </Link>
          </Form>
