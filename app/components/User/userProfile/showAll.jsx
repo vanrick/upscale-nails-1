@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import { Link } from 'react-router';
 import ReactDOM from 'react-dom';
 import {a, i, A, p, br, dt, dd, dl, table, tbody, tr, Grid, Row, Col, code,img, Button } from 'react-bootstrap';
 
@@ -63,7 +64,7 @@ export default class ShowAll extends Component {
                       </tbody>
                     </table>
                     <Button className='userBlue btn btn-primary' href="#">Change Appointments</Button>
-                    <Button className='userBlue btn btn-primary' href="#">Notes For Nail Tech</Button>
+                  <Link to="/technician"><Button className='userBlue btn btn-primary'>Notes For Nail Tech</Button></Link>
                   </Col>
                   </div>
                   </div>

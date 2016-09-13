@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import { Link } from 'react-router';
 import ReactDOM from 'react-dom';
 import { a, i, A, p, br, dt, dd, dl, table, tbody, tr, Grid, Row, Col, code, img, Button, thead } from 'react-bootstrap';
 
@@ -111,7 +112,7 @@ export default class TechnicianProfile extends Component {
                         </tr>
                         <tr>
                           <td>Email:</td>
-                          <td><a href='#'>Thanh@support.com</a></td>
+                          <td><Link to='#'>Thanh@support.com</Link></td>
                         </tr>
                         <tr>
                           <td>Phone Number:</td>
@@ -120,7 +121,7 @@ export default class TechnicianProfile extends Component {
 
                       </tbody>
                     </table>
-                    <Button className='userBlue btn btn-primary' href="#">Customer Notes</Button>
+                  <Link to="/user"><Button className='userBlue btn btn-primary'>Customer Notes</Button></Link>
                   </Col>
                   </div>
                   </div>
