@@ -45968,6 +45968,8 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
+	var _reactRouter = __webpack_require__(172);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46062,9 +46064,13 @@
 	            ),
 	            ' ',
 	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { className: 'btn btn-info nav-form-text', type: 'submit' },
-	              'Submit'
+	              _reactRouter.Link,
+	              { to: '/admin' },
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'btn btn-info nav-form-text', type: 'submit' },
+	                'Submit'
+	              )
 	            )
 	          )
 	        )
@@ -46281,18 +46287,6 @@
 	                ),
 	                ' ',
 	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', ref: 'email', placeholder: '123@gmail.com', onChange: this.setEmail })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Telephone Number'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', ref: 'telephone', placeholder: '999-999-9999', onChange: this.setPhone })
 	              ),
 	              ' ',
 	              _react2.default.createElement('input', { className: 'btn btn-info button-margin', onClick: close, type: 'submit' }),

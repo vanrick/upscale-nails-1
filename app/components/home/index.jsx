@@ -5,7 +5,6 @@ import NavComponent from './homeComponents/navbar';
 import ModalInstance from './homeComponents/createLogIn';
 import UserReviews from './homeComponents/userReviews'
 import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps"
-
 import Services from './homeComponents/services';
 import AllProducts from './homeComponents/productsApiCall';
 import SplashPage from './homeComponents/SplashPage';

@@ -112,12 +112,6 @@ export default class ModalInstance extends Component{
               <FormControl type="email" ref="email" placeholder="123@gmail.com" onChange={this.setEmail}/>
             </FormGroup>
             {' '}
-            <FormGroup>
-              <ControlLabel>Telephone Number</ControlLabel>
-              {' '}
-              <FormControl type="number" ref="telephone" placeholder="999-999-9999" onChange={this.setPhone}/>
-            </FormGroup>
-            {' '}
             <input className="btn btn-info button-margin" onClick={close} type="submit"/>
             <Button className="btn btn-danger" onClick={close}>Cancel</Button>
           </Form>

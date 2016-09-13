@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, NavItem, NavDropdown, Form, FormGroup, FormControl, MenuItem, ControlLabel} from 'react-bootstrap';
-
+import {Link} from 'react-router'
 export default class NavComponent extends Component {
 
   render() {
@@ -32,9 +32,11 @@ export default class NavComponent extends Component {
              <FormControl className="nav-form-text" type="password" placeholder="password" />
            </FormGroup>
            {' '}
+           <Link to="/admin">
            <Button  className="btn btn-info nav-form-text" type="submit">
              Submit
            </Button>
+            </Link>
          </Form>
         </Nav>
 
