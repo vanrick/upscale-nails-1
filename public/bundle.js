@@ -61500,15 +61500,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/*
-	 * This is the modify version of:
-	 * https://developers.google.com/maps/documentation/javascript/examples/event-arguments
-	 *
-	 * Add <script src="https://maps.googleapis.com/maps/api/js"></script> to your HTML to provide google.maps reference
-	 *
-	 * We use React 0.14 stateless function components here.
-	 * https://facebook.github.io/react/blog/2015/09/10/react-v0.14-rc1.html#stateless-function-components
-	 */
 	var SimpleMap = function SimpleMap(props) {
 	  return _react2.default.createElement(
 	    "section",
@@ -61525,9 +61516,11 @@
 	          ref: function ref(map) {
 	            return console.log(map);
 	          },
-	          defaultZoom: 10,
+	          defaultZoom: 11,
+	          options: { scrollwheel: false },
 	          defaultCenter: { lat: 26.5144029, lng: -81.9014407 },
 	          onClick: props.onMapClick
+
 	        },
 	        props.markers.map(function (marker, index) {
 	          return _react2.default.createElement(_reactGoogleMaps.Marker, _extends({}, marker, {
@@ -62135,7 +62128,27 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_adminNav2.default, null),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'admin-style' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Staff Members'
+	          )
+	        ),
 	        _react2.default.createElement(_userCall2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'admin-style' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Appointments'
+	          )
+	        ),
 	        _react2.default.createElement(_apptCall2.default, null)
 	      );
 	    }
@@ -62463,7 +62476,7 @@
 	      var parseAppts = apptResults.appointments.map(function (appt, i) {
 	        return _react2.default.createElement(
 	          'tr',
-	          null,
+	          { id: 'appt' },
 	          _react2.default.createElement(
 	            'td',
 	            null,
@@ -62712,15 +62725,15 @@
 	        null,
 	        _react2.default.createElement(
 	          _reactBootstrap.Nav,
-	          { bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
+	          { className: 'nav-position-admin nav-main ', bsStyle: 'tabs', onSelect: this.handleSelect },
 	          _react2.default.createElement(
 	            _reactBootstrap.NavItem,
-	            { eventKey: 'Home', href: '#' },
+	            { className: 'admin-nav-text', eventKey: 'Home', href: '#top' },
 	            'Home'
 	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.NavItem,
-	            { eventKey: 'Services', href: '#' },
+	            { className: 'admin-nav-text', eventKey: 'Services', href: '#appt' },
 	            'Appointments'
 	          ),
 	          _react2.default.createElement(
@@ -62728,7 +62741,7 @@
 	            { href: '/' },
 	            _react2.default.createElement(
 	              _reactBootstrap.Button,
-	              { className: 'btn btn-info pull-right', type: 'logout' },
+	              { className: 'btn btn-info pull-right admin-nav-button', type: 'logout' },
 	              'Logout'
 	            )
 	          )
@@ -63491,7 +63504,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 40vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n  margin-top: -5vh;\n}\n.user-reviews-header{\n  margin-top: -18%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -5%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: 3vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.button-margin{\n  margin-right: 3%;\n}\n\n.icons{\n  margin-right: 2%;\n}\n\n.contact-pic{\n  margin-top: 4%;\n\n}\n/*        profile page       */\n.smallImg{\n  height: 15vh;\n  width: 15vw;\n}\n\n.user-row {\n    margin-bottom: 14px;\n}\n\n.user-row:last-child {\n    margin-bottom: 0;\n}\n\n.dropdown-user {\n    margin: 13px 0;\n    padding: 5px;\n    height: 100%;\n}\n\n.dropdown-user:hover {\n    cursor: pointer;\n}\n\n.table-user-information > tbody > tr {\n    border-top: 1px solid rgb(221, 221, 221);\n}\n\n.table-user-information > tbody > tr:first-child {\n    border-top: 0;\n}\n\n\n.table-user-information > tbody > tr > td {\n    border-top: 0;\n}\n.toppad\n{margin-top:20px;\n}\n.borderIt{\n  border: 2px solid black;\n}\n.userBody{\n  background-color: #ACB0BC;\n  height: 100vh;\n  width: 100%;\n}\n.userBlue{\n  background-color: #5BC0DE;\n  border: none;\n  color: white;\n}\n.userRed{\n  background-color: #D9534F;\n  color: white;\n  border: none;\n}\n.userOrange{\n  color: #BB6A28;\n}\n.userGray{\n  color: #ACB0BC;\n}\n\n/*blue: 5BC0DE\nred: D9534F\norange: BB6A28\ngray: ACB0BC\n*/\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position-admin{\n  position: fixed;\n  z-index: 5000;\n  font-family: 'Petit Formal Script', cursive;\n  height: 6vh;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 40vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n  margin-top: -5vh;\n}\n.user-reviews-header{\n  margin-top: -18%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -5%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: 3vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.button-margin{\n  margin-right: 3%;\n}\n\n.icons{\n  margin-right: 2%;\n}\n\n.contact-pic{\n  margin-top: 4%;\n\n}\n/*        profile page       */\n.smallImg{\n  height: 15vh;\n  width: 15vw;\n}\n\n.user-row {\n    margin-bottom: 14px;\n}\n\n.user-row:last-child {\n    margin-bottom: 0;\n}\n\n.dropdown-user {\n    margin: 13px 0;\n    padding: 5px;\n    height: 100%;\n}\n\n.dropdown-user:hover {\n    cursor: pointer;\n}\n\n.table-user-information > tbody > tr {\n    border-top: 1px solid rgb(221, 221, 221);\n}\n\n.table-user-information > tbody > tr:first-child {\n    border-top: 0;\n}\n\n\n.table-user-information > tbody > tr > td {\n    border-top: 0;\n}\n.toppad\n{margin-top:20px;\n}\n.borderIt{\n  border: 2px solid black;\n}\n.userBody{\n  background-color: #ACB0BC;\n  height: 100vh;\n  width: 100%;\n}\n.userBlue{\n  background-color: #5BC0DE;\n  border: none;\n  color: white;\n}\n.userRed{\n  background-color: #D9534F;\n  color: white;\n  border: none;\n}\n.userOrange{\n  color: #BB6A28;\n}\n.userGray{\n  color: #ACB0BC;\n}\n\n.admin-style{\n  background-color: #98AEAB;\n  height: 8vh;\n  margin-top: -1%;\n}\n\n.admin-nav-button{\n  margin-top: .5%;\n  margin-right: 1%;\n}\n\n.admin-nav-text{\n  font-size: 1.2em;\n}\n/*blue: 5BC0DE\nred: D9534F\norange: BB6A28\ngray: ACB0BC\n*/\n", ""]);
 
 	// exports
 

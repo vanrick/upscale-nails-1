@@ -14,7 +14,7 @@ export default class CurrentAppts extends Component {
 
     var parseAppts = apptResults.appointments.map(function(appt, i) {
       return (
-        <tr>
+        <tr id="appt">
           <td>{appt.id}</td>
           <td>{appt.customer.first_name} {appt.customer.last_name}</td>
           <td>{appt.technician.first_name} {appt.technician.last_name}</td>

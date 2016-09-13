@@ -13,8 +13,17 @@ export default class Admin extends Component {
     return (
       <div>
         <AdminNav />
+        <br></br>
+        <br></br>
+      <div className="admin-style">
+        <h1>Staff Members</h1>
+      </div>
         <UserCall />
+      <div className="admin-style">
+        <h1>Appointments</h1>
+      </div>
         <ApptCall />
+
       </div>
     )
   };
