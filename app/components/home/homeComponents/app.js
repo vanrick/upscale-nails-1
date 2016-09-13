@@ -13,8 +13,8 @@ export default class App extends Component {
   this.state = {
     markers: [{
       position: {
-        lat: 26.5144029,
-        lng: -81.9014407,
+        lat: 26.514745,
+        lng: -81.900702,
       },
       key: `Fort Myers`,
       defaultAnimation: 2,
