@@ -1,12 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, NavItem, NavDropdown, Form, FormGroup, FormControl, MenuItem, ControlLabel} from 'react-bootstrap';
+import cookie from 'react-cookie';
+
 
 export default class NavComponent extends Component {
 
   render() {
     return (
       <div id="top">
+        <LoginPanel onSuccess={this.onLogin.bind(this)} />
         <Nav className="nav-position nav-main" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
           <NavItem className="nav-bar-text" eventKey="Home" href="#top">Home</NavItem>
           <NavItem className="nav-bar-text" eventKey="Services" href="#services">Services</NavItem>
