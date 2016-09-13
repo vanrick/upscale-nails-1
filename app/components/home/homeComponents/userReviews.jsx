@@ -17,9 +17,9 @@ export default class UserReviews extends Component {
           </Row>
             <br></br>
             <Row>
-              <Col className='text-center' xs={6} md={4}><h4>Caitlin</h4><img src={img1} height={170} width={190}/><hr></hr><h4>{revw1}</h4></Col>
-              <Col className='text-center' xs={6} md={4}><h4>Samantha</h4><img src={img2} height={170} width={190}/><hr></hr><h4>{revw2}</h4></Col>
-              <Col className='text-center' xs={6} md={4}><h4>Avery</h4><img src={img3} height={170} width={190}/><hr></hr><h4>{revw3}</h4></Col>
+              <Col className='text-center' xs={6} md={4}><h4 className="user-review-name">Caitlin</h4><img src={img1} height={170} width={190}/><hr></hr><h4 className="user-review">{revw1}</h4></Col>
+              <Col className='text-center' xs={6} md={4}><h4 className="user-review-name">Samantha</h4><img src={img2} height={170} width={190}/><hr></hr><h4 className="user-review">{revw2}</h4></Col>
+              <Col className='text-center' xs={6} md={4}><h4 className="user-review-name">Avery</h4><img src={img3} height={170} width={190}/><hr></hr><h4 className="user-review">{revw3}</h4></Col>
             </Row>
           </Grid>
         </div>

@@ -27216,7 +27216,7 @@
 	          pictures: 'review pictures',
 	          img1: 'https://hd.unsplash.com/photo-1465829284245-fc3c780208d5',
 	          img2: 'https://hd.unsplash.com/photo-1462326569699-70dfd9103ec3',
-	          img3: 'https://hd.unsplash.com/photo-1468488718849-422a2a5efc03',
+	          img3: 'https://hd.unsplash.com/photo-1468431461963-8a05e49c97c1',
 	          revw1: 'Nini was great! she really helped me find the right color for the right occasion and my nails looked beautuful. Thank You!',
 	          revw2: 'I hate it when my feet get rough. The pedicure by the expert staff was much needed and the massage chair was a BONUS.',
 	          revw3: 'Always a great experience. I enjoy the atmosphere and the technicians. I was in and out and on with my day looking beautiful.'
@@ -46413,14 +46413,14 @@
 	                { className: 'text-center', xs: 6, md: 4 },
 	                _react2.default.createElement(
 	                  'h4',
-	                  null,
+	                  { className: 'user-review-name' },
 	                  'Caitlin'
 	                ),
 	                _react2.default.createElement('img', { src: img1, height: 170, width: 190 }),
 	                _react2.default.createElement('hr', null),
 	                _react2.default.createElement(
 	                  'h4',
-	                  null,
+	                  { className: 'user-review' },
 	                  revw1
 	                )
 	              ),
@@ -46429,14 +46429,14 @@
 	                { className: 'text-center', xs: 6, md: 4 },
 	                _react2.default.createElement(
 	                  'h4',
-	                  null,
+	                  { className: 'user-review-name' },
 	                  'Samantha'
 	                ),
 	                _react2.default.createElement('img', { src: img2, height: 170, width: 190 }),
 	                _react2.default.createElement('hr', null),
 	                _react2.default.createElement(
 	                  'h4',
-	                  null,
+	                  { className: 'user-review' },
 	                  revw2
 	                )
 	              ),
@@ -46445,14 +46445,14 @@
 	                { className: 'text-center', xs: 6, md: 4 },
 	                _react2.default.createElement(
 	                  'h4',
-	                  null,
+	                  { className: 'user-review-name' },
 	                  'Avery'
 	                ),
 	                _react2.default.createElement('img', { src: img3, height: 170, width: 190 }),
 	                _react2.default.createElement('hr', null),
 	                _react2.default.createElement(
 	                  'h4',
-	                  null,
+	                  { className: 'user-review' },
 	                  revw3
 	                )
 	              )
@@ -61104,7 +61104,8 @@
 	                'h1',
 	                { className: 'carousel-header-styling' },
 	                'Upscale Nails and Spa'
-	              )
+	              ),
+	              _react2.default.createElement('hr', null)
 	            ),
 	            _react2.default.createElement('img', { width: 1445, height: 500, src: 'https://hd.unsplash.com/photo-1449179391249-52328aae1c16' }),
 	            _react2.default.createElement(
@@ -61132,7 +61133,8 @@
 	                'h1',
 	                { className: 'carousel-header-styling' },
 	                'Upscale Nails and Spa'
-	              )
+	              ),
+	              _react2.default.createElement('hr', null)
 	            ),
 	            _react2.default.createElement('img', { width: 1445, height: 500, src: 'https://hd.unsplash.com/photo-1467015806515-b6effeb01f5f' }),
 	            _react2.default.createElement(
@@ -61160,7 +61162,8 @@
 	                'h1',
 	                { className: 'carousel-header-styling' },
 	                'Upscale Nails and Spa'
-	              )
+	              ),
+	              _react2.default.createElement('hr', null)
 	            ),
 	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1452794441448-9a21ecfff6e3' }),
 	            _react2.default.createElement(
@@ -61188,7 +61191,8 @@
 	                'h1',
 	                { className: 'carousel-header-styling' },
 	                'Upscale Nails and Spa'
-	              )
+	              ),
+	              _react2.default.createElement('hr', null)
 	            ),
 	            _react2.default.createElement('img', { width: 1445, height: 500, alt: '900x500', src: 'https://hd.unsplash.com/photo-1459164648438-af647b154e96' }),
 	            _react2.default.createElement(
@@ -63504,7 +63508,7 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position-admin{\n  position: fixed;\n  z-index: 5000;\n  font-family: 'Petit Formal Script', cursive;\n  height: 6vh;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 40vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n  margin-top: -5vh;\n}\n.user-reviews-header{\n  margin-top: -18%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -5%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: 3vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.button-margin{\n  margin-right: 3%;\n}\n\n.icons{\n  margin-right: 2%;\n}\n\n.contact-pic{\n  margin-top: 4%;\n\n}\n/*        profile page       */\n.smallImg{\n  height: 15vh;\n  width: 15vw;\n}\n\n.user-row {\n    margin-bottom: 14px;\n}\n\n.user-row:last-child {\n    margin-bottom: 0;\n}\n\n.dropdown-user {\n    margin: 13px 0;\n    padding: 5px;\n    height: 100%;\n}\n\n.dropdown-user:hover {\n    cursor: pointer;\n}\n\n.table-user-information > tbody > tr {\n    border-top: 1px solid rgb(221, 221, 221);\n}\n\n.table-user-information > tbody > tr:first-child {\n    border-top: 0;\n}\n\n\n.table-user-information > tbody > tr > td {\n    border-top: 0;\n}\n.toppad\n{margin-top:20px;\n}\n.borderIt{\n  border: 2px solid black;\n}\n.userBody{\n  background-color: #ACB0BC;\n  height: 100vh;\n  width: 100%;\n}\n.userBlue{\n  background-color: #5BC0DE;\n  border: none;\n  color: white;\n}\n.userRed{\n  background-color: #D9534F;\n  color: white;\n  border: none;\n}\n.userOrange{\n  color: #BB6A28;\n}\n.userGray{\n  color: #ACB0BC;\n}\n\n.admin-style{\n  background-color: #98AEAB;\n  height: 8vh;\n  margin-top: -1%;\n}\n\n.admin-nav-button{\n  margin-top: .5%;\n  margin-right: 1%;\n}\n\n.admin-nav-text{\n  font-size: 1.2em;\n}\n/*blue: 5BC0DE\nred: D9534F\norange: BB6A28\ngray: ACB0BC\n*/\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n  letter-spacing: .5px;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position-admin{\n  position: fixed;\n  z-index: 5000;\n  font-family: 'Petit Formal Script', cursive;\n  height: 6vh;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 40vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n  margin-top: -5vh;\n}\n.user-reviews-header{\n  margin-top: -22%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -15%;\n  font-family: 'Petit Formal Script', cursive;\n  letter-spacing: .5px;\n}\n.user-review{\n    letter-spacing: .5px;\n}\n.user-review-name{\n  letter-spacing: .5px;\n  color: #DBBAB3;\n  font-weight: bolder;\n  font-size: 1.5em;\n}\n\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: 3vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.button-margin{\n  margin-right: 3%;\n}\n\n.icons{\n  margin-right: 2%;\n}\n\n.contact-pic{\n  margin-top: 4%;\n\n}\n/*        profile page       */\n.smallImg{\n  height: 15vh;\n  width: 15vw;\n}\n\n.user-row {\n    margin-bottom: 14px;\n}\n\n.user-row:last-child {\n    margin-bottom: 0;\n}\n\n.dropdown-user {\n    margin: 13px 0;\n    padding: 5px;\n    height: 100%;\n}\n\n.dropdown-user:hover {\n    cursor: pointer;\n}\n\n.table-user-information > tbody > tr {\n    border-top: 1px solid rgb(221, 221, 221);\n}\n\n.table-user-information > tbody > tr:first-child {\n    border-top: 0;\n}\n\n\n.table-user-information > tbody > tr > td {\n    border-top: 0;\n}\n.toppad\n{margin-top:20px;\n}\n.borderIt{\n  border: 2px solid black;\n}\n.userBody{\n  background-color: #ACB0BC;\n  height: 100vh;\n  width: 100%;\n}\n.userBlue{\n  background-color: #5BC0DE;\n  border: none;\n  color: white;\n}\n.userRed{\n  background-color: #D9534F;\n  color: white;\n  border: none;\n}\n.userOrange{\n  color: #BB6A28;\n}\n.userGray{\n  color: #ACB0BC;\n}\n\n.admin-style{\n  background-color: #98AEAB;\n  height: 8vh;\n  margin-top: -1%;\n}\n\n.admin-nav-button{\n  margin-top: .5%;\n  margin-right: 1%;\n}\n\n.admin-nav-text{\n  font-size: 1.2em;\n}\n/*blue: 5BC0DE\nred: D9534F\norange: BB6A28\ngray: ACB0BC\n*/\n", ""]);
 
 	// exports
 

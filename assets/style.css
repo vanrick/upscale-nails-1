@@ -48,6 +48,7 @@
 .carousel-text-description{
   font-size: 1.5em;
   font-family: 'Petit Formal Script', cursive;
+  letter-spacing: .5px;
 }
 
 .nav-position{
@@ -92,13 +93,24 @@
   margin-top: -5vh;
 }
 .user-reviews-header{
-  margin-top: -18%;
+  margin-top: -22%;
   font-family: 'Petit Formal Script', cursive;
 }
 .user-review-slogan{
-  margin-top: -5%;
+  margin-top: -15%;
   font-family: 'Petit Formal Script', cursive;
+  letter-spacing: .5px;
 }
+.user-review{
+    letter-spacing: .5px;
+}
+.user-review-name{
+  letter-spacing: .5px;
+  color: #DBBAB3;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
 .googleMap{
   height: 60vh;
   width: 100vw;

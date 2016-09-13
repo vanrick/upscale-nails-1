@@ -41,7 +41,7 @@ export default class Home extends Component {
           pictures='review pictures'
           img1='https://hd.unsplash.com/photo-1465829284245-fc3c780208d5'
           img2='https://hd.unsplash.com/photo-1462326569699-70dfd9103ec3'
-          img3='https://hd.unsplash.com/photo-1468488718849-422a2a5efc03'
+          img3='https://hd.unsplash.com/photo-1468431461963-8a05e49c97c1'
           revw1='Nini was great! she really helped me find the right color for the right occasion and my nails looked beautuful. Thank You!'
           revw2='I hate it when my feet get rough. The pedicure by the expert staff was much needed and the massage chair was a BONUS.'
           revw3='Always a great experience. I enjoy the atmosphere and the technicians. I was in and out and on with my day looking beautiful.'
