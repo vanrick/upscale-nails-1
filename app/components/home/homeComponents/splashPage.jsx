@@ -6,10 +6,10 @@ export default class SplashPage extends Component {
   render(){
     return (
       <div>
-        <Carousel >
+        <Carousel>
           <Carousel.Item>
             <Carousel.Caption>
-              <h1 className="carousel-header-styling">Upscale Nails and Spa</h1>
+              <h1 className="carousel-header-styling">Upscale Nails and Spa</h1><hr></hr>
             </Carousel.Caption>
             <img width={1445} height={500}  src="https://hd.unsplash.com/photo-1449179391249-52328aae1c16"/>
             <Carousel.Caption>
@@ -19,7 +19,7 @@ export default class SplashPage extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Carousel.Caption>
-              <h1 className="carousel-header-styling">Upscale Nails and Spa</h1>
+              <h1 className="carousel-header-styling">Upscale Nails and Spa</h1><hr></hr>
             </Carousel.Caption>
             <img width={1445} height={500}  src="https://hd.unsplash.com/photo-1467015806515-b6effeb01f5f"/>
             <Carousel.Caption>
@@ -29,7 +29,7 @@ export default class SplashPage extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Carousel.Caption>
-              <h1 className="carousel-header-styling">Upscale Nails and Spa</h1>
+              <h1 className="carousel-header-styling">Upscale Nails and Spa</h1><hr></hr>
             </Carousel.Caption>
             <img width={1445} height={500} alt="900x500" src="https://hd.unsplash.com/photo-1452794441448-9a21ecfff6e3"/>
           <Carousel.Caption>
@@ -39,7 +39,7 @@ export default class SplashPage extends Component {
         </Carousel.Item>
         <Carousel.Item>
           <Carousel.Caption>
-            <h1 className="carousel-header-styling">Upscale Nails and Spa</h1>
+            <h1 className="carousel-header-styling">Upscale Nails and Spa</h1><hr></hr>
           </Carousel.Caption>
           <img width={1445} height={500} alt="900x500" src="https://hd.unsplash.com/photo-1459164648438-af647b154e96"/>
         <Carousel.Caption>
@@ -48,8 +48,6 @@ export default class SplashPage extends Component {
         </Carousel.Caption>
       </Carousel.Item>
       </Carousel>
-
-
     </div>
     )
   }

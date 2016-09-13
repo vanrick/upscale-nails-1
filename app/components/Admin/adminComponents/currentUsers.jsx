@@ -22,6 +22,7 @@ export default class CurrentUsers extends Component {
           <td>{user.is_tech.toString()}</td>
           <td>{user.notes}</td>
         </tr>
+
       )
     })
     console.log(Mambo);
