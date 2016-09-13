@@ -1,9 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, NavItem, NavDropdown, Form, FormGroup, FormControl, MenuItem, ControlLabel} from 'react-bootstrap';
-import {Link} from 'react-router'
 import CookieComponent from './cookieComponent';
-import { onLogin, onLogout } from './cookieComponent';
 import cookie from 'react-cookie';
 export default class NavComponent extends Component {
 
@@ -15,8 +13,15 @@ export default class NavComponent extends Component {
   }
 
   onSubmit() {
-    this.props.onSuccess(document.querySelector('#email').value);
+    if(document.cookie.split("=")[0] !== "userId") {
+      // this.props.onSuccess(document.querySelector('#email').value);
+      this.props.onSuccess(1001);
+    } else {
+      this.props.onReset().bind(this);
+    }
   }
+
+
 
   render() {
     if(document.cookie.split("=")[0] !== "userId") {
@@ -48,16 +53,16 @@ export default class NavComponent extends Component {
            </FormGroup>
            {' '}
 
-           <Link to="/admin">
-             <Button className="btn btn-info nav-form-text" type="submit">
+
+           <Button className="btn btn-info nav-form-text" type="submit">
              Submit
            </Button>
-            </Link>
          </Form>
         </Nav>
       </div>
     )
   } else {
+
     return (
     <div id="top">
       <Nav className="nav-position nav-main" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
@@ -72,9 +77,11 @@ export default class NavComponent extends Component {
           <MenuItem eventKey="4.4">Yelp</MenuItem>
         </NavDropdown>
 
-        <Button className="btn btn-info nav-form-text" type="submit">
-           Logout
-         </Button>
+        <Form inline className="pull-right" onSubmit={this.onSubmit.bind(this)}>
+          <Button className="btn btn-info nav-form-text" type="submit">
+            Logout
+          </Button>
+        </Form>
 
       </Nav>
     </div>

@@ -13,7 +13,7 @@ import $ from 'jquery';
      }
    }
    componentDidMount () {
-     this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users/1001/appointments', function (results) {
+     this.serverRequest = $.get(`https://rocky-escarpment-34849.herokuapp.com/users/${document.cookie.split("=")[1]}/appointments`, function (results) {
        this.setState({
            appointments: results,
            ready: true

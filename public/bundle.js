@@ -45970,8 +45970,6 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
-	var _reactRouter = __webpack_require__(172);
-
 	var _cookieComponent = __webpack_require__(488);
 
 	var _cookieComponent2 = _interopRequireDefault(_cookieComponent);
@@ -46005,7 +46003,12 @@
 	  _createClass(NavComponent, [{
 	    key: 'onSubmit',
 	    value: function onSubmit() {
-	      this.props.onSuccess(document.querySelector('#email').value);
+	      if (document.cookie.split("=")[0] !== "userId") {
+	        // this.props.onSuccess(document.querySelector('#email').value);
+	        this.props.onSuccess(1001);
+	      } else {
+	        this.props.onReset().bind(this);
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -46085,18 +46088,15 @@
 	              ),
 	              ' ',
 	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/admin' },
-	                _react2.default.createElement(
-	                  _reactBootstrap.Button,
-	                  { className: 'btn btn-info nav-form-text', type: 'submit' },
-	                  'Submit'
-	                )
+	                _reactBootstrap.Button,
+	                { className: 'btn btn-info nav-form-text', type: 'submit' },
+	                'Submit'
 	              )
 	            )
 	          )
 	        );
 	      } else {
+
 	        return _react2.default.createElement(
 	          'div',
 	          { id: 'top' },
@@ -46144,9 +46144,13 @@
 	              )
 	            ),
 	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { className: 'btn btn-info nav-form-text', type: 'submit' },
-	              'Logout'
+	              _reactBootstrap.Form,
+	              { inline: true, className: 'pull-right', onSubmit: this.onSubmit.bind(this) },
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'btn btn-info nav-form-text', type: 'submit' },
+	                'Logout'
+	              )
 	            )
 	          )
 	        );
@@ -46220,16 +46224,14 @@
 	  }, {
 	    key: 'onLogout',
 	    value: function onLogout() {
-	      _reactCookie2.default.remove('userId', { path: '/' });
-	      /** Clear all cookies starting with 'session' (to get all cookies, omit regex argument) */
-	      Object.keys(_reactCookie2.default.select(/^session.*/i)).forEach(function (name) {
-	        return _reactCookie2.default.remove(name, { path: '/' });
-	      });
+	      console.log("RICK ROLLED");
+	      _reactCookie2.default.remove('userId');
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(_navbar2.default, { onSuccess: this.onLogin.bind(this) });
+	      return _react2.default.createElement(_navbar2.default, {
+	        onReset: this.onLogout.bind(this), onSuccess: this.onLogin.bind(this) });
 	    }
 	  }]);
 
@@ -62607,7 +62609,7 @@
 	          _react2.default.createElement(
 	            'h1',
 	            null,
-	            'Staff Members'
+	            'Registered Users and Staff'
 	          )
 	        ),
 	        _react2.default.createElement(_userCall2.default, null),
@@ -63282,8 +63284,7 @@
 	        _react2.default.createElement(_showAll2.default, {
 	          name: 'WORKS',
 	          img: 'http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png'
-	        }),
-	        _react2.default.createElement(_userAll2.default, null)
+	        })
 	      );
 	    }
 	  }]);
@@ -63354,7 +63355,7 @@
 	  _createClass(UserAppts, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users/1001/appointments', function (results) {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users/' + document.cookie.split("=")[1] + '/appointments', function (results) {
 	        this.setState({
 	          appointments: results,
 	          ready: true
@@ -63417,10 +63418,6 @@
 
 	var _showAll2 = _interopRequireDefault(_showAll);
 
-	var _userAll = __webpack_require__(561);
-
-	var _userAll2 = _interopRequireDefault(_userAll);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63431,6 +63428,8 @@
 
 	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
 
+
+	// import UserShow from './userAll';
 
 	var UserApptCall = function (_Component) {
 	  _inherits(UserApptCall, _Component);
@@ -63445,29 +63444,190 @@
 	    key: 'render',
 	    value: function render() {
 	      var apptResults = this.props.bingBong;
-	      var userResults = this.props.pingPong;
-	      // console.log(apptResults.appointments[0].description);
-	      console.log(userResults);
 
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'container userBody' },
 	        _react2.default.createElement(
 	          'div',
-	          null,
+	          { className: 'row' },
 	          _react2.default.createElement(
-	            'h1',
-	            null,
-	            userResults[0].first_name
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
+	            'div',
+	            { className: 'toppad pull-right' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 12, mdOffset: 0 },
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'userBlue', href: '#' },
+	                'Edit Profile'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'userRed', href: '#' },
+	                'Log Out'
+	              ),
+	              _react2.default.createElement('br', null)
+	            )
+	          ),
 	          _react2.default.createElement(
-	            'h1',
-	            null,
-	            apptResults.appointments[0].description
+	            'div',
+	            { className: 'col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xs: 5, sm: 12, md: 6, lg: 8 },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'panel panel-info' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-heading' },
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    apptResults.appointments[0].customer.first_name,
+	                    ' ',
+	                    apptResults.appointments[0].customer.last_name
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-body' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    _react2.default.createElement('div', null),
+	                    _react2.default.createElement(
+	                      'div',
+	                      null,
+	                      _react2.default.createElement(
+	                        _reactBootstrap.Col,
+	                        { md: 9, lg: 9 },
+	                        _react2.default.createElement(
+	                          'table',
+	                          { className: 'table table-user-information' },
+	                          _react2.default.createElement(
+	                            'tbody',
+	                            null,
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Appointments:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                Date(apptResults.appointments[0].appointment_start)
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Technician:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Tom'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Services:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                apptResults.appointments[0].product.name
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Polish Color:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '#4403'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Email:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                apptResults.appointments[0].customer.email
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          _reactBootstrap.Button,
+	                          { className: 'userBlue btn btn-primary', href: '#' },
+	                          'Change Appointments'
+	                        ),
+	                        _react2.default.createElement(
+	                          _reactBootstrap.Button,
+	                          { className: 'userBlue btn btn-primary', href: '#' },
+	                          'Notes For Nail Tech'
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-footer' },
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-primary' },
+	                    _react2.default.createElement('i', { className: 'glyphicon glyphicon-phone' })
+	                  ),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'pull-right' },
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-warning' },
+	                      _react2.default.createElement(
+	                        'i',
+	                        { className: 'glyphicon glyphicon-flash' },
+	                        'FACEBOOK'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#', type: 'button', className: 'btn btn-lg btn-warning' },
+	                      _react2.default.createElement(
+	                        'i',
+	                        { className: 'glyphicon glyphicon-star-empty' },
+	                        'SPECIALS'
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
 	          )
 	        )
 	      );

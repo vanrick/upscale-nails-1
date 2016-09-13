@@ -19,14 +19,14 @@ export default class CookieComponent extends Component {
   }
 
   onLogout() {
-    cookie.remove('userId', { path: '/' });
-    /** Clear all cookies starting with 'session' (to get all cookies, omit regex argument) */
-    Object.keys(cookie.select(/^session.*/i)).forEach(name => cookie.remove(name, { path: '/' }))
+    console.log("RICK ROLLED");
+    cookie.remove('userId');
   }
 
   render() {
     return (
-      <NavComponent onSuccess={this.onLogin.bind(this)} />
+      <NavComponent
+        onReset={this.onLogout.bind(this)} onSuccess={this.onLogin.bind(this)} />
     );
   }
 }

@@ -1,4 +1,3 @@
-
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Modal, Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
