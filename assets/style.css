@@ -79,9 +79,10 @@
 
 .reviews-background{
   background-color: #98aeab;
-  padding-top: 30vh;
+  padding-top: 40vh;
   padding-bottom: 25vh;
   font-family: 'Petit Formal Script', cursive;
+  margin-top: -5vh;
 }
 .user-reviews-header{
   margin-top: -18%;
@@ -91,8 +92,6 @@
   margin-top: -5%;
   font-family: 'Petit Formal Script', cursive;
 }
-
-
 .googleMap{
   height: 60vh;
   width: 100vw;
@@ -105,7 +104,7 @@
 
 .location-style{
   background-color: #dbbab3;
-  padding-top: .5vh;
+  padding-top: 3vh;
   padding-bottom: 1vh;
   font-size: 1.7em;
   font-family: 'Petit Formal Script', cursive;
@@ -156,6 +155,18 @@
 .service-name{
   font-size: 1.6em;
   font-family: 'Petit Formal Script', cursive;
+}
+
+.button-margin{
+  margin-right: 3%;
+}
+
+.icons{
+  margin-right: 2%;
+}
+
+.contact-pic{
+  margin-top: 4%;
 
 }
 /*        profile page       */
