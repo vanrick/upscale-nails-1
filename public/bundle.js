@@ -27132,7 +27132,7 @@
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
-	var _createLogIn = __webpack_require__(488);
+	var _createLogIn = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./homeComponents/createLogIn\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _createLogIn2 = _interopRequireDefault(_createLogIn);
 
@@ -27170,6 +27170,10 @@
 
 	var _footer2 = _interopRequireDefault(_footer);
 
+	var _cookieComponent = __webpack_require__(572);
+
+	var _cookieComponent2 = _interopRequireDefault(_cookieComponent);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27201,7 +27205,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement('script', { src: 'https://maps.googleapis.com/maps/api/js' }),
-	        _react2.default.createElement(_navbar2.default, null),
+	        _react2.default.createElement(_cookieComponent2.default, null),
 	        _react2.default.createElement(_createLogIn2.default, null),
 	        _react2.default.createElement(_SplashPage2.default, null),
 	        _react2.default.createElement(_services2.default, {
@@ -45968,6 +45972,14 @@
 
 	var _reactBootstrap = __webpack_require__(236);
 
+	var _cookieComponent = __webpack_require__(572);
+
+	var _cookieComponent2 = _interopRequireDefault(_cookieComponent);
+
+	var _reactCookie = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-cookie\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _reactCookie2 = _interopRequireDefault(_reactCookie);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45979,96 +45991,160 @@
 	var NavComponent = function (_Component) {
 	  _inherits(NavComponent, _Component);
 
-	  function NavComponent() {
+	  function NavComponent(props) {
 	    _classCallCheck(this, NavComponent);
 
-	    return _possibleConstructorReturn(this, (NavComponent.__proto__ || Object.getPrototypeOf(NavComponent)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (NavComponent.__proto__ || Object.getPrototypeOf(NavComponent)).call(this, props));
+
+	    _this.state = { userId: _reactCookie2.default.load('userId') };
+	    return _this;
 	  }
 
 	  _createClass(NavComponent, [{
+	    key: 'onSubmit',
+	    value: function onSubmit() {
+	      this.props.onSuccess(document.querySelector('#email').value);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { id: 'top' },
-	        _react2.default.createElement(
-	          _reactBootstrap.Nav,
-	          { className: 'nav-position nav-main', bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
+	      if (document.cookie.split("=")[0] !== "userId") {
+	        return _react2.default.createElement(
+	          'div',
+	          { id: 'top' },
 	          _react2.default.createElement(
-	            _reactBootstrap.NavItem,
-	            { className: 'nav-bar-text', eventKey: 'Home', href: '#top' },
-	            'Home'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.NavItem,
-	            { className: 'nav-bar-text', eventKey: 'Services', href: '#services' },
-	            'Services'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.NavItem,
-	            { className: 'nav-bar-text', eventKey: 'About Us', href: '#about' },
-	            'About Us'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.NavDropdown,
-	            { className: 'nav-bar-text', eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
+	            _reactBootstrap.Nav,
+	            { className: 'nav-position nav-main', bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
 	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.1', href: '#map' },
-	              ' Map '
+	              _reactBootstrap.NavItem,
+	              { className: 'nav-bar-text', eventKey: 'Home', href: '#top' },
+	              'Home'
 	            ),
 	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.2', href: '#hours' },
-	              'Hours & Location'
-	            ),
-	            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.3', href: 'https://www.facebook.com/Upscale-Nails-1029696537094258/' },
-	              'Facebook'
+	              _reactBootstrap.NavItem,
+	              { className: 'nav-bar-text', eventKey: 'Services', href: '#services' },
+	              'Services'
 	            ),
 	            _react2.default.createElement(
-	              _reactBootstrap.MenuItem,
-	              { eventKey: '4.4', href: 'https://www.yelp.com/biz/upscale-nails-fort-myers' },
-	              'Yelp'
+	              _reactBootstrap.NavItem,
+	              { className: 'nav-bar-text', eventKey: 'About Us', href: '#about' },
+	              'About Us'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.NavDropdown,
+	              { className: 'nav-bar-text', eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.1', href: '#map' },
+	                ' Map '
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.2', href: '#hours' },
+	                'Hours & Location'
+	              ),
+	              _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.3', href: 'https://www.facebook.com/Upscale-Nails-1029696537094258/' },
+	                'Facebook'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.4', href: 'https://www.yelp.com/biz/upscale-nails-fort-myers' },
+	                'Yelp'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Form,
+	              { inline: true, className: 'pull-right', onSubmit: this.onSubmit.bind(this) },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'formInlineName' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'nav-form-text' },
+	                  'Email'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { className: 'nav-form-text', type: 'email', id: 'email', placeholder: 'UpscaleNails@gmail.com' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'formInlineEmail' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'nav-form-text' },
+	                  'Password'
+	                ),
+	                ' ',
+	                _react2.default.createElement(_reactBootstrap.FormControl, { className: 'nav-form-text', type: 'password', placeholder: 'password' })
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'btn btn-info nav-form-text', type: 'submit' },
+	                'Submit'
+	              )
 	            )
-	          ),
+	          )
+	        );
+	      } else {
+	        return _react2.default.createElement(
+	          'div',
+	          { id: 'top' },
 	          _react2.default.createElement(
-	            _reactBootstrap.Form,
-	            { inline: true, className: 'pull-right' },
+	            _reactBootstrap.Nav,
+	            { className: 'nav-position nav-main', bsStyle: 'tabs', activeKey: '1', onSelect: this.handleSelect },
 	            _react2.default.createElement(
-	              _reactBootstrap.FormGroup,
-	              { controlId: 'formInlineName' },
-	              _react2.default.createElement(
-	                _reactBootstrap.ControlLabel,
-	                { className: 'nav-form-text' },
-	                'Email'
-	              ),
-	              ' ',
-	              _react2.default.createElement(_reactBootstrap.FormControl, { className: 'nav-form-text', type: 'email', placeholder: 'UpscaleNails@gmail.com' })
+	              _reactBootstrap.NavItem,
+	              { className: 'nav-bar-text', eventKey: 'Home', href: '#top' },
+	              'Home'
 	            ),
-	            ' ',
 	            _react2.default.createElement(
-	              _reactBootstrap.FormGroup,
-	              { controlId: 'formInlineEmail' },
-	              _react2.default.createElement(
-	                _reactBootstrap.ControlLabel,
-	                { className: 'nav-form-text' },
-	                'Password'
-	              ),
-	              ' ',
-	              _react2.default.createElement(_reactBootstrap.FormControl, { className: 'nav-form-text', type: 'password', placeholder: 'password' })
+	              _reactBootstrap.NavItem,
+	              { className: 'nav-bar-text', eventKey: 'Services', href: '#services' },
+	              'Services'
 	            ),
-	            ' ',
+	            _react2.default.createElement(
+	              _reactBootstrap.NavItem,
+	              { className: 'nav-bar-text', eventKey: 'About Us' },
+	              'About Us'
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.NavDropdown,
+	              { className: 'nav-bar-text', eventKey: '4', title: 'Contact', id: 'nav-dropdown' },
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.1' },
+	                'Hours & Location'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.2' },
+	                'Directions'
+	              ),
+	              _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.3' },
+	                'Facebook'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: '4.4' },
+	                'Yelp'
+	              )
+	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Button,
 	              { className: 'btn btn-info nav-form-text', type: 'submit' },
-	              'Submit'
+	              'Logout'
 	            )
 	          )
-	        )
-	      );
+	        );
+	      }
 	    }
 	  }]);
 
@@ -46078,248 +46154,7 @@
 	exports.default = NavComponent;
 
 /***/ },
-/* 488 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _reactBootstrap = __webpack_require__(236);
-
-	var _jquery = __webpack_require__(538);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ModalInstance = function (_Component) {
-	  _inherits(ModalInstance, _Component);
-
-	  function ModalInstance(props) {
-	    _classCallCheck(this, ModalInstance);
-
-	    var _this = _possibleConstructorReturn(this, (ModalInstance.__proto__ || Object.getPrototypeOf(ModalInstance)).call(this, props));
-
-	    _this.state = {
-	      first_name: '',
-	      last_name: '',
-	      password: '',
-	      email: '',
-	      telephone: ''
-	    };
-	    _this.handleSubmit = _this.handleSubmit.bind(_this);
-	    _this.setFirstName = _this.setFirstName.bind(_this);
-	    _this.setLastName = _this.setLastName.bind(_this);
-	    _this.setPassword = _this.setPassword.bind(_this);
-	    _this.setEmail = _this.setEmail.bind(_this);
-	    _this.setPhone = _this.setPhone.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(ModalInstance, [{
-	    key: 'setFirstName',
-	    value: function setFirstName(e) {
-	      this.setState({
-	        first_name: e.target.value
-	      });
-	    }
-	  }, {
-	    key: 'setPhone',
-	    value: function setPhone(e) {
-	      this.setState({
-	        telephone: e.target.value
-	      });
-	    }
-	  }, {
-	    key: 'setLastName',
-	    value: function setLastName(e) {
-	      this.setState({
-	        last_name: e.target.value
-	      });
-	    }
-	  }, {
-	    key: 'setPassword',
-	    value: function setPassword(e) {
-	      this.setState({
-	        password: e.target.value
-	      });
-	    }
-	  }, {
-	    key: 'setEmail',
-	    value: function setEmail(e) {
-	      this.setState({
-	        email: e.target.value
-	      });
-	    }
-	  }, {
-	    key: 'handleSubmit',
-	    value: function handleSubmit(e) {
-	      console.log("****HELLO****");
-	      console.log(this.state);
-	      console.log("****END HELLO*****");
-	      e.preventDefault();
-	      _jquery2.default.ajax({
-	        url: 'https://rocky-escarpment-34849.herokuapp.com/users',
-	        dataType: 'json',
-	        type: 'POST',
-	        data: this.state,
-	        success: function (userData) {
-	          this.setState({ userData: userData });
-	        }.bind(this),
-	        error: function (xhr, status, err) {}.bind(this)
-	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      var close = function close() {
-	        return _this2.setState({ show: false });
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'modal-container' },
-	        _react2.default.createElement(
-	          _reactBootstrap.Button,
-	          {
-	            className: 'pull-right btn-danger',
-	            bsStyle: 'primary',
-	            bsSize: 'small',
-	            onClick: function onClick() {
-	              return _this2.setState({ show: true });
-	            }
-	          },
-	          'Create New Account'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Modal,
-	          {
-	            show: this.state.show,
-	            onHide: close,
-	            container: this,
-	            'aria-labelledby': 'contained-modal-title',
-	            className: 'modal-bucket'
-	          },
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Header,
-	            { closeButton: true },
-	            _react2.default.createElement(
-	              _reactBootstrap.Modal.Title,
-	              { id: 'contained-modal-title' },
-	              'New Customer Information'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Body,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Form,
-	              { onSubmit: this.handleSubmit },
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'First Name'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', ref: 'first_name', placeholder: 'Jane', onChange: this.setFirstName })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Last Name'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', ref: 'last_name', placeholder: 'Doe', onChange: this.setLastName })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Password'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'password', ref: 'password', placeholder: 'password', onChange: this.setPassword })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Email'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'email', ref: 'email', placeholder: '123@gmail.com', onChange: this.setEmail })
-	              ),
-	              ' ',
-	              _react2.default.createElement(
-	                _reactBootstrap.FormGroup,
-	                null,
-	                _react2.default.createElement(
-	                  _reactBootstrap.ControlLabel,
-	                  null,
-	                  'Telephone Number'
-	                ),
-	                ' ',
-	                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', ref: 'telephone', placeholder: '999-999-9999', onChange: this.setPhone })
-	              ),
-	              ' ',
-	              _react2.default.createElement('input', { className: 'btn btn-info button-margin', onClick: close, type: 'submit' }),
-	              _react2.default.createElement(
-	                _reactBootstrap.Button,
-	                { className: 'btn btn-danger', onClick: close },
-	                'Cancel'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(_reactBootstrap.Modal.Footer, null)
-	        )
-	      );
-	    }
-	  }]);
-
-	  return ModalInstance;
-	}(_react.Component);
-
-	exports.default = ModalInstance;
-
-
-	ModalInstance.contextTypes = {
-	  router: _react2.default.PropTypes.object.isRequired
-	};
-
-/***/ },
+/* 488 */,
 /* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -62768,6 +62603,10 @@
 
 	var _showAll2 = _interopRequireDefault(_showAll);
 
+	var _userAll = __webpack_require__(571);
+
+	var _userAll2 = _interopRequireDefault(_userAll);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -62794,7 +62633,8 @@
 	        _react2.default.createElement(_showAll2.default, {
 	          name: 'WORKS',
 	          img: 'http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png'
-	        })
+	        }),
+	        _react2.default.createElement(_userAll2.default, null)
 	      );
 	    }
 	  }]);
@@ -62829,7 +62669,15 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _showApptsCall = __webpack_require__(570);
+
+	var _showApptsCall2 = _interopRequireDefault(_showApptsCall);
+
 	var _reactBootstrap = __webpack_require__(236);
+
+	var _jquery = __webpack_require__(538);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62839,244 +62687,56 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ShowAll = function (_Component) {
-	  _inherits(ShowAll, _Component);
+	var UserAppts = function (_Component) {
+	  _inherits(UserAppts, _Component);
 
-	  function ShowAll() {
-	    _classCallCheck(this, ShowAll);
+	  function UserAppts(props) {
+	    _classCallCheck(this, UserAppts);
 
-	    return _possibleConstructorReturn(this, (ShowAll.__proto__ || Object.getPrototypeOf(ShowAll)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (UserAppts.__proto__ || Object.getPrototypeOf(UserAppts)).call(this, props));
+
+	    _this.state = {
+	      appointments: '',
+	      ready: false
+	    };
+	    return _this;
 	  }
 
-	  _createClass(ShowAll, [{
+	  _createClass(UserAppts, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users/1001/appointments', function (results) {
+	        this.setState({
+	          appointments: results,
+	          ready: true
+	        });
+	      }.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.serverRequest.abort();
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _props = this.props;
 	      var name = _props.name;
 	      var img = _props.img;
 
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'container userBody' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'row' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'toppad pull-right' },
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { md: 12, mdOffset: 0 },
-	              _react2.default.createElement(
-	                _reactBootstrap.Button,
-	                { className: 'userBlue', href: '#' },
-	                'Edit Profile'
-	              ),
-	              _react2.default.createElement(
-	                _reactBootstrap.Button,
-	                { className: 'userRed', href: '#' },
-	                'Log Out'
-	              ),
-	              _react2.default.createElement('br', null),
-	              _react2.default.createElement(
-	                'p',
-	                { className: 'text-infto ' },
-	                'May 05,2016 03:00 pm '
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad' },
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { xs: 5, sm: 12, md: 6, lg: 8 },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'panel panel-info' },
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'panel-heading' },
-	                  _react2.default.createElement(
-	                    'h3',
-	                    { className: 'panel-title' },
-	                    'Mertile Escobar'
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'panel-body' },
-	                  _react2.default.createElement(
-	                    'div',
-	                    { className: 'row' },
-	                    _react2.default.createElement(
-	                      'div',
-	                      null,
-	                      _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { md: 3, lg: 3 },
-	                        _react2.default.createElement('img', { src: img, className: 'img-circle img-responsive smallImg' })
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      'div',
-	                      null,
-	                      _react2.default.createElement(
-	                        _reactBootstrap.Col,
-	                        { md: 9, lg: 9 },
-	                        _react2.default.createElement(
-	                          'table',
-	                          { className: 'table table-user-information' },
-	                          _react2.default.createElement(
-	                            'tbody',
-	                            null,
-	                            _react2.default.createElement(
-	                              'tr',
-	                              null,
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Appointments:'
-	                              ),
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Sept 14, 2016 Weds @ 3:30pm'
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              'tr',
-	                              null,
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Technician:'
-	                              ),
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Nini'
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              'tr',
-	                              null,
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Services:'
-	                              ),
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Pedicure and Manicure package'
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              'tr',
-	                              null,
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Polish Color:'
-	                              ),
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                '#4403'
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              'tr',
-	                              null,
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Email:'
-	                              ),
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                _react2.default.createElement(
-	                                  'a',
-	                                  { href: '#' },
-	                                  'Mertile@support.com'
-	                                )
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              'tr',
-	                              null,
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                'Phone Number:'
-	                              ),
-	                              _react2.default.createElement(
-	                                'td',
-	                                null,
-	                                '123-4567-8900(Mobile)'
-	                              )
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          _reactBootstrap.Button,
-	                          { className: 'userBlue btn btn-primary', href: '#' },
-	                          'Change Appointments'
-	                        ),
-	                        _react2.default.createElement(
-	                          _reactBootstrap.Button,
-	                          { className: 'userBlue btn btn-primary', href: '#' },
-	                          'Notes For Nail Tech'
-	                        )
-	                      )
-	                    )
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'panel-footer' },
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-primary' },
-	                    _react2.default.createElement('i', { className: 'glyphicon glyphicon-phone' })
-	                  ),
-	                  _react2.default.createElement(
-	                    'span',
-	                    { className: 'pull-right' },
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-warning' },
-	                      _react2.default.createElement(
-	                        'i',
-	                        { className: 'glyphicon glyphicon-flash' },
-	                        'FACEBOOK'
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: '#', type: 'button', className: 'btn btn-lg btn-warning' },
-	                      _react2.default.createElement(
-	                        'i',
-	                        { className: 'glyphicon glyphicon-star-empty' },
-	                        'SPECIALS'
-	                      )
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        )
-	      );
+
+	      if (this.state.ready === true) {
+	        return _react2.default.createElement(_showApptsCall2.default, { bingBong: this.state.appointments });
+	      } else {
+	        return null;
+	      }
 	    }
 	  }]);
 
-	  return ShowAll;
+	  return UserAppts;
 	}(_react.Component);
 
-	exports.default = ShowAll;
+	exports.default = UserAppts;
 
 /***/ },
 /* 557 */
@@ -63495,6 +63155,268 @@
 
 	// exports
 
+
+/***/ },
+/* 568 */,
+/* 569 */,
+/* 570 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _jquery = __webpack_require__(538);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _showAll = __webpack_require__(556);
+
+	var _showAll2 = _interopRequireDefault(_showAll);
+
+	var _userAll = __webpack_require__(571);
+
+	var _userAll2 = _interopRequireDefault(_userAll);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// import {getUsers} from '../../../databaseUtilities/databaseRequests';
+
+
+	var UserApptCall = function (_Component) {
+	  _inherits(UserApptCall, _Component);
+
+	  function UserApptCall() {
+	    _classCallCheck(this, UserApptCall);
+
+	    return _possibleConstructorReturn(this, (UserApptCall.__proto__ || Object.getPrototypeOf(UserApptCall)).apply(this, arguments));
+	  }
+
+	  _createClass(UserApptCall, [{
+	    key: 'render',
+	    value: function render() {
+	      var apptResults = this.props.bingBong;
+	      var userResults = this.props.pingPong;
+	      // console.log(apptResults.appointments[0].description);
+	      console.log(userResults);
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            userResults[0].first_name
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            apptResults.appointments[0].description
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return UserApptCall;
+	}(_react.Component);
+
+	exports.default = UserApptCall;
+
+/***/ },
+/* 571 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _showApptsCall = __webpack_require__(570);
+
+	var _showApptsCall2 = _interopRequireDefault(_showApptsCall);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _jquery = __webpack_require__(538);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UserShow = function (_Component) {
+	  _inherits(UserShow, _Component);
+
+	  function UserShow(props) {
+	    _classCallCheck(this, UserShow);
+
+	    var _this = _possibleConstructorReturn(this, (UserShow.__proto__ || Object.getPrototypeOf(UserShow)).call(this, props));
+
+	    _this.state = {
+	      users: '',
+	      ready: false
+	    };
+	    return _this;
+	  }
+
+	  _createClass(UserShow, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.serverRequest = _jquery2.default.get('https://rocky-escarpment-34849.herokuapp.com/users', function (results) {
+	        this.setState({
+	          users: results,
+	          ready: true
+	        });
+	      }.bind(this));
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.serverRequest.abort();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var name = _props.name;
+	      var img = _props.img;
+
+
+	      if (this.state.ready === true) {
+	        return _react2.default.createElement(_showApptsCall2.default, { pingPong: this.state.users });
+	      } else {
+	        return null;
+	      }
+	    }
+	  }]);
+
+	  return UserShow;
+	}(_react.Component);
+
+	exports.default = UserShow;
+
+/***/ },
+/* 572 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _navbar = __webpack_require__(487);
+
+	var _navbar2 = _interopRequireDefault(_navbar);
+
+	var _reactCookie = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-cookie\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _reactCookie2 = _interopRequireDefault(_reactCookie);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CookieComponent = function (_Component) {
+	  _inherits(CookieComponent, _Component);
+
+	  function CookieComponent(props) {
+	    _classCallCheck(this, CookieComponent);
+
+	    var _this = _possibleConstructorReturn(this, (CookieComponent.__proto__ || Object.getPrototypeOf(CookieComponent)).call(this, props));
+
+	    _this.state = { userId: _reactCookie2.default.load('userId') };
+	    return _this;
+	  }
+
+	  _createClass(CookieComponent, [{
+	    key: 'onLogin',
+	    value: function onLogin(userId) {
+	      console.log('userId', userId);
+	      console.log("RICK");
+	      this.setState({ userId: userId });
+	      _reactCookie2.default.save('userId', userId);
+	    }
+	  }, {
+	    key: 'onLogout',
+	    value: function onLogout() {
+	      _reactCookie2.default.remove('userId', { path: '/' });
+	      /** Clear all cookies starting with 'session' (to get all cookies, omit regex argument) */
+	      Object.keys(_reactCookie2.default.select(/^session.*/i)).forEach(function (name) {
+	        return _reactCookie2.default.remove(name, { path: '/' });
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_navbar2.default, { onSuccess: this.onLogin.bind(this) });
+	    }
+	  }]);
+
+	  return CookieComponent;
+	}(_react.Component);
+
+	exports.default = CookieComponent;
 
 /***/ }
 /******/ ]);
