@@ -45997,6 +45997,8 @@
 	    var _this = _possibleConstructorReturn(this, (NavComponent.__proto__ || Object.getPrototypeOf(NavComponent)).call(this, props));
 
 	    _this.state = { userId: _reactCookie2.default.load('userId') };
+	    console.log("HELLLOOOO");
+	    console.log(_this.state);
 	    return _this;
 	  }
 

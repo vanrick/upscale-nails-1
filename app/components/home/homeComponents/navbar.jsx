@@ -10,6 +10,8 @@ export default class NavComponent extends Component {
   constructor(props) {
     super(props);
     this.state =  { userId: cookie.load('userId') };
+    console.log("HELLLOOOO");
+    console.log(this.state);
   }
 
   onSubmit() {
@@ -47,13 +49,13 @@ export default class NavComponent extends Component {
            {' '}
 
            <Link to="/admin">
-           <Button  className="btn btn-info nav-form-text" type="submit">
+             <Button className="btn btn-info nav-form-text" type="submit">
              Submit
            </Button>
             </Link>
          </Form>
         </Nav>
-  </div>
+      </div>
     )
   } else {
     return (
@@ -76,6 +78,7 @@ export default class NavComponent extends Component {
 
       </Nav>
     </div>
+
     )
   }
 
