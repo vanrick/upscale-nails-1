@@ -14,6 +14,8 @@ import MenuCall from './homeComponents/menuCall';
 import SimpleMap from './homeComponents/SimpleMap';
 import LocationSpacer from './homeComponents/LocationSpacer';
 import Footer from './homeComponents/footer';
+import CookieComponent from './homeComponents/cookieComponent';
+
 export default class Home extends Component {
 
 
@@ -26,7 +28,7 @@ export default class Home extends Component {
     return (
       <div>
          <script src="https://maps.googleapis.com/maps/api/js"></script>
-        <NavComponent />
+        <CookieComponent />
         <ModalInstance />
         <SplashPage />
         <Services
