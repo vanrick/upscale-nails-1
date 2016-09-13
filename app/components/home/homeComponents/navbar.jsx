@@ -1,27 +1,32 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, NavItem, NavDropdown, Form, FormGroup, FormControl, MenuItem, ControlLabel} from 'react-bootstrap';
-import cookie from 'react-cookie';
-import {Link} from 'react-router'
 import CookieComponent from './cookieComponent';
-import { onLogin, onLogout } from './cookieComponent';
 import cookie from 'react-cookie';
 export default class NavComponent extends Component {
 
   constructor(props) {
     super(props);
     this.state =  { userId: cookie.load('userId') };
+    console.log("HELLLOOOO");
+    console.log(this.state);
   }
 
   onSubmit() {
-    this.props.onSuccess(document.querySelector('#email').value);
+    if(document.cookie.split("=")[0] !== "userId") {
+      // this.props.onSuccess(document.querySelector('#email').value);
+      this.props.onSuccess(1001);
+    } else {
+      this.props.onReset().bind(this);
+    }
   }
+
+
 
   render() {
     if(document.cookie.split("=")[0] !== "userId") {
     return (
       <div id="top">
-        <LoginPanel onSuccess={this.onLogin.bind(this)} />
         <Nav className="nav-position nav-main" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
           <NavItem className="nav-bar-text" eventKey="Home" href="#top">Home</NavItem>
           <NavItem className="nav-bar-text" eventKey="Services" href="#services">Services</NavItem>
@@ -47,17 +52,15 @@ export default class NavComponent extends Component {
              <FormControl className="nav-form-text" type="password" placeholder="password" />
            </FormGroup>
            {' '}
-
-           <Link to="/admin">
-           <Button  className="btn btn-info nav-form-text" type="submit">
-\             Submit
+           <Button className="btn btn-info nav-form-text" type="submit">
+             Submit
            </Button>
-            </Link>
          </Form>
         </Nav>
-  </div>
+      </div>
     )
   } else {
+
     return (
     <div id="top">
       <Nav className="nav-position nav-main" bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
@@ -72,12 +75,15 @@ export default class NavComponent extends Component {
           <MenuItem eventKey="4.4">Yelp</MenuItem>
         </NavDropdown>
 
-        <Button className="btn btn-info nav-form-text" type="submit">
-           Logout
-         </Button>
+        <Form inline className="pull-right" onSubmit={this.onSubmit.bind(this)}>
+          <Button className="btn btn-info nav-form-text" type="submit">
+            Logout
+          </Button>
+        </Form>
 
       </Nav>
     </div>
+
     )
   }
 

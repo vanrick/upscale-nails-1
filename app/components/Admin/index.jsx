@@ -16,7 +16,7 @@ export default class Admin extends Component {
         <br></br>
         <br></br>
       <div className="admin-style">
-        <h1>Staff Members</h1>
+        <h1>Registered Users and Staff</h1>
       </div>
         <UserCall />
       <div className="admin-style">
