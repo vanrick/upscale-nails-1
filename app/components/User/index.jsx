@@ -14,7 +14,6 @@ export default class User extends Component {
          name='WORKS'
          img='http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png'
           />
-        <UserShow />
       </div>
 
     )
