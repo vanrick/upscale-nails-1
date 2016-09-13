@@ -46,9 +46,6 @@ export default class ModalInstance extends Component{
     })
   }
   handleSubmit(e){
-    console.log("****HELLO****");
-    console.log(this.state)
-    console.log("****END HELLO*****");
     e.preventDefault()
     $.ajax({
       url: 'https://rocky-escarpment-34849.herokuapp.com/users',
@@ -65,7 +62,9 @@ export default class ModalInstance extends Component{
 
   render (){
     let close = () => this.setState({ show: false});
+    if(document.cookie.split("=")[0] !== "userId") {
     return (
+
       <div className="modal-container">
         <Button
           className="pull-right btn-danger"
@@ -125,7 +124,8 @@ export default class ModalInstance extends Component{
         </Modal.Footer>
         </Modal>
       </div>
-    );
+    )
+    }
   }
 }
 
