@@ -13,19 +13,17 @@ import MenuCall from './homeComponents/menuCall';
 
 import LocationSpacer from './homeComponents/LocationSpacer';
 import Footer from './homeComponents/footer';
+import CookieComponent from './homeComponents/cookieComponent';
+
 export default class Home extends Component {
 
 
-// Import react
-// Import all of the bootstrap components in the file that will be using it
-// Create the class which is the folder that holds the file
-// list all components that will be used on the index page
 
   render() {
     return (
       <div>
          <script src="https://maps.googleapis.com/maps/api/js"></script>
-        <NavComponent />
+        <CookieComponent />
         <ModalInstance />
         <SplashPage />
         <Services
