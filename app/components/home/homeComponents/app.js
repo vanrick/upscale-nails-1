@@ -4,9 +4,7 @@ import {
 } from "react";
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-
 import update from "react-addons-update";
-
 import SimpleMap from "./SimpleMap";
 
 export default class App extends Component {
