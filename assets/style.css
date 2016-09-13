@@ -222,6 +222,16 @@
   color: #ACB0BC;
 }
 
+
+/*tech profile*/
+
+.techSmImg{
+  height: 22vh;
+  width: 15vw;
+}
+.spcRight{
+  margin-right: .19vw;
+}
 /*blue: 5BC0DE
 red: D9534F
 orange: BB6A28
