@@ -12,7 +12,7 @@ export default class Footer extends Component {
     return (
       <div id="hours" className="footer-background">
         <div>
-          <h1 className="text-center contact-style">Contact Upscale Nails</h1>
+          <h1 className="text-center contact-style">Contact Upscale Nails</h1><hr></hr>
         </div>
       <div id="hours" >
         <Grid>
