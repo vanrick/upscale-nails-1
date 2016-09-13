@@ -18,7 +18,7 @@ export default class TechnicianProfile extends Component {
               </Col>
             </div>
              <div className="toppad" >
-               <Col xsOffset={0} smOffset={0} mdOffset={3} lgOffset={3} xs={5} sm={12} md={6} lg={8}>
+               <Col xsOffset={0} smOffset={0} mdOffset={2} lgOffset={2} xs={5} sm={12} md={6} lg={8}>
                <div className="panel panel-info">
                  <div className='panel-heading'>
                    <h3 className="panel-title">Thanh Nguyen</h3>
