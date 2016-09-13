@@ -1,25 +1,25 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Nav, Navbar, NavDropdown, MenuItem, NavItem, Grid, Row, Col } from 'react-bootstrap';
-import ShowAll from './userProfile/showAll';
+import TechnicianProfile from './technicianProfile/technician';
 
 
-export default class User extends Component {
+export default class Technician extends Component {
 
   render() {
     return (
       <div>
-        <ShowAll
+        <TechnicianProfile
          name='WORKS'
-         img='http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png'
+         img='http://icons.iconarchive.com/icons/hopstarter/face-avatars/256/Male-Face-D4-icon.png'
           />
-    </div>
+      </div>
 
     )
   };
 
 }
 
-User.contextTypes = {
+Technician.contextTypes = {
   router: React.PropTypes.object.isRequired,
 }

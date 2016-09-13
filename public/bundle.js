@@ -68,6 +68,10 @@
 
 	var _index6 = _interopRequireDefault(_index5);
 
+	var _index7 = __webpack_require__(568);
+
+	var _index8 = _interopRequireDefault(_index7);
+
 	var _bootstrap = __webpack_require__(557);
 
 	var _bootstrap2 = _interopRequireDefault(_bootstrap);
@@ -81,7 +85,8 @@
 	  { history: _reactRouter.hashHistory },
 	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _index2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: '/admin', component: _index4.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/user', component: _index6.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/user', component: _index6.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/technician', component: _index8.default })
 	), document.getElementById('app'));
 
 /***/ },
@@ -61265,8 +61270,8 @@
 	    _this.state = {
 	      markers: [{
 	        position: {
-	          lat: 26.5144029,
-	          lng: -81.9014407
+	          lat: 26.514745,
+	          lng: -81.900702
 	        },
 	        key: 'Fort Myers',
 	        defaultAnimation: 2
@@ -61514,9 +61519,9 @@
 	          ref: function ref(map) {
 	            return console.log(map);
 	          },
-	          defaultZoom: 11,
+	          defaultZoom: 18,
 	          options: { scrollwheel: false },
-	          defaultCenter: { lat: 26.5144029, lng: -81.9014407 },
+	          defaultCenter: { lat: 26.514745, lng: -81.900702 },
 	          onClick: props.onMapClick
 
 	        },
@@ -61896,15 +61901,23 @@
 	                _reactBootstrap.Col,
 	                { md: 6, className: 'text-left contact-location' },
 	                React.createElement(
-	                  'h4',
+	                  'div',
 	                  null,
-	                  ' ',
-	                  React.createElement(FontAwesome, {
-	                    className: 'icons',
-	                    name: 'location-arrow',
-	                    size: '2x'
-	                  }),
-	                  'Address: 15880 Summerlin Rd #109, Fort Myers, FL 33908'
+	                  React.createElement(
+	                    'h4',
+	                    null,
+	                    React.createElement(FontAwesome, {
+	                      className: 'icons',
+	                      name: 'location-arrow',
+	                      size: '2x'
+	                    }),
+	                    'Address: 15880 Summerlin Rd #109,'
+	                  ),
+	                  React.createElement(
+	                    'h4',
+	                    null,
+	                    'Fort Myers, FL 33908'
+	                  )
 	                ),
 	                React.createElement('br', null),
 	                React.createElement(
@@ -61926,7 +61939,7 @@
 	                    name: 'clock-o',
 	                    size: '2x'
 	                  }),
-	                  'Hours of Opperation: M-F 9:00am-6:30pm'
+	                  'Hours of Opperation: M-S 9:00am-6:30pm'
 	                )
 	              )
 	            )
@@ -62837,6 +62850,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(172);
+
 	var _reactDom = __webpack_require__(34);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -62881,7 +62896,7 @@
 	              { md: 12, mdOffset: 0 },
 	              _react2.default.createElement(
 	                _reactBootstrap.Button,
-	                { className: 'userBlue', href: '#' },
+	                { className: 'userBlue spcRight', href: '#' },
 	                'Edit Profile'
 	              ),
 	              _react2.default.createElement(
@@ -62899,10 +62914,10 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad' },
+	            { className: 'toppad' },
 	            _react2.default.createElement(
 	              _reactBootstrap.Col,
-	              { xs: 5, sm: 12, md: 6, lg: 8 },
+	              { xsOffset: 0, smOffset: 0, mdOffset: 2, xs: 5, sm: 12, md: 6, lg: 8 },
 	              _react2.default.createElement(
 	                'div',
 	                { className: 'panel panel-info' },
@@ -63034,13 +63049,17 @@
 	                        ),
 	                        _react2.default.createElement(
 	                          _reactBootstrap.Button,
-	                          { className: 'userBlue btn btn-primary', href: '#' },
+	                          { className: 'userBlue btn btn-primary spcRight', href: '#' },
 	                          'Change Appointments'
 	                        ),
 	                        _react2.default.createElement(
-	                          _reactBootstrap.Button,
-	                          { className: 'userBlue btn btn-primary', href: '#' },
-	                          'Notes For Nail Tech'
+	                          _reactRouter.Link,
+	                          { to: '/technician' },
+	                          _react2.default.createElement(
+	                            _reactBootstrap.Button,
+	                            { className: 'userBlue btn btn-primary' },
+	                            'Notes For Nail Tech'
+	                          )
 	                        )
 	                      )
 	                    )
@@ -63059,7 +63078,7 @@
 	                    { className: 'pull-right' },
 	                    _react2.default.createElement(
 	                      'a',
-	                      { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-warning' },
+	                      { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-warning spcRight' },
 	                      _react2.default.createElement(
 	                        'i',
 	                        { className: 'glyphicon glyphicon-flash' },
@@ -63503,10 +63522,459 @@
 
 
 	// module
-	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n  letter-spacing: .5px;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position-admin{\n  position: fixed;\n  z-index: 5000;\n  font-family: 'Petit Formal Script', cursive;\n  height: 6vh;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 40vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n  margin-top: -5vh;\n}\n.user-reviews-header{\n  margin-top: -22%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -15%;\n  font-family: 'Petit Formal Script', cursive;\n  letter-spacing: .5px;\n}\n.user-review{\n    letter-spacing: .5px;\n}\n.user-review-name{\n  letter-spacing: .5px;\n  color: #DBBAB3;\n  font-weight: bolder;\n  font-size: 1.5em;\n}\n\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: 3vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.button-margin{\n  margin-right: 3%;\n}\n\n.icons{\n  margin-right: 2%;\n}\n\n.contact-pic{\n  margin-top: 4%;\n\n}\n/*        profile page       */\n.smallImg{\n  height: 15vh;\n  width: 15vw;\n}\n\n.user-row {\n    margin-bottom: 14px;\n}\n\n.user-row:last-child {\n    margin-bottom: 0;\n}\n\n.dropdown-user {\n    margin: 13px 0;\n    padding: 5px;\n    height: 100%;\n}\n\n.dropdown-user:hover {\n    cursor: pointer;\n}\n\n.table-user-information > tbody > tr {\n    border-top: 1px solid rgb(221, 221, 221);\n}\n\n.table-user-information > tbody > tr:first-child {\n    border-top: 0;\n}\n\n\n.table-user-information > tbody > tr > td {\n    border-top: 0;\n}\n.toppad\n{margin-top:20px;\n}\n.borderIt{\n  border: 2px solid black;\n}\n.userBody{\n  background-color: #ACB0BC;\n  height: 100vh;\n  width: 100%;\n}\n.userBlue{\n  background-color: #5BC0DE;\n  border: none;\n  color: white;\n}\n.userRed{\n  background-color: #D9534F;\n  color: white;\n  border: none;\n}\n.userOrange{\n  color: #BB6A28;\n}\n.userGray{\n  color: #ACB0BC;\n}\n\n.admin-style{\n  background-color: #98AEAB;\n  height: 8vh;\n  margin-top: -1%;\n}\n\n.admin-nav-button{\n  margin-top: .5%;\n  margin-right: 1%;\n}\n\n.admin-nav-text{\n  font-size: 1.2em;\n}\n\n\n/*blue: 5BC0DE\nred: D9534F\norange: BB6A28\ngray: ACB0BC\n*/\n", ""]);
+	exports.push([module.id, ".modal-container {\n  position: absolute;\n  z-index: 4000;\n  height: 100vh;\n  width: 100vw;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n\n}\n\n.modal-bucket {\n  z-index: 2050;\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.modal .modal-backdrop {\n  position: absolute;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-main {\n  background-color: #DED7D1;\n  width: 100%;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.btn-spacer{\n  margin-right: 3%;\n}\n\n.ul-style{\n  list-style-type: none;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-header-styling{\n  margin-top: -105vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-picture-text-header{\n  margin-top: -60vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.carousel-text-description{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n  letter-spacing: .5px;\n}\n\n.nav-position{\n  position: fixed;\n  z-index: 5000;\n  padding-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-position-admin{\n  position: fixed;\n  z-index: 5000;\n  font-family: 'Petit Formal Script', cursive;\n  height: 6vh;\n}\n\n.nav-form-text{\n  color: black;\n  margin-right: 1vw;\n  margin-top: 1vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.nav-bar-text{\n  font-size: 1.5em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n#services{\n  background-color: #ded7d1;\n  margin-top: -2.5vh;\n  padding-bottom: 10vh;\n  padding-top: 8vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.reviews-background{\n  background-color: #98aeab;\n  padding-top: 40vh;\n  padding-bottom: 25vh;\n  font-family: 'Petit Formal Script', cursive;\n  margin-top: -5vh;\n}\n.user-reviews-header{\n  margin-top: -22%;\n  font-family: 'Petit Formal Script', cursive;\n}\n.user-review-slogan{\n  margin-top: -15%;\n  font-family: 'Petit Formal Script', cursive;\n  letter-spacing: .5px;\n}\n.user-review{\n    letter-spacing: .5px;\n}\n.user-review-name{\n  letter-spacing: .5px;\n  color: #DBBAB3;\n  font-weight: bolder;\n  font-size: 1.5em;\n}\n\n.googleMap{\n  height: 60vh;\n  width: 100vw;\n}\n\n.bottom-section-color{\n  background-color: #a8adaf;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.location-style{\n  background-color: #dbbab3;\n  padding-top: 3vh;\n  padding-bottom: 1vh;\n  font-size: 1.7em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-style{\n  background-color: #DBBAB3;\n  padding-bottom: 1vh;\n  font-size: 3em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.footer-background{\n  background-color: #dbbab3;\n  padding-bottom: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menuTable {\n  background-color: #DED7D1;\n  margin-bottom: -5px;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-heading {\n  background-color: #DED7D1;\n  margin: -5px 0 -5px 0;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.menu-container {\n  background-color: #DED7D1;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.contact-location{\n  margin-top: 10vh;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.service-menu-header{\n  margin-top: -4%;\n  font-family: 'Petit Formal Script', cursive;\n  font-size: 1.9em;\n  margin-bottom: 3.5vh;\n}\n\n.service-name{\n  font-size: 1.6em;\n  font-family: 'Petit Formal Script', cursive;\n}\n\n.button-margin{\n  margin-right: 3%;\n}\n\n.icons{\n  margin-right: 2%;\n}\n\n.contact-pic{\n  margin-top: 4%;\n\n}\n/*        profile page       */\n.smallImg{\n  height: 22vh;\n  width: 15vw;\n}\n\n.user-row {\n    margin-bottom: 14px;\n}\n\n.user-row:last-child {\n    margin-bottom: 0;\n}\n\n.dropdown-user {\n    margin: 13px 0;\n    padding: 5px;\n    height: 100%;\n}\n\n.dropdown-user:hover {\n    cursor: pointer;\n}\n\n.table-user-information > tbody > tr {\n    border-top: 1px solid rgb(221, 221, 221);\n}\n\n.table-user-information > tbody > tr:first-child {\n    border-top: 0;\n}\n\n\n.table-user-information > tbody > tr > td {\n    border-top: 0;\n}\n.toppad\n{margin-top:20px;\n}\n.borderIt{\n  border: 2px solid black;\n}\n.userBody{\n  background-color: #ACB0BC;\n  height: 100vh;\n  width: 100%;\n}\n.userBlue{\n  background-color: #5BC0DE;\n  border: none;\n  color: white;\n}\n.userRed{\n  background-color: #D9534F;\n  color: white;\n  border: none;\n}\n.userOrange{\n  color: #BB6A28;\n}\n.userGray{\n  color: #ACB0BC;\n}\n\n\n\n/*tech profile*/\n\n.techSmImg{\n  height: 22vh;\n  width: 15vw;\n}\n.spcRight{\n  margin-right: .19vw;\n}\n.admin-style{\n  background-color: #98AEAB;\n  height: 8vh;\n  margin-top: -1%;\n}\n\n.admin-nav-button{\n  margin-top: .5%;\n  margin-right: 1%;\n}\n\n.admin-nav-text{\n  font-size: 1.2em;\n\n}\n\n\n/*blue: 5BC0DE\nred: D9534F\norange: BB6A28\ngray: ACB0BC\n*/\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 568 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	var _technician = __webpack_require__(569);
+
+	var _technician2 = _interopRequireDefault(_technician);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Technician = function (_Component) {
+	  _inherits(Technician, _Component);
+
+	  function Technician() {
+	    _classCallCheck(this, Technician);
+
+	    return _possibleConstructorReturn(this, (Technician.__proto__ || Object.getPrototypeOf(Technician)).apply(this, arguments));
+	  }
+
+	  _createClass(Technician, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_technician2.default, {
+	          name: 'WORKS',
+	          img: 'http://icons.iconarchive.com/icons/hopstarter/face-avatars/256/Male-Face-D4-icon.png'
+	        })
+	      );
+	    }
+	  }]);
+
+	  return Technician;
+	}(_react.Component);
+
+	exports.default = Technician;
+
+
+	Technician.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
+
+/***/ },
+/* 569 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactBootstrap = __webpack_require__(236);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TechnicianProfile = function (_Component) {
+	  _inherits(TechnicianProfile, _Component);
+
+	  function TechnicianProfile() {
+	    _classCallCheck(this, TechnicianProfile);
+
+	    return _possibleConstructorReturn(this, (TechnicianProfile.__proto__ || Object.getPrototypeOf(TechnicianProfile)).apply(this, arguments));
+	  }
+
+	  _createClass(TechnicianProfile, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var name = _props.name;
+	      var img = _props.img;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container userBody' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'toppad pull-right' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 12, mdOffset: 0 },
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'userBlue spcRight', href: '#' },
+	                'Edit Profile'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { className: 'userRed', href: '#' },
+	                'Log Out'
+	              ),
+	              _react2.default.createElement('br', null),
+	              _react2.default.createElement(
+	                'p',
+	                { className: 'text-infto ' },
+	                'May 26,2016 03:00 pm '
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'toppad' },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xsOffset: 0, smOffset: 0, mdOffset: 2, lgOffset: 2, xs: 5, sm: 12, md: 6, lg: 8 },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'panel panel-info' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-heading' },
+	                  _react2.default.createElement(
+	                    'h3',
+	                    { className: 'panel-title' },
+	                    'Thanh Nguyen'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-body' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      null,
+	                      _react2.default.createElement(
+	                        _reactBootstrap.Col,
+	                        { md: 3, lg: 3 },
+	                        _react2.default.createElement('img', { src: img, className: 'img-circle img-responsive techSmImg' })
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      null,
+	                      _react2.default.createElement(
+	                        _reactBootstrap.Col,
+	                        { md: 9, lg: 9 },
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'agenda' },
+	                          _react2.default.createElement(
+	                            'div',
+	                            { className: 'table-responsive' },
+	                            _react2.default.createElement(
+	                              'table',
+	                              { className: 'table table-condensed table-bordered' },
+	                              _react2.default.createElement(
+	                                'thead',
+	                                null,
+	                                _react2.default.createElement(
+	                                  'tr',
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    'th',
+	                                    null,
+	                                    'Date'
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'th',
+	                                    null,
+	                                    'Time'
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'th',
+	                                    null,
+	                                    'Customer'
+	                                  )
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                'tbody',
+	                                null,
+	                                _react2.default.createElement(
+	                                  'tr',
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-date active', rowSpan: '1' },
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'dayofmonth' },
+	                                      '26'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'dayofweek' },
+	                                      'Friday'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'shortdate text-muted' },
+	                                      'May, 2016'
+	                                    )
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-time' },
+	                                    '5:15 PM - 6:00 PM'
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-events' },
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'agenda-event' },
+	                                      _react2.default.createElement(
+	                                        'i',
+	                                        { className: 'glyphicon glyphicon-repeat text-muted', title: 'Repeating event' },
+	                                        '2wks'
+	                                      ),
+	                                      '  Jennifer'
+	                                    )
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  'tr',
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-date active', rowSpan: '3' },
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'dayofmonth' },
+	                                      '27'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'dayofweek' },
+	                                      'Saturday'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'shortdate text-muted' },
+	                                      'May, 2016'
+	                                    )
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-time' },
+	                                    '9:15 - 10:30 AM'
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-events' },
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'agenda-event' },
+	                                      'Mertile'
+	                                    )
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  'tr',
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-time' },
+	                                    '10:45 AM - 12:00 PM'
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-events' },
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'agenda-event' },
+	                                      'Bernadette'
+	                                    )
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  'tr',
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-time' },
+	                                    '1:30 PM - 2:15 PM'
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    'td',
+	                                    { className: 'agenda-events' },
+	                                    _react2.default.createElement(
+	                                      'div',
+	                                      { className: 'agenda-event' },
+	                                      'Michael Olson'
+	                                    )
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'table',
+	                          { className: 'table table-user-information' },
+	                          _react2.default.createElement(
+	                            'tbody',
+	                            null,
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Licensed Services:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Manicurest, Drill, Waxing, Facials'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Email:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                _react2.default.createElement(
+	                                  _reactRouter.Link,
+	                                  { to: '#' },
+	                                  'Thanh@support.com'
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'tr',
+	                              null,
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Phone Number:'
+	                              ),
+	                              _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '123-4567-8900(Mobile)'
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          _reactRouter.Link,
+	                          { to: '/user' },
+	                          _react2.default.createElement(
+	                            _reactBootstrap.Button,
+	                            { className: 'userBlue btn btn-primary' },
+	                            'Customer Notes'
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'panel-footer' },
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-primary' },
+	                    _react2.default.createElement('i', { className: 'glyphicon glyphicon-phone' })
+	                  ),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'pull-right' },
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#', type: 'button', className: 'userBlue btn btn-lg btn-warning spcRight' },
+	                      _react2.default.createElement(
+	                        'i',
+	                        { className: 'glyphicon glyphicon-flash' },
+	                        'FACEBOOK'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#', type: 'button', className: 'btn btn-lg btn-warning' },
+	                      _react2.default.createElement(
+	                        'i',
+	                        { className: 'glyphicon glyphicon-star-empty' },
+	                        'SPECIALS'
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return TechnicianProfile;
+	}(_react.Component);
+
+	exports.default = TechnicianProfile;
 
 /***/ }
 /******/ ]);

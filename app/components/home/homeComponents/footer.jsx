@@ -21,11 +21,15 @@ export default class Footer extends Component {
               <img src={img1} height={300} width={350}/>
             </Col>
             <Col md={6} className="text-left contact-location">
-              <h4> <FontAwesome
-                  className="icons"
-                  name='location-arrow'
-                  size='2x'
-                  />Address: 15880 Summerlin Rd #109, Fort Myers, FL 33908</h4>
+              <div>
+                  <h4><FontAwesome
+                      className="icons"
+                      name='location-arrow'
+                      size='2x'
+                      />
+                  Address: 15880 Summerlin Rd #109,</h4>
+                  <h4>Fort Myers, FL 33908</h4>
+                </div>
               <br></br>
               <h4><FontAwesome
                   className="icons"
@@ -37,7 +41,7 @@ export default class Footer extends Component {
                   className="icons"
                   name='clock-o'
                   size='2x'
-                  />Hours of Opperation: M-F 9:00am-6:30pm</h4>
+                  />Hours of Opperation: M-S 9:00am-6:30pm</h4>
             </Col>
 
           </Row>

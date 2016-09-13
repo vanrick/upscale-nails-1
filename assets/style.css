@@ -190,7 +190,7 @@
 }
 /*        profile page       */
 .smallImg{
-  height: 15vh;
+  height: 22vh;
   width: 15vw;
 }
 
@@ -252,6 +252,17 @@
   color: #ACB0BC;
 }
 
+
+
+/*tech profile*/
+
+.techSmImg{
+  height: 22vh;
+  width: 15vw;
+}
+.spcRight{
+  margin-right: .19vw;
+}
 .admin-style{
   background-color: #98AEAB;
   height: 8vh;
@@ -265,6 +276,7 @@
 
 .admin-nav-text{
   font-size: 1.2em;
+
 }
 
 

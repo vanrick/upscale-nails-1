@@ -20,9 +20,9 @@ const SimpleMap = props => (
       googleMapElement={
         <GoogleMap
           ref={(map) => console.log(map)}
-          defaultZoom={11}
+          defaultZoom={18}
           options={{ scrollwheel: false}}
-          defaultCenter={{ lat: 26.5144029, lng: -81.9014407 }}
+          defaultCenter={{ lat: 26.514745, lng: -81.900702 }}
           onClick={props.onMapClick}
 
         >
