@@ -48,6 +48,7 @@
 .carousel-text-description{
   font-size: 1.5em;
   font-family: 'Petit Formal Script', cursive;
+  letter-spacing: .5px;
 }
 
 .nav-position{
@@ -55,6 +56,13 @@
   z-index: 5000;
   padding-top: 1vh;
   font-family: 'Petit Formal Script', cursive;
+}
+
+.nav-position-admin{
+  position: fixed;
+  z-index: 5000;
+  font-family: 'Petit Formal Script', cursive;
+  height: 6vh;
 }
 
 .nav-form-text{
@@ -79,19 +87,29 @@
 
 .reviews-background{
   background-color: #98aeab;
-  padding-top: 30vh;
+  padding-top: 40vh;
   padding-bottom: 25vh;
   font-family: 'Petit Formal Script', cursive;
+  margin-top: -5vh;
 }
 .user-reviews-header{
-  margin-top: -18%;
+  margin-top: -22%;
   font-family: 'Petit Formal Script', cursive;
 }
 .user-review-slogan{
-  margin-top: -5%;
+  margin-top: -15%;
   font-family: 'Petit Formal Script', cursive;
+  letter-spacing: .5px;
 }
-
+.user-review{
+    letter-spacing: .5px;
+}
+.user-review-name{
+  letter-spacing: .5px;
+  color: #DBBAB3;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
 
 .googleMap{
   height: 60vh;
@@ -105,7 +123,7 @@
 
 .location-style{
   background-color: #dbbab3;
-  padding-top: .5vh;
+  padding-top: 3vh;
   padding-bottom: 1vh;
   font-size: 1.7em;
   font-family: 'Petit Formal Script', cursive;
@@ -156,11 +174,23 @@
 .service-name{
   font-size: 1.6em;
   font-family: 'Petit Formal Script', cursive;
+}
+
+.button-margin{
+  margin-right: 3%;
+}
+
+.icons{
+  margin-right: 2%;
+}
+
+.contact-pic{
+  margin-top: 4%;
 
 }
 /*        profile page       */
 .smallImg{
-  height: 15vh;
+  height: 22vh;
   width: 15vw;
 }
 
@@ -221,6 +251,34 @@
 .userGray{
   color: #ACB0BC;
 }
+
+
+
+/*tech profile*/
+
+.techSmImg{
+  height: 22vh;
+  width: 15vw;
+}
+.spcRight{
+  margin-right: .19vw;
+}
+.admin-style{
+  background-color: #98AEAB;
+  height: 8vh;
+  margin-top: -1%;
+}
+
+.admin-nav-button{
+  margin-top: .5%;
+  margin-right: 1%;
+}
+
+.admin-nav-text{
+  font-size: 1.2em;
+
+}
+
 
 /*blue: 5BC0DE
 red: D9534F

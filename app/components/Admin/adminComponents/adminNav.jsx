@@ -7,11 +7,11 @@ export default class AdminNav extends Component {
   render() {
     return (
       <div>
-        <Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
-          <NavItem eventKey="Home" href="#">Home</NavItem>
-          <NavItem eventKey="Services" href="#">Appointments</NavItem>
+        <Nav className="nav-position-admin nav-main " bsStyle="tabs" onSelect={this.handleSelect}>
+          <NavItem className="admin-nav-text" eventKey="Home" href="#top">Home</NavItem>
+          <NavItem className="admin-nav-text"eventKey="Services" href="#appt">Appointments</NavItem>
           <a href="/">
-          <Button className="btn btn-info pull-right" type="logout">
+          <Button className="btn btn-info pull-right admin-nav-button" type="logout">
              Logout
           </Button></a>
 

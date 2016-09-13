@@ -4,36 +4,36 @@ import UserApptCall from './showApptsCall';
 import { Button, A, Grid, Row, Col, Nav, NavItem, NavDropdown, MenuItem, Table } from 'react-bootstrap';
 import $ from 'jquery';
 
-  export default class UserAppts extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        appointments: '',
-        ready: false
-      }
-    }
-    componentDidMount () {
-      this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users/1001/appointments', function (results) {
-        this.setState({
-            appointments: results,
-            ready: true
-          })
-      }.bind(this))
-    }
+ export default class UserAppts extends Component {
+   constructor(props) {
+     super(props);
+     this.state = {
+       appointments: '',
+       ready: false
+     }
+   }
+   componentDidMount () {
+     this.serverRequest = $.get('https://rocky-escarpment-34849.herokuapp.com/users/1001/appointments', function (results) {
+       this.setState({
+           appointments: results,
+           ready: true
+         })
+     }.bind(this))
+   }
 
-    componentWillUnmount () {
-      this.serverRequest.abort();
-    }
+   componentWillUnmount () {
+     this.serverRequest.abort();
+   }
 
-    render() {
-      var { name, img } = this.props
+   render() {
+     var { name, img } = this.props
 
-      if(this.state.ready === true){
-        return (
-          <UserApptCall bingBong={this.state.appointments}/>
-        )
-      }else{
-        return null
-    }
-  }
+     if(this.state.ready === true){
+       return (
+         <UserApptCall bingBong={this.state.appointments}/>
+       )
+     }else{
+       return null
+   }
+ }
 }
